@@ -1,4 +1,4 @@
-Temporary_project_name
+﻿Temporary_project_name
 ======================
 
 Gra (?) - ponoć strategia turowa
@@ -20,7 +20,9 @@ Gra (?) - ponoć strategia turowa
 /////////////TUTAJ ZAMIEŚCIĆ SZCZEGÓŁOWĄ ROZPISKĘ SZKIELETU GRY (POSZCZEGÓLNE PLIKI/KLASY), PRACE DO WYKONANIA BĘDĄ OPISANE W KAŻDYM PLIKU OSOBNO (JAKO TO-DO-LIST)
 ...WIP...
 1) Main.cpp
-2)...
+2) Anim.cpp
+3) Anim.h
+4) ...
 
 
 
