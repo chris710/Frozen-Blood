@@ -7,15 +7,15 @@ Gra (?) - ponoć strategia turowa
 //////////////TUTAJ UMIEŚCIĆ SZCZEGÓŁY PROJEKTU (TZW. KOMPLETNY PROJEKT)
 
 ...WIP...
-1) Ogólny opis gry (okreść kategorię gry, krótko ją streścić/ opisać; coś jak news w czasopiśmie komputerowym)
-2) Cele gry (krótko o rzeczach do których się w grze dąży)
-3) Fabuła, historie, świat, postacie inne pierdoły
-4) Zasady i tryby gry (czyli czym to się je)
-5) Interakcja między graczem a grą 
-6) Opis interfejsu (grafiki, muzyki, poziomów)
-7) Przebieg (trudne) opisać co będzie się działo w grze od momentu, kiedy użytkownik rozpoczyna grę, poprzez główne zdarzenia w grze, aż do momentu jej zakończenia, wygląda to tak jakbyś opisywał grę w którą sam grałeś
-8) Schematy, mechanizmy rozwiązania, algorytmy
-9) Podsumowanie (czyli tłumacz się dlaczego wybrałeś tak jak wybrałeś i ma być tak jak jest)
+- Ogólny opis gry (okreść kategorię gry, krótko ją streścić/ opisać; coś jak news w czasopiśmie komputerowym)
+- Cele gry (krótko o rzeczach do których się w grze dąży)
+- Fabuła, historie, świat, postacie inne pierdoły
+- Zasady i tryby gry (czyli czym to się je)
+- Interakcja między graczem a grą 
+- Opis interfejsu (grafiki, muzyki, poziomów)
+- Przebieg (trudne) opisać co będzie się działo w grze od momentu, kiedy użytkownik rozpoczyna grę, poprzez główne zdarzenia w grze, aż do momentu jej zakończenia, wygląda to tak jakbyś opisywał grę w którą sam grałeś
+- Schematy, mechanizmy rozwiązania, algorytmy
+- Podsumowanie (czyli tłumacz się dlaczego wybrałeś tak jak wybrałeś i ma być tak jak jest)
 
 KOD GRY
 - main.cpp
