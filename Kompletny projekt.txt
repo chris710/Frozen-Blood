@@ -3,11 +3,11 @@
 
 1) Ogólny opis gry (okreść kategorię gry, krótko ją streścić/ opisać; coś jak news w czasopiśmie komputerowym)
 
-Gra jest strategią turową z planszą podzieloną na kwadratowe pola. Fabuły chwilowo brak; skupiamy się nad trybem dla 2 graczy (multiplayer). Gracze muszą skupiać się zarówno na ekonomii jak i zarządzaniu wojskiem. Środki na armię gracz pozyskuje ze specjalnych pól zwanych osadami, które należy najpierw zająć. Stałe rozlokowanie osad na mapie wymusza ekspansywność celem zdobycia przewagi ekonomicznej. Zarządzanie wojskiem polega na rozlokowaniu i przemieszczaniu ikonek jednostek na polach mapy. Każda jednostka posiada wyjątkowe właściwości bojowe, pozwalające rozwinąć różnorodne taktyki bojowe.
+Gra jest strategią turową z planszą podzieloną na kwadratowe pola. Fabuły chwilowo brak; skupiamy się nad trybem dla 2 graczy (multiplayer). Gracze muszą skupiać się zarówno na ekonomii jak i zarządzaniu wojskiem. Środki na armię gracz pozyskuje ze specjalnych pól zwanych osadami, które należy najpierw zająć. Stałe rozlokowanie osad na mapie wymusza ekspansywność celem zdobycia przewagi ekonomicznej. Zarządzanie wojskiem polega na rozlokowaniu i przemieszczaniu ikonek jednostek na polach mapy. Każda jednostka posiada wyjątkowe właściwości bojowe, pozwalające rozwinąć różnorodne taktyki.
 
 
 2) Cele gry (krótko o rzeczach do których się w grze dąży)
-...Patrz punkt 7
+...Patrz punkt 7 i 4
 
 3) Fabuła, historie, świat, postacie inne pierdoły
 
@@ -22,15 +22,43 @@ Zasady gry:
 -Na planszy rozmieszczone są niezajęte osady, można je zająć bohaterem lub piechurami. Osady są dobrymi miejscami do obrony i przynoszą zyski w postaci złota
 -Na początku każdej tury gracz otrzymuje złoto z zajętych osad i twierdz, może za nie zrekrutwować jednostki lub wykupić bohatera
 -Każde pole określa inną formację terenu (droga, most, góry, las, twierdza, osada, woda, otwarty teren). Każdy teren posiada własne cechy takie jak trudność poruszania się w nim czy współczynnik obrony
--W twierdzy gracz może rekrutować jednostki: piechur (przeciętny atak i obrona, może zajmować osady), łucznik (dobry atak (2 pola zasięgu), słaba obrona), mag (słabe atak i obrona, potrafi wskrzeszać poległe jednostki jako szkielety), zabójcy (duża mobilność, silny atak, przeciętna obrona), duch(?) (słaby atak i obrona, skuteczny przeciwko szkieletom, zwiększa staty pobliskich jednostek), defender(?) (mało mobilny, acz z silnym atakiem i obroną), trebusz (nie może w jednej turze poruszać się i atakować, silny atak (5 pól zasięgu), słaba obrona), smok (niezwykle mobilny bez wpływu na rodzaj terenu). 
+-W twierdzy gracz może rekrutować jednostki: piechur (przeciętny atak i obrona, może zajmować osady), łucznik (dobry atak (2 pola zasięgu), słaba obrona), mag (słabe atak i obrona, potrafi wskrzeszać poległe jednostki jako szkielety), zabójcy (duża mobilność, silny atak, przeciętna obrona), duch(?) (słaby atak i obrona, skuteczny przeciwko szkieletom, zwiększa staty pobliskich jednostek), defender(?) (mało mobilny, acz z silnym atakiem i obroną), trebusz (nie może w jednej turze poruszać się i atakować, silny atak (5 pól zasięgu), słaba obrona), smok (niezwykle mobilny bez wpływu na rodzaj terenu, silny atak i obrona, podatny na ataki na odległość). 
+-Gracze wykonują swoje ruchy naprzemian, turowo. Każda jednostka może być użyta tylko raz podczas jednej tury.
+-
+
+Tryby:
+Skirmish dla 2,3 i 4 graczy.
+Story mode: -? może w przyszłości
 
 
 5) Interakcja między graczem a grą 
 
-
+Ekran główny gry pokazuje fragment mapy aktualnie przeglądany przez użytkownika. Pod spodem znajduje się pasek ze szczegółami mi. dotyczącymi miejsca, na które wskazuje kursor oraz ogólnymi danymi, takimi jak ilość złota.
+Całość jest obsługiwana za pomocą myszy lub klawiatury. Miejsce kursora jest wyszczególnione, np. ramką. Po kliknięciu na jednostkę podświetlają się pola, na któe może się ona udać, zaatakować, itp.
+Oprócz tego dostępne jest dodatkowe menu (nadać nazwę?, gdzie ono jest?, jak je włączyć, jeżeli w ogóle?), które daje dostęp do dodatkowych opcji, np. zakończyć obecną turę, przejrzeć całą mapę czy zobaczyć statystyki.
+Dodatkowe menu(albo okno?) włącza się przy wybraniu twierdzy (rekrutacja jednostek).
+Pause menu.
+Main menu.
 
 
 6) Opis interfejsu (grafiki, muzyki, poziomów)
+
+Grafikę mamy w 90% z Ancient Empires 2 (trzeba podrasować).
+Do tego należy uzgodnić co się animuje a co nie. Muzyka pomocy :( 
+Ogarniam powoli Cubase, więc za parę miesięcy może coś wykombinuję.
+
+
 7) Przebieg (trudne) opisać co będzie się działo w grze od momentu, kiedy użytkownik rozpoczyna grę, poprzez główne zdarzenia w grze, aż do momentu jej zakończenia, wygląda to tak jakbyś opisywał grę w którą sam grałeś
+
+Tu jest dużo do pisania. Przede wszystkim trzeba skopiować wszystko co powyżej i dopisać po trochu tego co brakuje.
+
+
 8) Schematy, mechanizmy rozwiązania, algorytmy
+
+...WIP...
+AI, Drzewa, listy, systemy eksperckie, matematyczne aspekty, itp.
+
+
 9) Podsumowanie (czyli tłumacz się dlaczego wybrałeś tak jak wybrałeś i ma być tak jak jest)
+
+Krytyka?
