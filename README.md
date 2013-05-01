@@ -17,20 +17,25 @@ Gra (?) - ponoć strategia turowa
 8) Schematy, mechanizmy rozwiązania, algorytmy
 9) Podsumowanie (czyli tłumacz się dlaczego wybrałeś tak jak wybrałeś i ma być tak jak jest)
 
+KOD GRY
+- main.cpp
+- main.h
+- game/game.cpp
+- game/game.h
+- game/menu.cpp
+- game/menu.h
+- editor/level_editor.cpp
+- editor/level_editor.h
+- units/[RASA]/units.cpp
+- units/[RASA]/units.h
+- units/[RASA]/ai.cpp
+- units/[RASA]/ai.h
 
-/////////////TUTAJ ZAMIEŚCIĆ SZCZEGÓŁOWĄ ROZPISKĘ SZKIELETU GRY (POSZCZEGÓLNE PLIKI/KLASY), PRACE DO WYKONANIA BĘDĄ OPISANE W KAŻDYM PLIKU OSOBNO (JAKO TO-DO-LIST)
-...WIP...
-1) Main.cpp
-2) Level_creator.cpp
-3) Units.cpp
-4) Functions.cpp
-5) /res/drawable
-6) /res/sounds
-7) /res/anims
-
-
-
-
+ZASOBY GRY
+- data/units/
+- data/sounds/
+- data/UI/
+- data/UI/splash.png
 
 
 //
