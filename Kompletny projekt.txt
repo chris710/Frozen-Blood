@@ -1,11 +1,35 @@
 ﻿//////////////TUTAJ UMIEŚCIĆ SZCZEGÓŁY PROJEKTU (TZW. KOMPLETNY PROJEKT)
 
-...WIP...
+
 1) Ogólny opis gry (okreść kategorię gry, krótko ją streścić/ opisać; coś jak news w czasopiśmie komputerowym)
+
+Gra jest strategią turową z planszą podzieloną na kwadratowe pola. Fabuły chwilowo brak; skupiamy się nad trybem dla 2 graczy (multiplayer). Gracze muszą skupiać się zarówno na ekonomii jak i zarządzaniu wojskiem. Środki na armię gracz pozyskuje ze specjalnych pól zwanych osadami, które należy najpierw zająć. Stałe rozlokowanie osad na mapie wymusza ekspansywność celem zdobycia przewagi ekonomicznej. Zarządzanie wojskiem polega na rozlokowaniu i przemieszczaniu ikonek jednostek na polach mapy. Każda jednostka posiada wyjątkowe właściwości bojowe, pozwalające rozwinąć różnorodne taktyki bojowe.
+
+
 2) Cele gry (krótko o rzeczach do których się w grze dąży)
+...Patrz punkt 7
+
 3) Fabuła, historie, świat, postacie inne pierdoły
+
+Fabuły chwilowo brak. Wydarzenia gry toczą sie w zimowym świecie fantasy. Walka toczy się pomiędzy dwoma braćmi, pretendującymi do zostania królem mroźnej krainy. Work in progress...
+
+
 4) Zasady i tryby gry (czyli czym to się je)
+
+Zasady gry:
+-Głównym celem jest zmuszenie przeciwnika do poddania się. Można to osiągnąć uzyskując przewagę ekonomiczno-militarną, bądź też po prostu zajmując ostatni bastion przeciwnika i wybijając wszystkie jego jednostki.
+-Każdy gracz zaczyna z jedną twierdzą (budynkiem pełniącym wiele funkcji: dodaje złota, jest dobrym punktem do obrony, jako jedyny pozwala rekrutować jednostki) i z jednym bohaterem (jako jedyna jednostka może być ożywiony w twierdzy po śmierci, także jako jedyna potrafi zajmować inne twierdze).
+-Na planszy rozmieszczone są niezajęte osady, można je zająć bohaterem lub piechurami. Osady są dobrymi miejscami do obrony i przynoszą zyski w postaci złota
+-Na początku każdej tury gracz otrzymuje złoto z zajętych osad i twierdz, może za nie zrekrutwować jednostki lub wykupić bohatera
+-Każde pole określa inną formację terenu (droga, most, góry, las, twierdza, osada, woda, otwarty teren). Każdy teren posiada własne cechy takie jak trudność poruszania się w nim czy współczynnik obrony
+-W twierdzy gracz może rekrutować jednostki: piechur (przeciętny atak i obrona, może zajmować osady), łucznik (dobry atak (2 pola zasięgu), słaba obrona), mag (słabe atak i obrona, potrafi wskrzeszać poległe jednostki jako szkielety), zabójcy (duża mobilność, silny atak, przeciętna obrona), duch(?) (słaby atak i obrona, skuteczny przeciwko szkieletom, zwiększa staty pobliskich jednostek), defender(?) (mało mobilny, acz z silnym atakiem i obroną), trebusz (nie może w jednej turze poruszać się i atakować, silny atak (5 pól zasięgu), słaba obrona), smok (niezwykle mobilny bez wpływu na rodzaj terenu). 
+
+
 5) Interakcja między graczem a grą 
+
+
+
+
 6) Opis interfejsu (grafiki, muzyki, poziomów)
 7) Przebieg (trudne) opisać co będzie się działo w grze od momentu, kiedy użytkownik rozpoczyna grę, poprzez główne zdarzenia w grze, aż do momentu jej zakończenia, wygląda to tak jakbyś opisywał grę w którą sam grałeś
 8) Schematy, mechanizmy rozwiązania, algorytmy
