@@ -4,7 +4,8 @@
 Gra (?) - ponoć strategia turowa
 
 
-//////////////TUTAJ UMIEŚCIĆ SZCZEGÓŁY PROJEKTU (TZW. KOMPLETNY PROJEKT), KAŻDA NOTKA O WYGLĄDZIE, SCHEMATACH, MECHANIZMACH, ROZWIĄZANIACH I ŚRODKACH MA TUTAJ BYĆ OPISANA
+//////////////TUTAJ UMIEŚCIĆ SZCZEGÓŁY PROJEKTU (TZW. KOMPLETNY PROJEKT)
+
 ...WIP...
 1) Ogólny opis gry (okreść kategorię gry, krótko ją streścić/ opisać; coś jak news w czasopiśmie komputerowym)
 2) Cele gry (krótko o rzeczach do których się w grze dąży)
@@ -20,9 +21,12 @@ Gra (?) - ponoć strategia turowa
 /////////////TUTAJ ZAMIEŚCIĆ SZCZEGÓŁOWĄ ROZPISKĘ SZKIELETU GRY (POSZCZEGÓLNE PLIKI/KLASY), PRACE DO WYKONANIA BĘDĄ OPISANE W KAŻDYM PLIKU OSOBNO (JAKO TO-DO-LIST)
 ...WIP...
 1) Main.cpp
-2) Anim.cpp
-3) Anim.h
-4) ...
+2) Level_creator.cpp
+3) Units.cpp
+4) Functions.cpp
+5) /res/drawable
+6) /res/sounds
+7) /res/anims
 
 
 
@@ -38,7 +42,7 @@ Gra (?) - ponoć strategia turowa
 
 //SCHEMAT TWORZENIA COMMITÓW:
 //-TYTUŁ KAPITALIKAMI
-//-(W NAWIASACH) W TYTULE, POSTĘP ZMIANY (INPROGRESS,ALFA,BETA,FINAL)
+//-(W NAWIASACH) W TYTULE PRZED NAZWĄ ZMIANY, POSTĘP ZMIANY (INPROGRESS,ALFA,BETA,FINAL)
 //-TYTUŁ ZAWIERA PLIK/KLASĘ, W KTÓREJ ZACHODZĄ ZMIANY I OGÓLNĄ NAZWĘ ZMIANY/POPRAWKI
 //-W TREŚCI ZAPISAĆ SZCZEGÓŁY DOKONANEJ PRACY I UWAGI ODNOŚNIE JEJ I JEJ EWENTUALNEGO WPŁYWU
 NA RESZTĘ PROJEKTU
