@@ -15,3 +15,8 @@
 //  3)Pobranie zasobów (głównie obrazków i właściwości terenu) ze źródeł zewnętrznych
 //  4)Stworzenie narzędzia do "ręcznego" zapełniania mapy (GUI?)
 //  5)Użycie presetów terenu do wygenerowania mapy
+//  6)Generator plików
+//
+
+
+

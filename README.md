@@ -6,36 +6,28 @@ Gra (?) - ponoć strategia turowa
 
 //////////////TUTAJ UMIEŚCIĆ SZCZEGÓŁY PROJEKTU (TZW. KOMPLETNY PROJEKT)
 
-...WIP...
-- Ogólny opis gry (okreść kategorię gry, krótko ją streścić/ opisać; coś jak news w czasopiśmie komputerowym)
-- Cele gry (krótko o rzeczach do których się w grze dąży)
-- Fabuła, historie, świat, postacie inne pierdoły
-- Zasady i tryby gry (czyli czym to się je)
-- Interakcja między graczem a grą 
-- Opis interfejsu (grafiki, muzyki, poziomów)
-- Przebieg (trudne) opisać co będzie się działo w grze od momentu, kiedy użytkownik rozpoczyna grę, poprzez główne zdarzenia w grze, aż do momentu jej zakończenia, wygląda to tak jakbyś opisywał grę w którą sam grałeś
-- Schematy, mechanizmy rozwiązania, algorytmy
-- Podsumowanie (czyli tłumacz się dlaczego wybrałeś tak jak wybrałeś i ma być tak jak jest)
+PRZENIESIONE DO OSOBNEGO PLIKU
 
-KOD GRY
+KOD GRY		//CO SIĘ W NICH ZNAJDUJE?
 - main.cpp
 - main.h
 - game/game.cpp
 - game/game.h
 - game/menu.cpp
 - game/menu.h
-- editor/level_editor.cpp
+- editor/level_editor.cpp	//edytor map
 - editor/level_editor.h
-- units/[RASA]/units.cpp
+- units/[RASA]/units.cpp	//klasy postaci
 - units/[RASA]/units.h
-- units/[RASA]/ai.cpp
+- units/[RASA]/ai.cpp		//algorytmy sztucznej inteligencji
 - units/[RASA]/ai.h
 
 ZASOBY GRY
-- data/units/
-- data/sounds/
-- data/UI/
-- data/UI/splash.png
+- res/drawable 		//katalog z obrazkami
+- res/units/	
+- res/sounds/		//katalog z dźwiękami
+- res/UI/
+- res/UI/splash.png
 
 
 //
