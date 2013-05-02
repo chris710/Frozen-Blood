@@ -1,0 +1,14 @@
+# depslib dependency file v1.0
+1367482789 source:c:\users\wojciech\documents\github\temporary_project_name\kod\main.cpp
+	<iostream>
+	<allegro5/allegro.h>
+	<allegro5/allegro_native_dialog.h>
+	<allegro5/allegro_image.h>
+	<allegro5/allegro_audio.h>
+	<allegro5/allegro_acodec.h>
+	"game/game.h"
+
+1367483158 c:\users\wojciech\documents\github\temporary_project_name\kod\game\game.h
+	<vector>
+	<string>
+

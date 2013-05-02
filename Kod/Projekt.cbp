@@ -34,6 +34,7 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
+		<Unit filename="game/game.h" />
 		<Unit filename="main.cpp" />
 		<Extensions>
 			<code_completion />
