@@ -18,5 +18,31 @@
 //  6)Generator plików
 //
 
+///POTRZEBNE BIBLIOTEKI
+#include <fstream>
+
+
+///POTRZEBNE PLIKI
+#include "game.h"
+
+
+
+
+///////////////////////////////////
+//
+//      WCZYTYWANIE MAPY Z PLIKU
+//
+///////////////////////////////////
+bool MapLoader (std::string file)                                                       //jako argument podajemy nazwę pliku z mapą
+{
+    std::fstream map;                       //zmienna map określa plik z mapą do otwarcia
+    std::string mapa="res/maps/"+file;      //string mapa to połączenie ścieżki pliku z mapą oraz argumentu z nazwą pliku
+    map.open(mapa.c_str());                 //otwieramy plik
+
+    std::string message="Nie mozna otworzyc pliku z mapa "+file+"!";
+    if(!map.good()) { DisplayMessage("Blad!",message); return false; }      //sprawdzamy czy można otworzyć plik z mapą
+}
+
+
 
 
