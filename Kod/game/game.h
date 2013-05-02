@@ -18,10 +18,11 @@
 #include <string>
 
 ///WYSUNIETE DEKLARACJE
-class gameInstance;
+class unitInstance;
 
 ///POTRZEBNE PLIKI
 #include "units.h"
+
 
 class gameInstance
 {
@@ -63,9 +64,18 @@ class gameInstance
         std::vector<objStruct*> objLib;
 
         ///SWIAT GRY
+        void CreateUnit(std::string type);
         std::vector<unitInstance*> unitList;
 
+        ///GRACZE
+        int GetCurrentPlayer();
+        void EndTurn();
+
     private:
+        ///GRACZE
+        std::vector<std::string> playerList;
+        int playerCurrent;
+
         ///KONTROLA OKNA
         ALLEGRO_DISPLAY* displayAL; //Uchwyt okna
 

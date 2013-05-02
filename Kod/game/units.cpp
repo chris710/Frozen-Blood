@@ -3,11 +3,12 @@
 ///                units.cpp                   ///
 //////////////////////////////////////////////////
 
-#include "game.h"
+///POTRZEBNE PLIKI
 #include "units.h"
 
 unitInstance::unitInstance(std::string type,gameInstance* game) //Ladowanie danych o jednostce z listy
 {
+    owner = game->GetCurrentPlayer();
     for(int i=0;i<game->unitLib.size();i++)
     {
         if(game->unitLib[i]->name==type)

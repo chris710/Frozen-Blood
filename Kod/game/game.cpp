@@ -33,11 +33,30 @@ bool gameInstance::CreateDisplay(int ScreenHeight,int ScreenWidth)
 
 void gameInstance::ReleaseMemory()
 {
-    for(int i=0;i<unitList.size();i++) delete unitList[i];
+    for(int i=0;i<unitList.size();i++) delete unitList[i]; //Czyszczenie jednostek na polu bitwy, bitmapy zwalnia Resource Loader
     al_destroy_display(displayAL); //Zwalnianie ekranu
 }
 
 void gameInstance::DisplayMessage(std::string title,std::string message)
 {
     al_show_native_message_box(displayAL,NULL,title.c_str(),message.c_str(),NULL,NULL); //Wyswietlanie wiadomosci o podanym tytule i wiadomosci
+}
+
+void gameInstance::CreateUnit(std::string type) //Tworzymy jednostke o podanym typie, typ wziety z unitLib
+{
+    unitInstance unit(type,this);
+    this->unitList.push_back(&unit); //jednostka trafia na liste jednostek na mapie, trafia do obecnego gracza
+}
+int gameInstance::GetCurrentPlayer() //Zwraca numer obecnego gracza
+{
+    return playerCurrent;
+}
+void gameInstance::EndTurn() //Przesuwa kolejnosc na nastepnego gracza, albo resetuje ture.
+{
+    playerCurrent++;
+    if(playerCurrent>playerList.size())
+    {
+        //game->playerAddGold();
+        playerCurrent=0;
+    }
 }

@@ -9,6 +9,9 @@
 ///POTRZEBNE PLIKI
 #include "game.h"
 
+///WYSUNIETE DEKLARACJE
+class gameInstance;
+
 class unitInstance
 {
     public:
@@ -19,6 +22,7 @@ class unitInstance
         int attack;     //poziom ataku
         int defence;    //poziom obrony
         int ful;
+        int owner;
         ALLEGRO_SAMPLE* sound_movement;
         ALLEGRO_SAMPLE* sound_attack;
         ALLEGRO_SAMPLE* sound_death;

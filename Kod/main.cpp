@@ -5,6 +5,7 @@
 
 ///POTRZEBNE PLIKI
 #include "game/game.h"
+#include "game/units.h"
 
 ///DEFINICJE PROGRAMU
 #define ScreenHeight 600
@@ -21,7 +22,7 @@ int main()
         return -1;
     }
     //Wlasciwa petla gry
-
+    game->CreateUnit("test");
 
 
     game->ResourceUnloader(); //Usuwanie list zasobow
