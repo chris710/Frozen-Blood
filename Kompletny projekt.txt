@@ -42,8 +42,7 @@ Main menu.
 
 
 6) Opis interfejsu (grafiki, muzyki, poziomów)
-
-Grafikę mamy w 90% z Ancient Empires 2 (trzeba podrasować).
+Grafikę trzeba zrobić od nowa.
 Do tego należy uzgodnić co się animuje a co nie. Muzyka pomocy :( 
 Ogarniam powoli Cubase, więc za parę miesięcy może coś wykombinuję.
 
