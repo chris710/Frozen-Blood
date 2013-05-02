@@ -17,8 +17,8 @@ bool gameInstance::CreateDisplay(int ScreenHeight,int ScreenWidth)
         return false;
     }
 
-    display_AL = al_create_display(ScreenWidth,ScreenHeight); //Tworzenie ekranu gry korzystajac z uchwytu okna
-    if(!display_AL) //Jezeli sie udalo sie stworzyc okna, zamykamy program
+    displayAL = al_create_display(ScreenWidth,ScreenHeight); //Tworzenie ekranu gry korzystajac z uchwytu okna
+    if(!displayAL) //Jezeli sie udalo sie stworzyc okna, zamykamy program
     {
         al_show_native_message_box(NULL,NULL,NULL,"Nie udalo sie utworzyc obrazu.",NULL,NULL);
         return false;
@@ -33,10 +33,11 @@ bool gameInstance::CreateDisplay(int ScreenHeight,int ScreenWidth)
 
 void gameInstance::ReleaseMemory()
 {
-    al_destroy_display(display_AL);
+    for(int i=0;i<unitList.size();i++) delete unitList[i];
+    al_destroy_display(displayAL); //Zwalnianie ekranu
 }
 
 void gameInstance::DisplayMessage(std::string title,std::string message)
 {
-    al_show_native_message_box(display_AL,NULL,title.c_str(),message.c_str(),NULL,NULL);
+    al_show_native_message_box(displayAL,NULL,title.c_str(),message.c_str(),NULL,NULL); //Wyswietlanie wiadomosci o podanym tytule i wiadomosci
 }

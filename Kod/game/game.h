@@ -17,26 +17,31 @@
 #include <vector>
 #include <string>
 
+///WYSUNIETE DEKLARACJE
+class gameInstance;
+
 ///POTRZEBNE PLIKI
+#include "units.h"
 
 class gameInstance
 {
     public:
         gameInstance() { } //Konstruktor, wywoluje wczytywanie danych
         ~gameInstance() { }; //Destruktor, wywoluje czyszczenie pamieci
-        struct unitStruct
+        struct unitStruct //Struktura jednostki na liscie
         {
-            std::string name;
+            std::string name; //Zawiera domyslne dane o jednostce
             ALLEGRO_BITMAP* bitmap;
-            int stats; //do zmiany
+            int HP,attack,defence,ful;
+            std::string sound_movement,sound_attack,sound_death;
         };
         struct soundStruct
-        {
+        {                       //Element listy dzwiekow
             std::string name;
             ALLEGRO_SAMPLE* file;
         };
         struct objStruct
-        {
+        {                       //Element listy obiektow
             std::string name;
             ALLEGRO_BITMAP* bitmap;
         };
@@ -46,20 +51,24 @@ class gameInstance
         void DisplayMessage(std::string title,std::string message); //Wyswietlanie wiadomosci na ekran
 
         ///RESOURCE LOADER
-        bool PushUnitCFG(std::string name,std::string file,int stats); //Dodawanie do listy jednostek
+        bool PushUnitCFG(std::string name,std::string file,int HP,int attack, int defence,std::string sound_movement,
+                         std::string sound_attack,std::string sound_death); //Dodawanie do listy jednostek
         bool PushSoundCFG(std::string name,std::string file); //Dodawanie do listy dzwiekow
         bool PushObjCFG(std::string name,std::string file); //Dodawanie do listy dzwiekow
         bool ResourceLoader(); //Ladowanie calych list danych
         void ResourceUnloader(); //Usuwanie calych list danych
 
+        std::vector<unitStruct*> unitLib; //Listy dostepnych plikow jednostek oraz innych assetow
+        std::vector<soundStruct*> soundLib;
+        std::vector<objStruct*> objLib;
+
+        ///SWIAT GRY
+        std::vector<unitInstance*> unitList;
+
     private:
         ///KONTROLA OKNA
-        ALLEGRO_DISPLAY* display_AL;
+        ALLEGRO_DISPLAY* displayAL; //Uchwyt okna
 
-        ///RESOURCE LOADER
-        std::vector<unitStruct*> unitList; //Listy dostepnych plikow jednostek oraz innych assetow
-        std::vector<soundStruct*> soundList;
-        std::vector<objStruct*> objList;
 };
 
 #endif

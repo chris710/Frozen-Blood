@@ -38,6 +38,8 @@
 		<Unit filename="game/game.cpp" />
 		<Unit filename="game/game.h" />
 		<Unit filename="game/res_loader.cpp" />
+		<Unit filename="game/units.cpp" />
+		<Unit filename="game/units.h" />
 		<Unit filename="main.cpp" />
 		<Extensions>
 			<code_completion />

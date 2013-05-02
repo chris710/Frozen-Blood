@@ -2,7 +2,7 @@
 1367488543 source:c:\users\wojciech\documents\github\temporary_project_name\kod\main.cpp
 	"game/game.h"
 
-1367499679 c:\users\wojciech\documents\github\temporary_project_name\kod\game\game.h
+1367505515 c:\users\wojciech\documents\github\temporary_project_name\kod\game\game.h
 	<allegro5/allegro.h>
 	<allegro5/allegro_native_dialog.h>
 	<allegro5/allegro_image.h>
@@ -10,13 +10,21 @@
 	<allegro5/allegro_acodec.h>
 	<vector>
 	<string>
+	"units.h"
 
-1367488108 source:c:\users\wojciech\documents\github\temporary_project_name\kod\game\game.cpp
+1367505411 source:c:\users\wojciech\documents\github\temporary_project_name\kod\game\game.cpp
 	"game.h"
 
-1367499879 source:c:\users\wojciech\documents\github\temporary_project_name\kod\game\res_loader.cpp
+1367505291 source:c:\users\wojciech\documents\github\temporary_project_name\kod\game\res_loader.cpp
 	<fstream>
 	"game.h"
 
-1367488736 source:c:\users\wojciech\documents\github\temporary_project_name\kod\editor\level_editor.cpp
+1367501068 source:c:\users\wojciech\documents\github\temporary_project_name\kod\editor\level_editor.cpp
+
+1367505312 source:c:\users\wojciech\documents\github\temporary_project_name\kod\game\units.cpp
+	"game.h"
+	"units.h"
+
+1367505252 c:\users\wojciech\documents\github\temporary_project_name\kod\game\units.h
+	"game.h"
 
