@@ -24,7 +24,7 @@ Zasady gry:
 -Każde pole określa inną formację terenu (droga, most, góry, las, twierdza, osada, woda, otwarty teren). Każdy teren posiada własne cechy takie jak trudność poruszania się w nim czy współczynnik obrony
 -W twierdzy gracz może rekrutować jednostki: piechur (przeciętny atak i obrona, może zajmować osady), łucznik (dobry atak (2 pola zasięgu), słaba obrona), mag (słabe atak i obrona, potrafi wskrzeszać poległe jednostki jako szkielety), zabójcy (duża mobilność, silny atak, przeciętna obrona), duch(?) (słaby atak i obrona, skuteczny przeciwko szkieletom, zwiększa staty pobliskich jednostek), defender(?) (mało mobilny, acz z silnym atakiem i obroną), trebusz (nie może w jednej turze poruszać się i atakować, silny atak (5 pól zasięgu), słaba obrona), smok (niezwykle mobilny bez wpływu na rodzaj terenu, silny atak i obrona, podatny na ataki na odległość). 
 -Gracze wykonują swoje ruchy naprzemian, turowo. Każda jednostka może być użyta tylko raz podczas jednej tury.
--
+-Podczas ataku, jednostka przeciwnika dostaje obrażenia równe podstawowemu atakowi jednostki atakującej * % życia - modyfikator terenu
 
 Tryby:
 Skirmish dla 2,3 i 4 graczy.
