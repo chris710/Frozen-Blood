@@ -3,17 +3,8 @@
 ///                 main.cpp                   ///
 //////////////////////////////////////////////////
 
-///BIBLIOTEKA ALLEGRO
-#include <allegro5/allegro.h>
-#include <allegro5/allegro_native_dialog.h>
-#include <allegro5/allegro_image.h>
-#include <allegro5/allegro_audio.h>
-#include <allegro5/allegro_acodec.h>
-
-
 ///POTRZEBNE PLIKI
 #include "game/game.h"
-
 
 ///DEFINICJE PROGRAMU
 #define ScreenHeight 600
@@ -21,28 +12,20 @@
 
 int main()
 {
-    //ALLEGRO_DISPLAY - tworzenie ektranu gry
-    ALLEGRO_DISPLAY *display_AL; //Uchwyt do ektranu
-    if(!al_init()) //Inicjalizacja Allegro, jezeli sie nie uda, zamykamy program
+    gameInstance* game = new gameInstance; //Tworzenie instancji gry
+    if(!game->CreateDisplay(ScreenHeight,ScreenWidth)) return -1; //Tworzenie ekranu gry, jezeli wystapi blad to konczymy
+    if(!game->ResourceLoader()) //Ladowanie danych, jezeli wystapi blad to usuwamy to co sie udalo zaladowac i konczymy
     {
-        al_show_native_message_box(NULL,NULL,NULL,"Nie udalo sie zainicjalizowac Allegro 5.",NULL,NULL);
+        game->ResourceUnloader();
+        game->ReleaseMemory();
         return -1;
     }
+    //Wlasciwa petla gry
 
-    display_AL = al_create_display(ScreenWidth,ScreenHeight); //Tworzenie ekranu gry korzystajac z uchwytu okna
-    if(!display_AL) //Jezeli sie udalo sie stworzyc okna, zamykamy program
-    {
-        al_show_native_message_box(NULL,NULL,NULL,"Nie udalo sie utworzyc obrazu.",NULL,NULL);
-        return -1;
-    }
 
-    //ALLEGRO - Uruchamianie dodatkow i potrzebnych funkcji
-    al_install_keyboard();
-    al_install_audio();
-    al_init_image_addon();
-    al_init_acodec_addon();
 
-    //ALLEGRO - Zwalnianie pamieci i zamkniecie programu
-    al_destroy_display(display_AL);
+    game->ResourceUnloader(); //Usuwanie list zasobow
+    game->ReleaseMemory(); //Zwalnianie pamieci zajetej przez gre
+    delete game;
     return 0;
 }
