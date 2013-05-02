@@ -14,7 +14,7 @@ bool gameInstance::ResourceLoader()
     std::ifstream resources[3]; //Otwieramy wszystkie pliki cfg zawierajace dane o obiektach gry
     resources[0].open("game/units.cfg");
     resources[1].open("game/sounds.cfg");
-    resources[2].open("game/tiles.cfg");
+    resources[2].open("game/objs.cfg");
 
     if(!resources[0].good()) { DisplayMessage("Blad!","Nie mozna otworzyc pliku units.cfg!"); return false; } //Sprawdzamy czy
     if(!resources[1].good()) { DisplayMessage("Blad!","Nie mozna otworzyc pliku sounds.cfg!"); return false; } //listy sa dostepne
