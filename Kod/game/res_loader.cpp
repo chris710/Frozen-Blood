@@ -11,16 +11,18 @@
 
 bool gameInstance::ResourceLoader()
 {
-    std::ifstream resources[2];
+    std::ifstream resources[3];
     resources[0].open("game/units.cfg");
     resources[1].open("game/sounds.cfg");
+    resources[2].open("game/tiles.cfg");
 
     if(!resources[0].good()) { DisplayMessage("Blad!","Nie mozna otworzyc pliku units.cfg!"); return false; }
     if(!resources[1].good()) { DisplayMessage("Blad!","Nie mozna otworzyc pliku sounds.cfg!"); return false; }
+    if(!resources[2].good()) { DisplayMessage("Blad!","Nie mozna otworzyc pliku tiles.cfg!"); return false; }
 
     std::string line;
 
-    for(int i=0;i<2;i++)
+    for(int i=0;i<3;i++)
     {
         while(!resources[i].eof())
         {
@@ -32,14 +34,21 @@ bool gameInstance::ResourceLoader()
                 getline(resources[i],name);
                 getline(resources[i],file);
                 resources[i]>>stats;
-                if(!PushUnitCFG(name,file,stats)) { DisplayMessage("Krytyczny blad!","Ladowanie danych nie udalo sie."); return false; }
+                PushUnitCFG(name,file,stats);
             }
             if(line=="SOUND")
             {
                 std::string name,file;
                 getline(resources[i],name);
                 getline(resources[i],file);
-                if(!PushSoundCFG(name,file)) return false;
+                PushSoundCFG(name,file);
+            }
+            if(line=="OBJ")
+            {
+                std::string name,file;
+                getline(resources[i],name);
+                getline(resources[i],file);
+                PushObjCFG(name,file);
             }
         }
         resources[i].close();
@@ -56,8 +65,13 @@ void gameInstance::ResourceUnloader()
     }
     for(int i=0;i<soundList.size();i++)
     {
-        //al_delete_sound(unitList[i].sound);
+        al_destroy_sample(soundList[i]->file);
         delete soundList[i];
+    }
+        for(int i=0;i<objList.size();i++)
+    {
+        al_destroy_bitmap(objList[i]->bitmap);
+        delete objList[i];
     }
 }
 
@@ -75,8 +89,17 @@ bool gameInstance::PushSoundCFG(std::string name,std::string file)
 {
     soundStruct sound;
     sound.name=name;
-    //if(!sound.sound = al_load_sound(file.c_str())) return false;
+    sound.file = al_load_sample(file.c_str());
+    if(!sound.file) { return false; }
     soundList.push_back(&sound);
     return true;
 }
-
+bool gameInstance::PushObjCFG(std::string name,std::string file)
+{
+    objStruct obj;
+    obj.name=name;
+    obj.bitmap = al_load_bitmap(file.c_str());
+    if(!obj.bitmap) { return false; }
+    objList.push_back(&obj);
+    return true;
+}

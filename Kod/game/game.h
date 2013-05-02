@@ -33,7 +33,12 @@ class gameInstance
         struct soundStruct
         {
             std::string name;
-            std::string file;
+            ALLEGRO_SAMPLE* file;
+        };
+        struct objStruct
+        {
+            std::string name;
+            ALLEGRO_BITMAP* bitmap;
         };
         ///KONTROLA OKNA
         bool CreateDisplay(int ScreenHeight,int ScreenWidth); //Tworzenie ekranu gry o podanej rozdzielczosci
@@ -43,6 +48,7 @@ class gameInstance
         ///RESOURCE LOADER
         bool PushUnitCFG(std::string name,std::string file,int stats); //Dodawanie do listy jednostek
         bool PushSoundCFG(std::string name,std::string file); //Dodawanie do listy dzwiekow
+        bool PushObjCFG(std::string name,std::string file); //Dodawanie do listy dzwiekow
         bool ResourceLoader(); //Ladowanie calych list danych
         void ResourceUnloader(); //Usuwanie calych list danych
 
@@ -53,6 +59,7 @@ class gameInstance
         ///RESOURCE LOADER
         std::vector<unitStruct*> unitList; //Listy dostepnych plikow jednostek oraz innych assetow
         std::vector<soundStruct*> soundList;
+        std::vector<objStruct*> objList;
 };
 
 #endif
