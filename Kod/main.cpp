@@ -5,8 +5,6 @@
 
 ///POTRZEBNE PLIKI
 #include "game/game.h"
-#include "game/units.h"
-#include "editor/level_editor.h"
 
 ///DEFINICJE PROGRAMU
 #define ScreenHeight 600
@@ -28,6 +26,9 @@ int main()
     game->gameTimerAL = al_create_timer(1.0/game->fps); //tworzymy nowy timer
     al_register_event_source(game->eventQueueAL,al_get_timer_event_source(game->gameTimerAL)); //i go rejestrujemy jako zrodlo zdarzen
 
+    //Rejestracja okna jako zrodlo zdarzen
+    al_register_event_source(game->eventQueueAL,al_get_display_event_source(game->GetDisplay()));
+
     al_start_timer(game->gameTimerAL); //Uruchamiamy nasz timer
 
     game->LoadMap("test"); //Ladowanie testowej mapy, na razie brak interfejsu
@@ -36,6 +37,8 @@ int main()
     {
 
         al_wait_for_event(game->eventQueueAL,&game->gameEventsAL); //Czekamy na zdarzenie
+        //Zamykanie przyciskiem
+        if(game->gameEventsAL.type == ALLEGRO_EVENT_DISPLAY_CLOSE) { std::cout << "[DISPLAY] ENDING" << std::endl; game->exitGame = true; break; }
         if(game->gameEventsAL.type == ALLEGRO_EVENT_KEY_DOWN) //Jezeli zdarzenie to wcisniety przycisk
         {
             switch(game->gameEventsAL.keyboard.keycode) //to sprawdzamy co to za przycisk

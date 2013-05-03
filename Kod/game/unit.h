@@ -3,8 +3,8 @@
 ///                 units.h                    ///
 //////////////////////////////////////////////////
 
-#ifndef UNITS_H
-#define UNITS_H
+#ifndef UNIT_H
+#define UNIT_H
 
 ///POTRZEBNE PLIKI
 #include "game.h"

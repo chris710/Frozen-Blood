@@ -23,8 +23,7 @@
 class unitInstance;
 
 ///POTRZEBNE PLIKI
-#include "units.h"
-
+#include "unit.h"
 
 class gameInstance
 {
@@ -56,6 +55,7 @@ class gameInstance
             unitInstance* CurrentUnit; //Przechowuje wskaznik na obecna na tym polu jednostke
         };
         ///KONTROLA OKNA
+        ALLEGRO_DISPLAY* GetDisplay() { return displayAL; };
         bool CreateDisplay(int ScreenHeight,int ScreenWidth); //Tworzenie ekranu gry o podanej rozdzielczosci
         void ReleaseMemory(); //Zwalnianie pamieci zajetej przez Allegro, np. timer czy keystate
         void DisplayMessage(std::string title,std::string message); //Wyswietlanie wiadomosci na ekran
@@ -98,6 +98,7 @@ class gameInstance
         int GetCurrentPlayer(); //Funkcja zwraca numer obecnego gracza
         void EndTurn(); //Funkcja ustawia nastepnego gracza na obecnego
 
+
     private:
         ///GRACZE
         std::vector<std::string> playerList; //Lista graczy
@@ -105,6 +106,7 @@ class gameInstance
 
         ///KONTROLA OKNA
         ALLEGRO_DISPLAY* displayAL; //Uchwyt okna
+
 };
 
 #endif

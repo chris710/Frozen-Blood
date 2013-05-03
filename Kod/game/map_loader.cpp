@@ -47,7 +47,7 @@ bool gameInstance::LoadMap(std::string file)
         }
     }
     mapa.close(); //Zamykamy plik mapy
-    std::cout << "LOADED MAP: " << file << std::endl;
+    std::cout << "[MAP] \"" << file << "\" LOADED" << std::endl;
     return true;
 }
 void gameInstance::UnloadMap() //Usuwanie mapy z pamieci

@@ -1,10 +1,8 @@
 # depslib dependency file v1.0
-1367587610 source:c:\users\wojciech\documents\github\temporary_project_name\kod\main.cpp
+1367602770 source:c:\users\wojciech\documents\github\temporary_project_name\kod\main.cpp
 	"game/game.h"
-	"game/units.h"
-	"editor/level_editor.h"
 
-1367586751 c:\users\wojciech\documents\github\temporary_project_name\kod\game\game.h
+1367602721 c:\users\wojciech\documents\github\temporary_project_name\kod\game\game.h
 	<allegro5/allegro.h>
 	<allegro5/allegro_native_dialog.h>
 	<allegro5/allegro_image.h>
@@ -14,7 +12,7 @@
 	<vector>
 	<string>
 	<fstream>
-	"units.h"
+	"unit.h"
 
 1367587793 source:c:\users\wojciech\documents\github\temporary_project_name\kod\game\game.cpp
 	"game.h"
@@ -35,9 +33,16 @@
 1367583362 c:\users\wojciech\documents\github\temporary_project_name\kod\editor\level_editor.h
 	"../game/game.h"
 
-1367589412 source:c:\users\wojciech\documents\github\temporary_project_name\kod\game\map_loader.cpp
+1367602157 source:c:\users\wojciech\documents\github\temporary_project_name\kod\game\map_loader.cpp
 	"game.h"
 
-1367587891 source:c:\users\wojciech\documents\github\temporary_project_name\kod\game\map_render.cpp
+1367601990 source:c:\users\wojciech\documents\github\temporary_project_name\kod\game\map_render.cpp
 	"game.h"
+
+1367602239 c:\users\wojciech\documents\github\temporary_project_name\kod\game\unit.h
+	"game.h"
+	<time.h>
+
+1367602257 source:c:\users\wojciech\documents\github\temporary_project_name\kod\game\unit.cpp
+	"unit.h"
 

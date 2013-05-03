@@ -4,7 +4,7 @@
 //////////////////////////////////////////////////
 
 ///POTRZEBNE PLIKI
-#include "units.h"
+#include "unit.h"
 
 unitInstance::unitInstance(std::string type,gameInstance* game) //Ladowanie danych o jednostce z listy
 {
