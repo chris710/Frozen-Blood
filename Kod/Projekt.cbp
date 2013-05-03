@@ -35,8 +35,10 @@
 			<Add option="-Wall" />
 		</Compiler>
 		<Unit filename="editor/level_editor.cpp" />
+		<Unit filename="editor/level_editor.h" />
 		<Unit filename="game/game.cpp" />
 		<Unit filename="game/game.h" />
+		<Unit filename="game/map_loader.cpp" />
 		<Unit filename="game/res_loader.cpp" />
 		<Unit filename="game/units.cpp" />
 		<Unit filename="game/units.h" />

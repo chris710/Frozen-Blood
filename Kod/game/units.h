@@ -8,6 +8,7 @@
 
 ///POTRZEBNE PLIKI
 #include "game.h"
+#include <time.h>
 
 ///WYSUNIETE DEKLARACJE
 class gameInstance;
@@ -23,6 +24,7 @@ class unitInstance
         int defence;    //poziom obrony
         int ful;
         int owner;
+        time_t ID;
         ALLEGRO_SAMPLE* sound_movement;
         ALLEGRO_SAMPLE* sound_attack;
         ALLEGRO_SAMPLE* sound_death;

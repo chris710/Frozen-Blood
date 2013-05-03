@@ -18,6 +18,7 @@ unitInstance::unitInstance(std::string type,gameInstance* game) //Ladowanie dany
             defence = game->unitLib[i]->defence;
             bitmap = game->unitLib[i]->bitmap;
             ful = i;
+            ID = time(NULL);
             break;
         }
     }

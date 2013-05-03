@@ -1,9 +1,10 @@
 # depslib dependency file v1.0
-1367512902 source:c:\users\wojciech\documents\github\temporary_project_name\kod\main.cpp
+1367571854 source:c:\users\wojciech\documents\github\temporary_project_name\kod\main.cpp
 	"game/game.h"
 	"game/units.h"
+	"editor/level_editor.h"
 
-1367513479 c:\users\wojciech\documents\github\temporary_project_name\kod\game\game.h
+1367571185 c:\users\wojciech\documents\github\temporary_project_name\kod\game\game.h
 	<allegro5/allegro.h>
 	<allegro5/allegro_native_dialog.h>
 	<allegro5/allegro_image.h>
@@ -11,22 +12,28 @@
 	<allegro5/allegro_acodec.h>
 	<vector>
 	<string>
+	<fstream>
 	"units.h"
 
-1367513483 source:c:\users\wojciech\documents\github\temporary_project_name\kod\game\game.cpp
+1367571797 source:c:\users\wojciech\documents\github\temporary_project_name\kod\game\game.cpp
 	"game.h"
 
-1367506967 source:c:\users\wojciech\documents\github\temporary_project_name\kod\game\res_loader.cpp
-	<fstream>
+1367570683 source:c:\users\wojciech\documents\github\temporary_project_name\kod\game\res_loader.cpp
 	"game.h"
 
-1367511165 source:c:\users\wojciech\documents\github\temporary_project_name\kod\editor\level_editor.cpp
-	<fstream>
+1367571579 source:c:\users\wojciech\documents\github\temporary_project_name\kod\editor\level_editor.cpp
+	"level_editor.h"
+
+1367566706 source:c:\users\wojciech\documents\github\temporary_project_name\kod\game\units.cpp
+	"units.h"
+
+1367571900 c:\users\wojciech\documents\github\temporary_project_name\kod\game\units.h
+	"game.h"
+	<time.h>
+
+1367571551 c:\users\wojciech\documents\github\temporary_project_name\kod\editor\level_editor.h
 	"../game/game.h"
 
-1367513079 source:c:\users\wojciech\documents\github\temporary_project_name\kod\game\units.cpp
-	"units.h"
-
-1367512902 c:\users\wojciech\documents\github\temporary_project_name\kod\game\units.h
+1367571602 source:c:\users\wojciech\documents\github\temporary_project_name\kod\game\map_loader.cpp
 	"game.h"
 

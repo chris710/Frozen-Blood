@@ -29,11 +29,14 @@ bool gameInstance::CreateDisplay(int ScreenHeight,int ScreenWidth)
     al_install_audio();
     al_init_image_addon();
     al_init_acodec_addon();
+    return true;
 }
 
 void gameInstance::ReleaseMemory()
 {
+    if(mapLoaded) UnloadMap();
     for(int i=0;i<unitList.size();i++) delete unitList[i]; //Czyszczenie jednostek na polu bitwy, bitmapy zwalnia Resource Loader
+    ResourceUnloader(); //Usuwanie list zasobow
     al_destroy_display(displayAL); //Zwalnianie ekranu
 }
 
@@ -41,7 +44,6 @@ void gameInstance::DisplayMessage(std::string title,std::string message)
 {
     al_show_native_message_box(displayAL,NULL,title.c_str(),message.c_str(),NULL,NULL); //Wyswietlanie wiadomosci o podanym tytule i wiadomosci
 }
-
 void gameInstance::CreateUnit(std::string type) //Tworzymy jednostke o podanym typie, typ wziety z unitLib
 {
     unitInstance unit(type,this);

@@ -16,6 +16,7 @@
 ///POTRZEBNE BIBLIOTEKI
 #include <vector>
 #include <string>
+#include <fstream>
 
 ///WYSUNIETE DEKLARACJE
 class unitInstance;
@@ -27,7 +28,7 @@ class unitInstance;
 class gameInstance
 {
     public:
-        gameInstance() { } //Konstruktor, wywoluje wczytywanie danych
+        gameInstance() { mapLoaded = false; gameMap = NULL; displayAL = NULL; } //Konstruktor, wywoluje wczytywanie danych
         ~gameInstance() { }; //Destruktor, wywoluje czyszczenie pamieci
         struct unitStruct //Struktura jednostki na liscie
         {
@@ -46,6 +47,13 @@ class gameInstance
             std::string name;
             ALLEGRO_BITMAP* bitmap;
         };
+        struct mapTile
+        {
+            ALLEGRO_BITMAP* tile;
+            std::string effect;
+            int rotation;
+            unitInstance* CurrentUnit;
+        };
         ///KONTROLA OKNA
         bool CreateDisplay(int ScreenHeight,int ScreenWidth); //Tworzenie ekranu gry o podanej rozdzielczosci
         void ReleaseMemory(); //Zwalnianie pamieci zajetej przez Allegro, np. timer czy keystate
@@ -62,6 +70,15 @@ class gameInstance
         std::vector<unitStruct*> unitLib; //Listy dostepnych plikow jednostek oraz innych assetow
         std::vector<soundStruct*> soundLib;
         std::vector<objStruct*> objLib;
+
+        ///MAP LOADER
+        bool mapLoaded;
+        bool LoadMap(std::string file);
+        void UnloadMap();
+
+        mapTile** gameMap;
+        std::string mapName;
+        int mapSize[2];
 
         ///SWIAT GRY
         void CreateUnit(std::string type);

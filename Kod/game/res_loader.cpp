@@ -3,9 +3,6 @@
 ///              res_loader.cpp                ///
 //////////////////////////////////////////////////
 
-///POTRZEBNE BIBLIOTEKI
-#include <fstream>
-
 ///POTRZEBNE PLIKI
 #include "game.h"
 
@@ -18,7 +15,7 @@ bool gameInstance::ResourceLoader()
 
     if(!resources[0].good()) { DisplayMessage("Blad!","Nie mozna otworzyc pliku units.cfg!"); return false; } //Sprawdzamy czy
     if(!resources[1].good()) { DisplayMessage("Blad!","Nie mozna otworzyc pliku sounds.cfg!"); return false; } //listy sa dostepne
-    if(!resources[2].good()) { DisplayMessage("Blad!","Nie mozna otworzyc pliku tiles.cfg!"); return false; } // do wczytania
+    if(!resources[2].good()) { DisplayMessage("Blad!","Nie mozna otworzyc pliku objs.cfg!"); return false; } // do wczytania
 
     std::string line;
 

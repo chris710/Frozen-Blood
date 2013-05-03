@@ -1,7 +1,7 @@
 ///////////////////////////////////////
 ///                                 ///
 ///                                 ///
-///         EDYTOR POZIOMÃ“W         ///
+///         EDYTOR POZIOMÓW         ///
 ///                                 ///
 ///                                 ///
 ///////////////////////////////////////
@@ -11,36 +11,13 @@
 
 //      TO-DO LIST:
 //  1)Tworzenie mapy jako macierzy 2wymiarowej
-//  2)Stworzenie rÃ³znych rodzajÃ³w terenÃ³w (teren otwarty, woda, most, las, gÃ³ry, osada, twierdza, droga) lub...
-//  3)Pobranie zasobÃ³w (gÅ‚Ã³wnie obrazkÃ³w i wÅ‚aÅ›ciwoÅ›ci terenu) ze ÅºrÃ³deÅ‚ zewnÄ™trznych
-//  4)Stworzenie narzÄ™dzia do "rÄ™cznego" zapeÅ‚niania mapy (GUI?)
-//  5)UÅ¼ycie presetÃ³w terenu do wygenerowania mapy
-//  6)Generator plikÃ³w
+//  2)Stworzenie róznych rodzajów terenów (teren otwarty, woda, most, las, góry, osada, twierdza, droga) lub...
+//  3)Pobranie zasobów (g³ównie obrazków i w³aœciwoœci terenu) ze Ÿróde³ zewnêtrznych
+//  4)Stworzenie narzêdzia do "rêcznego" zape³niania mapy (GUI?)
+//  5)U¿ycie presetów terenu do wygenerowania mapy
+//  6)Generator plików
 //
-
-///POTRZEBNE BIBLIOTEKI
-#include <fstream>
-
 
 ///POTRZEBNE PLIKI
-#include "../game/game.h"
-
-///////////////////////////////////
-//
-//      WCZYTYWANIE MAPY Z PLIKU
-//
-///////////////////////////////////
-bool MapLoader (std::string file,gameInstance* game)    //jako argument podajemy nazwÄ™ pliku z mapÄ…,
-// gameInstance potrzebna do bibliotek jednostek, dzwiekow, itd.
-{
-    std::ifstream map;                       //zmienna map okreÅ›la plik z mapÄ… do otwarcia
-    std::string mapa="res/maps/"+file;      //string mapa to poÅ‚Ä…czenie Å›cieÅ¼ki pliku z mapÄ… oraz argumentu z nazwÄ… pliku
-    map.open(mapa.c_str());                 //otwieramy plik
-
-    std::string message="Nie mozna otworzyc pliku z mapa "+file+"!";
-    if(!map.good()) { game->DisplayMessage("Blad!",message); return false; }      //sprawdzamy czy moÅ¼na otworzyÄ‡ plik z mapÄ…
-}
-
-
-
+#include "level_editor.h"
 
