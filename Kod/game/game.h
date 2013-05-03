@@ -29,7 +29,7 @@ class unitInstance;
 class gameInstance
 {
     public:
-        gameInstance() { mapLoaded = false; exitGame = false; updateDisplay = true; gameMap = NULL; displayAL = NULL; gameTimerAL = NULL; eventQueueAL = NULL; fps = 20;} //Konstruktor, wywoluje wczytywanie danych
+        gameInstance() { mapLoaded = false; exitGame = false; updateDisplay = true; displayAL = NULL; gameTimerAL = NULL; eventQueueAL = NULL; fps = 20;} //Konstruktor, wywoluje wczytywanie danych
         ~gameInstance() { }; //Destruktor, wywoluje czyszczenie pamieci
         struct unitStruct //Struktura jednostki na liscie
         {
@@ -83,9 +83,12 @@ class gameInstance
         bool LoadMap(std::string file); //Ladowanie mapy o podanej nazwie
         void UnloadMap(); //Usuwanie obecnie zaladowanej mapy
         bool mapLoaded; //Zmienna stanu wczytania mapy
-        mapTile** gameMap; //Macierz mapy
+        std::vector<mapTile*> gameMap; //Macierz mapy
         std::string mapName; //Nazwa mapy
         int mapSize[2]; // jej rozmiar
+
+        ///MAP RENDER
+        bool RenderMap();
 
         ///SWIAT GRY
         void CreateUnit(std::string type); //Funkcja tworzaca jednostke, typ z unitLib

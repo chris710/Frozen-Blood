@@ -34,8 +34,8 @@ bool gameInstance::CreateDisplay(int ScreenHeight,int ScreenWidth)
 
 void gameInstance::ReleaseMemory()
 {
-    if(mapLoaded) UnloadMap(); //Jezeli jest co zwalniac, to usuwamy mape
-    for(int i=0;i<unitList.size();i++) delete unitList[i]; //Czyszczenie jednostek na polu bitwy, bitmapy zwalnia Resource Loader
+    UnloadMap(); //Jezeli jest co zwalniac, to usuwamy mape
+    //Czyszczenie jednostek na polu bitwy, bitmapy zwalnia Resource Loader
     ResourceUnloader(); //Usuwanie list zasobow
     if(eventQueueAL) al_destroy_event_queue(eventQueueAL); //niszcenie timerow i list zdarzen ALLEGRO
     if(gameTimerAL) al_destroy_timer(gameTimerAL);

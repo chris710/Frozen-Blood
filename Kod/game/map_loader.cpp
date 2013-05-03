@@ -8,51 +8,59 @@
 
 bool gameInstance::LoadMap(std::string file)
 {
-    std::ifstream plik;                       //zmienna plik okreœla plik z map¹ do otwarcia
-    std::string mapa="res/maps/"+file+".map";      //string mapa to po³¹czenie œcie¿ki pliku z map¹ oraz argumentu z nazw¹ pliku
-    plik.open(mapa.c_str());                 //otwieramy plik
+    if(mapLoaded) return false;
+    file = "res/maps/"+file+".cfg";
+    std::ifstream mapa;
+    mapa.open(file.c_str());
+    if(!mapa.good()) { std::cout << "[MAP] ERROR - \"" << file << "\" - FILE NOT FOUND" << std::endl; return false; }
+    std::cout << "[MAP] \"" << file << "\" LOADING" <<  std::endl;
+    std::string name,line;
+    int x,y;
 
-    std::string message="Nie mozna otworzyc pliku z mapa "+file+"!";
-    if(!plik.good()) { DisplayMessage("Blad!",message); return false; }      //sprawdzamy czy mo¿na otworzyæ plik z map¹
-    std::string line;
-    getline(plik,line);
-    if(line=="[NAME]") getline(plik,mapName);  else return false; //Wczytujemy dane z pliku jednoczesnie
-    getline(plik,line);
-    if(line=="[SIZE]") plik >> mapSize[0] >> mapSize[1]; else return false; //sprawdzajac ich poprawnosc
+    getline(mapa,line);
+    if(line=="[NAME]") getline(mapa,name); else { mapa.close(); std::cout << "[MAP] ERROR - [NAME] must be valid" << std::endl; return false; }
+    mapLoaded=true;
+    getline(mapa,line);
+    if(line=="[SIZE]") mapa >> x >> y; else { mapa.close(); std::cout << "[MAP] ERROR - [SIZE] must be valid" << std::endl;return false; }
+    mapName=name;
+    mapSize[0]=x;
+    mapSize[1]=y;
 
-    gameMap = new mapTile*[mapSize[0]]; //Tworzymy macierz mapy w oparciu o dane jej rozmiaru
-    for(int i=0;i<mapSize[0];i++) gameMap[i] = new mapTile[mapSize[i]];
-
-    bool eof = false; //Tak dlugo jak jest jeszcze cos w pliku
-    for(int i=0;i<mapSize[0];i++) //Czytamy kafelki mapy i umieszczamy je na odpowiednim miejscu w macierzy
+    while(mapa >> line && !mapa.eof())
     {
-        if(eof) break;
-        for(int j=0;j<mapSize[1];j++)
+        mapTile* tile = new mapTile;
+        if(line=="[TILE]")
         {
-            if(plik.eof()) { eof=true; break; }
-            else
-            {
-                getline(plik,line);
-                if(line=="[TILE]")
-                {
-                    getline(plik,line);
-                    for(int k=0;k<objLib.size();k++) if(objLib[k]->name==line) gameMap[i][j].tile=objLib[k]->bitmap;
-                }   else return false;
-                getline(plik,line);
-                if(line=="[EFFECT]")  getline(plik,gameMap[i][j].effect);   else return false;
-                getline(plik,line);
-                if(line=="[ROTATION]")  plik >> gameMap[i][j].rotation;   else return false;
-            }
+            mapa >> line;
+            int k;
+            for(k=0;k<objLib.size();k++)
+                if(objLib[k]->name==line) { tile->tile=objLib[k]->bitmap; break; }
+                else tile->tile=NULL;
+            if(tile->tile==NULL) { std::cout << "[objLIB] ERROR - \"" << line << "\" - FILE NOT FOUND" << std::endl; UnloadMap(); return false; }
+            if(k>=objLib.size()) { std::cout << "[objLIB] ERROR - \"" << line << "\" - FILE NOT FOUND" << std::endl; UnloadMap(); return false; }
+            mapa >> line;
+            tile->effect=line;
+            mapa >> x;
+            tile->rotation=x;
+            tile->CurrentUnit=NULL;
+            gameMap.push_back(tile);
         }
     }
+    mapa.close();
+    std::cout << "LOADED MAP: " << file << std::endl;
     return true;
 }
 void gameInstance::UnloadMap() //Usuwanie mapy z pamieci
 {
-    for(int i=0;i<mapSize[0];i++) delete [] gameMap[i]; //Zwalniamy kafelki mapy
-    delete [] gameMap; //i usuwamy cala strukture mapy(macierz)
+    if(!mapLoaded) return;
+    std::cout << "[MAP] \"" << mapName << "\" UNLOADING" << std::endl;
+    for(int i=0;i<gameMap.size();i++) delete gameMap[i];
+    gameMap.clear();
     mapName=""; //Czyscimy nazwe mapy oraz jej rozmiar i jednostki istniejace na mapie
-    mapSize[0]=NULL;
-    mapSize[1]=NULL;
+    mapSize[0]=0;
+    mapSize[1]=0;
+    for(int i=0;i<unitList.size();i++) delete unitList[i];
+    std::cout << "[MAP] FILE UNLOADED" << std::endl;
+    mapLoaded=false;
     unitList.clear();
 }

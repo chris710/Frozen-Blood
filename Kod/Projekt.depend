@@ -1,10 +1,10 @@
 # depslib dependency file v1.0
-1367577103 source:c:\users\wojciech\documents\github\temporary_project_name\kod\main.cpp
+1367587610 source:c:\users\wojciech\documents\github\temporary_project_name\kod\main.cpp
 	"game/game.h"
 	"game/units.h"
 	"editor/level_editor.h"
 
-1367577059 c:\users\wojciech\documents\github\temporary_project_name\kod\game\game.h
+1367586751 c:\users\wojciech\documents\github\temporary_project_name\kod\game\game.h
 	<allegro5/allegro.h>
 	<allegro5/allegro_native_dialog.h>
 	<allegro5/allegro_image.h>
@@ -16,26 +16,28 @@
 	<fstream>
 	"units.h"
 
-1367575252 source:c:\users\wojciech\documents\github\temporary_project_name\kod\game\game.cpp
+1367587793 source:c:\users\wojciech\documents\github\temporary_project_name\kod\game\game.cpp
 	"game.h"
 
-1367577349 source:c:\users\wojciech\documents\github\temporary_project_name\kod\game\res_loader.cpp
+1367589232 source:c:\users\wojciech\documents\github\temporary_project_name\kod\game\res_loader.cpp
 	"game.h"
-	<iostream>
 
-1367571579 source:c:\users\wojciech\documents\github\temporary_project_name\kod\editor\level_editor.cpp
+1367583362 source:c:\users\wojciech\documents\github\temporary_project_name\kod\editor\level_editor.cpp
 	"level_editor.h"
 
-1367575252 source:c:\users\wojciech\documents\github\temporary_project_name\kod\game\units.cpp
+1367583362 source:c:\users\wojciech\documents\github\temporary_project_name\kod\game\units.cpp
 	"units.h"
 
-1367575249 c:\users\wojciech\documents\github\temporary_project_name\kod\game\units.h
+1367583362 c:\users\wojciech\documents\github\temporary_project_name\kod\game\units.h
 	"game.h"
 	<time.h>
 
-1367571551 c:\users\wojciech\documents\github\temporary_project_name\kod\editor\level_editor.h
+1367583362 c:\users\wojciech\documents\github\temporary_project_name\kod\editor\level_editor.h
 	"../game/game.h"
 
-1367577070 source:c:\users\wojciech\documents\github\temporary_project_name\kod\game\map_loader.cpp
+1367589412 source:c:\users\wojciech\documents\github\temporary_project_name\kod\game\map_loader.cpp
+	"game.h"
+
+1367587891 source:c:\users\wojciech\documents\github\temporary_project_name\kod\game\map_render.cpp
 	"game.h"
 

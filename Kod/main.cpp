@@ -30,8 +30,11 @@ int main()
 
     al_start_timer(game->gameTimerAL); //Uruchamiamy nasz timer
 
+    game->LoadMap("test");
+
     while(!game->exitGame) //Petla wlasciwa gry
     {
+
         al_wait_for_event(game->eventQueueAL,&game->gameEventsAL); //Czekamy na zdarzenie
         if(game->gameEventsAL.type == ALLEGRO_EVENT_KEY_DOWN) //Jezeli zdarzenie to wcisniety przycisk
         {
@@ -44,9 +47,11 @@ int main()
         }
         if(game->updateDisplay) //Jezeli nalezy uaktualnic ekran, to to robimy
         {
-            al_draw_bitmap(game->objLib[0]->bitmap,20,20,NULL);
-            al_flip_display();
+
             al_clear_to_color(al_map_rgb(157,67,67));
+            game->RenderMap();
+            al_flip_display();
+            game->updateDisplay = false;
         }
     }
     game->ReleaseMemory(); //Zwalnianie pamieci zajetej przez gre, zwalniami Liby
