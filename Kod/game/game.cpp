@@ -40,6 +40,8 @@ void gameInstance::ReleaseMemory()
     ResourceUnloader(); //Usuwanie list zasobow
     if(eventQueueAL) al_destroy_event_queue(eventQueueAL); //niszcenie timerow i list zdarzen ALLEGRO
     if(gameTimerAL) al_destroy_timer(gameTimerAL);
+    if(mouseCursor) al_destroy_mouse_cursor(mouseCursor);
+    if(mouseCursorPressed) al_destroy_mouse_cursor(mouseCursorPressed);
     if(displayAL) al_destroy_display(displayAL); //Zwalnianie ekranu
 }
 

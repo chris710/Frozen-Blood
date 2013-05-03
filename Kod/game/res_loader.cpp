@@ -76,10 +76,33 @@ bool gameInstance::ResourceLoader()
                 if(!fieldBox) std::cout << "[objLib] ERROR \"" << file << "\" - FILE NOT FOUND" << std::endl;
                 else std::cout << "[objLib] FIELDBOX LOADED" << std::endl;
             }
+            if(line=="[CURSOR]")
+            {
+                if(cursor!=NULL) continue;
+                std::string file;
+                getline(resources[i],file);
+                cursor = al_load_bitmap(file.c_str());
+                if(!cursor) std::cout << "[objLib] ERROR \"" << file << "\" - FILE NOT FOUND" << std::endl;
+                else std::cout << "[objLib] CURSOR LOADED" << std::endl;
+            }
+            if(line=="[CURSORPRESSED]")
+            {
+                if(cursorPressed!=NULL) continue;
+                std::string file;
+                getline(resources[i],file);
+                cursorPressed = al_load_bitmap(file.c_str());
+                if(!cursorPressed) std::cout << "[objLib] ERROR \"" << file << "\" - FILE NOT FOUND" << std::endl;
+                else std::cout << "[objLib] CURSORPRESSED LOADED" << std::endl;
+            }
         }
         resources[i].close(); //Zamykamy pliki cfg
     }
     if(!fieldBox) std::cout << "[DISPLAY] FIELDBOX MISSING" << std::endl;
+    if(!cursor) std::cout << "[DISPLAY] CURSOR MISSING" << std::endl;
+    else    { mouseCursor = al_create_mouse_cursor(cursor,12,12); al_set_mouse_cursor(displayAL,mouseCursor); }
+    if(!cursorPressed) std::cout << "[DISPLAY] CURSORPRESSED MISSING" << std::endl;
+    else    mouseCursorPressed = al_create_mouse_cursor(cursorPressed,12,12);
+
     return true;
 }
 
@@ -106,6 +129,8 @@ void gameInstance::ResourceUnloader()
         delete objLib[i];
         objLib[i]=NULL;
     }
+    if(cursor) { al_destroy_bitmap(cursor); std::cout << "[objLIB] CURSOR UNLOADED" <<std::endl; }
+    if(cursorPressed) { al_destroy_bitmap(cursorPressed); std::cout << "[objLIB] CURSORPRESSED UNLOADED" <<std::endl; }
     if(fieldBox) { al_destroy_bitmap(fieldBox); std::cout << "[objLIB] FIELDBOX UNLOADED" <<std::endl; }
     unitLib.clear();
     soundLib.clear();

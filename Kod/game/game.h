@@ -28,7 +28,7 @@ class unitInstance;
 class gameInstance
 {
     public:
-        gameInstance() { mapLoaded = false; exitGame = false; updateDisplay = true; displayAL = NULL; gameTimerAL = NULL; eventQueueAL = NULL; fps = 20;} //Konstruktor, wywoluje wczytywanie danych
+        gameInstance() { mapLoaded = false; exitGame = false; updateDisplay = true; displayAL = NULL; gameTimerAL = NULL; eventQueueAL = NULL; cursorActive = false; fps = 20;} //Konstruktor, wywoluje wczytywanie danych
         ~gameInstance() { }; //Destruktor, wywoluje czyszczenie pamieci
         struct unitStruct //Struktura jednostki na liscie
         {
@@ -55,6 +55,8 @@ class gameInstance
             unitInstance* CurrentUnit; //Przechowuje wskaznik na obecna na tym polu jednostke
         };
         ///KONTROLA OKNA
+        ALLEGRO_MOUSE_CURSOR* mouseCursor,* mouseCursorPressed;
+        bool cursorActive;
         ALLEGRO_DISPLAY* GetDisplay() { return displayAL; };
         bool CreateDisplay(int ScreenHeight,int ScreenWidth); //Tworzenie ekranu gry o podanej rozdzielczosci
         void ReleaseMemory(); //Zwalnianie pamieci zajetej przez Allegro, np. timer czy keystate
@@ -88,10 +90,12 @@ class gameInstance
         int mapSize[2]; // jej rozmiar
 
         ///MAP RENDER
-        ALLEGRO_MOUSE_STATE state;
+        ALLEGRO_MOUSE_STATE mouseState;
         bool RenderMap();
         bool RenderFieldBox();
         ALLEGRO_BITMAP* fieldBox;
+        ALLEGRO_BITMAP* cursor;
+        ALLEGRO_BITMAP* cursorPressed;
 
         ///SWIAT GRY
         void CreateUnit(std::string type); //Funkcja tworzaca jednostke, typ z unitLib

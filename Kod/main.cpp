@@ -7,7 +7,7 @@
 #include "game/game.h"
 
 ///DEFINICJE PROGRAMU
-#define ScreenHeight 600
+#define ScreenHeight 672
 #define ScreenWidth 800
 
 int main()
@@ -36,9 +36,21 @@ int main()
     while(!game->exitGame) //Petla wlasciwa gry
     {
         al_wait_for_event(game->eventQueueAL,&game->gameEventsAL); //Czekamy na zdarzenie
+        al_get_mouse_state(&game->mouseState);
 
         //Zamykanie przyciskiem
         if(game->gameEventsAL.type == ALLEGRO_EVENT_DISPLAY_CLOSE) { std::cout << "[DISPLAY] ENDING" << std::endl; game->exitGame = true; break; }
+        if(game->gameEventsAL.type == ALLEGRO_EVENT_MOUSE_BUTTON_DOWN)
+        {
+            al_set_mouse_cursor(game->GetDisplay(),game->mouseCursorPressed);
+            game->updateDisplay=true;
+        }
+        if(game->gameEventsAL.type == ALLEGRO_EVENT_MOUSE_BUTTON_UP)
+        {
+            al_set_mouse_cursor(game->GetDisplay(),game->mouseCursor);
+            game->updateDisplay=true;
+        }
+        //Jezeli zdarzenie to wcisniety przycisk
         if(game->gameEventsAL.type == ALLEGRO_EVENT_KEY_DOWN) //Jezeli zdarzenie to wcisniety przycisk
         {
             switch(game->gameEventsAL.keyboard.keycode) //to sprawdzamy co to za przycisk
