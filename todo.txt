@@ -1,14 +1,18 @@
-TODO LIST
-Najwa¿niejsze na chwilê obecn¹.
+ï»¿TODO LIST
+NajwaÅ¼niejsze na chwilÄ™ obecnÄ….
 
-1. Obs³uga b³êdów dla wielu funkcji programu
-2. Obs³uga efektow oraz rotacji kafelków terenu
-3. Animacje dla jednostek i objektów(woda).
-4. Obs³uga plików dŸwiêkowych takich jak muzyka czy odg³osy walki/ruchu/œmierci
+1. ObsÅ‚uga bÅ‚Ä™dÃ³w dla wielu funkcji programu
+2. ObsÅ‚uga efektow oraz rotacji kafelkÃ³w terenu
+-przed poruszaniem, zasiÄ™g pokazuje siÄ™ jako czerwone, pÃ³Å‚przezroczyste kwadraty ponad kafelkami
+-ponad osadami unosi siÄ™ dym
+-w czasie ruchu teÅ¼ unosi  siÄ™ dym
+-zasiÄ™g ataku pokazuje siÄ™ jako Å¼Ã³Å‚te, pÃ³Å‚przezroczyste kwadraty ponad kafelkami
+3. Animacje dla jednostek i objektÃ³w (woda).
+4. ObsÅ‚uga plikÃ³w dÅºwiÄ™kowych takich jak muzyka czy odgÅ‚osy walki/ruchu/Å›mierci
 5. Menu gry
--Wybór trybu: iloœæ graczy, mapa
--Wybór edytora
+-WybÃ³r trybu: iloÅ›Ä‡ graczy, mapa
+-WybÃ³r edytora
 -credits
--wyjœcie z gry
-6. Obs³uga myszki
-
+-wyjÅ›cie z gry
+6. ObsÅ‚uga myszki
+7. Scrollowanie ekranu mapy
