@@ -44,6 +44,7 @@ int main()
         }
         if(game->updateDisplay) //Jezeli nalezy uaktualnic ekran, to to robimy
         {
+            al_draw_bitmap(game->objLib[0]->bitmap,20,20,NULL);
             al_flip_display();
             al_clear_to_color(al_map_rgb(157,67,67));
         }

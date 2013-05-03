@@ -14,6 +14,7 @@
 #include <allegro5/allegro_acodec.h>
 
 ///POTRZEBNE BIBLIOTEKI
+#include <iostream>
 #include <vector>
 #include <string>
 #include <fstream>
