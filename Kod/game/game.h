@@ -28,7 +28,7 @@ class unitInstance;
 class gameInstance
 {
     public:
-        gameInstance() { mapLoaded = false; gameMap = NULL; displayAL = NULL; } //Konstruktor, wywoluje wczytywanie danych
+        gameInstance() { mapLoaded = false; exitGame = false; updateDisplay = true; gameMap = NULL; displayAL = NULL; gameTimerAL = NULL; eventQueueAL = NULL; fps = 20;} //Konstruktor, wywoluje wczytywanie danych
         ~gameInstance() { }; //Destruktor, wywoluje czyszczenie pamieci
         struct unitStruct //Struktura jednostki na liscie
         {
@@ -58,6 +58,13 @@ class gameInstance
         bool CreateDisplay(int ScreenHeight,int ScreenWidth); //Tworzenie ekranu gry o podanej rozdzielczosci
         void ReleaseMemory(); //Zwalnianie pamieci zajetej przez Allegro, np. timer czy keystate
         void DisplayMessage(std::string title,std::string message); //Wyswietlanie wiadomosci na ekran
+        ALLEGRO_EVENT_QUEUE *eventQueueAL;
+        ALLEGRO_EVENT gameEventsAL;
+        ALLEGRO_TIMER *gameTimerAL;
+        ALLEGRO_KEYBOARD_STATE keyStateAL;
+        int fps;
+        bool updateDisplay;
+        bool exitGame;
 
         ///RESOURCE LOADER
         bool PushUnitCFG(std::string name,std::string file,int HP,int attack, int defence,std::string sound_movement,
@@ -72,10 +79,9 @@ class gameInstance
         std::vector<objStruct*> objLib;
 
         ///MAP LOADER
-        bool mapLoaded;
         bool LoadMap(std::string file);
         void UnloadMap();
-
+        bool mapLoaded;
         mapTile** gameMap;
         std::string mapName;
         int mapSize[2];
@@ -95,7 +101,6 @@ class gameInstance
 
         ///KONTROLA OKNA
         ALLEGRO_DISPLAY* displayAL; //Uchwyt okna
-
 };
 
 #endif

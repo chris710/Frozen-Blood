@@ -1,10 +1,10 @@
 # depslib dependency file v1.0
-1367571854 source:c:\users\wojciech\documents\github\temporary_project_name\kod\main.cpp
+1367573447 source:c:\users\wojciech\documents\github\temporary_project_name\kod\main.cpp
 	"game/game.h"
 	"game/units.h"
 	"editor/level_editor.h"
 
-1367571185 c:\users\wojciech\documents\github\temporary_project_name\kod\game\game.h
+1367573431 c:\users\wojciech\documents\github\temporary_project_name\kod\game\game.h
 	<allegro5/allegro.h>
 	<allegro5/allegro_native_dialog.h>
 	<allegro5/allegro_image.h>
@@ -15,7 +15,7 @@
 	<fstream>
 	"units.h"
 
-1367571797 source:c:\users\wojciech\documents\github\temporary_project_name\kod\game\game.cpp
+1367572913 source:c:\users\wojciech\documents\github\temporary_project_name\kod\game\game.cpp
 	"game.h"
 
 1367570683 source:c:\users\wojciech\documents\github\temporary_project_name\kod\game\res_loader.cpp

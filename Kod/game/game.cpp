@@ -37,7 +37,9 @@ void gameInstance::ReleaseMemory()
     if(mapLoaded) UnloadMap();
     for(int i=0;i<unitList.size();i++) delete unitList[i]; //Czyszczenie jednostek na polu bitwy, bitmapy zwalnia Resource Loader
     ResourceUnloader(); //Usuwanie list zasobow
-    al_destroy_display(displayAL); //Zwalnianie ekranu
+    if(eventQueueAL) al_destroy_event_queue(eventQueueAL);
+    if(gameTimerAL) al_destroy_timer(gameTimerAL);
+    if(displayAL) al_destroy_display(displayAL); //Zwalnianie ekranu
 }
 
 void gameInstance::DisplayMessage(std::string title,std::string message)
