@@ -22,10 +22,17 @@ Zasady gry:
 -Na planszy rozmieszczone są niezajęte osady, można je zająć bohaterem lub piechurami. Osady są dobrymi miejscami do obrony i przynoszą zyski w postaci złota
 -Na początku każdej tury gracz otrzymuje złoto z zajętych osad i twierdz, może za nie zrekrutwować jednostki lub wykupić bohatera
 -Każde pole określa inną formację terenu (droga, most, góry, las, twierdza, osada, woda, otwarty teren). Każdy teren posiada własne cechy takie jak trudność poruszania się w nim czy współczynnik obrony
--W twierdzy gracz może rekrutować jednostki: piechur (przeciętny atak i obrona, może zajmować osady), łucznik (dobry atak (2 pola zasięgu), słaba obrona), mag (słabe atak i obrona, potrafi wskrzeszać poległe jednostki jako szkielety), zabójcy (duża mobilność, silny atak, przeciętna obrona), duch(?) (słaby atak i obrona, skuteczny przeciwko szkieletom, zwiększa staty pobliskich jednostek), defender(?) (mało mobilny, acz z silnym atakiem i obroną), trebusz (nie może w jednej turze poruszać się i atakować, silny atak (5 pól zasięgu), słaba obrona), smok (niezwykle mobilny bez wpływu na rodzaj terenu, silny atak i obrona, podatny na ataki na odległość). 
+-W twierdzy gracz może rekrutować jednostki: piechur (przeciętny atak i obrona, może zajmować osady), łucznik (dobry atak (2 pola zasięgu), słaba obrona), mag (słabe atak i obrona, potrafi wskrzeszać poległe jednostki jako szkielety), zabójcy (duża mobilność, silny atak, przeciętna obrona), duch(mist) (słaby atak i obrona, skuteczny przeciwko szkieletom, zwiększa staty pobliskich jednostek), defender(?) (mało mobilny, acz z silnym atakiem i obroną), trebusz (nie może w jednej turze poruszać się i atakować, silny atak (5 pól zasięgu), słaba obrona), smok (niezwykle mobilny bez wpływu na rodzaj terenu, silny atak i obrona, podatny na ataki na odległość). 
 -Gracze wykonują swoje ruchy naprzemian, turowo. Każda jednostka może być użyta tylko raz podczas jednej tury.
 -Podczas ataku, jednostka przeciwnika dostaje obrażenia równe podstawowemu atakowi jednostki atakującej * % życia - modyfikator terenu
--Po zadanych obrażeniach jednostka otrzymuje punkty doświadczenia. Jeżeli uzbiera się ich odpowiednia ilość jednostka awansuje na wyższy poziom. Z każdym poziomem obrona i atak zwiększają się o 2. Co 2 poziom jednostka uzyskuje wyższy status (soldier->warrior->knight->slayer; archer->elite archer->ranger->elite ranger;).
+-Po zadanych obrażeniach jednostka otrzymuje punkty doświadczenia. Obrażenia przy zabiciu wroga liczą się podwójnie. Jeżeli uzbiera się ich odpowiednia ilość jednostka awansuje na wyższy poziom. Z każdym poziomem obrona i atak zwiększają się o 2. Co 2 poziom jednostka uzyskuje wyższy status:
+soldier->warrior->knight->slayer; 
+archer->elite archer->ranger->elite ranger;
+wizard->sorcerer->magus->archmage; hunter->shadow hunter->assassin->silent assassin; 
+mist->mistral->phantom->wraith;
+defender->protector->guardian->titan; 
+trebuchet->siege trebuchet->heavy trebuchet->bombarder;
+dragon->blood dragon->elder dragon->legendary dragon).
 
 Tryby:
 Skirmish dla 2,3 i 4 graczy.
