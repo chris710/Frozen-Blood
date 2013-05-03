@@ -26,3 +26,21 @@ bool gameInstance::RenderMap()
     }
     return true;
 }
+
+bool gameInstance::RenderFieldBox()
+{
+    al_get_mouse_state(&state);
+    if(fieldBox==NULL) return false;
+    int mouseX,mouseY;
+    mouseX=(int)state.x;
+    mouseY=(int)state.y;
+
+    if(mouseX>=0 && mouseX<=mapSize[0]*96-1 && mouseY>=0 && mouseY<=mapSize[1]*96-1)
+    {
+            mouseX/=96;
+            mouseY/=96;
+            al_draw_bitmap(fieldBox,mouseX*96,mouseY*96,NULL);
+            std::cout << "[DISPLAY] FIELDBOX UPTADED AT FIELD " << mouseX << " " << mouseY << std::endl;
+    }
+
+}

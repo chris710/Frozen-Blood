@@ -22,7 +22,7 @@ int main()
     //Ustawianie zmiennych ALLEGRO i wlasciwa petla gry
     game->eventQueueAL = al_create_event_queue(); //Tworzymy nowa kolejke zdarzen
     al_register_event_source(game->eventQueueAL,al_get_keyboard_event_source()); // i ja rejestrujemy
-
+    al_register_event_source(game->eventQueueAL,al_get_mouse_event_source()); // i rejestrujemy zdarzenia klawiatury i myszy
     game->gameTimerAL = al_create_timer(1.0/game->fps); //tworzymy nowy timer
     al_register_event_source(game->eventQueueAL,al_get_timer_event_source(game->gameTimerAL)); //i go rejestrujemy jako zrodlo zdarzen
 
@@ -35,8 +35,8 @@ int main()
 
     while(!game->exitGame) //Petla wlasciwa gry
     {
-
         al_wait_for_event(game->eventQueueAL,&game->gameEventsAL); //Czekamy na zdarzenie
+
         //Zamykanie przyciskiem
         if(game->gameEventsAL.type == ALLEGRO_EVENT_DISPLAY_CLOSE) { std::cout << "[DISPLAY] ENDING" << std::endl; game->exitGame = true; break; }
         if(game->gameEventsAL.type == ALLEGRO_EVENT_KEY_DOWN) //Jezeli zdarzenie to wcisniety przycisk
@@ -48,11 +48,12 @@ int main()
                 break;
             }
         }
+        if(game->gameEventsAL.type == ALLEGRO_EVENT_MOUSE_AXES) game->updateDisplay=true;
         if(game->updateDisplay) //Jezeli nalezy uaktualnic ekran, to to robimy
         {
-
             al_clear_to_color(al_map_rgb(157,67,67));
             game->RenderMap();
+            game->RenderFieldBox();
             al_flip_display();
             game->updateDisplay = false;
         }

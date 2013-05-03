@@ -67,9 +67,19 @@ bool gameInstance::ResourceLoader()
                 std::cout << "[objLIB] \"" << name  << " " << file << "\" LOADING" <<std::endl;
                 PushObjCFG(name,file);
             }
+            if(line=="[FIELDBOX]")
+            {
+                if(fieldBox!=NULL) continue;
+                std::string file;
+                getline(resources[i],file);
+                fieldBox = al_load_bitmap(file.c_str());
+                if(!fieldBox) std::cout << "[objLib] ERROR \"" << file << "\" - FILE NOT FOUND" << std::endl;
+                else std::cout << "[objLib] FIELDBOX LOADED" << std::endl;
+            }
         }
         resources[i].close(); //Zamykamy pliki cfg
     }
+    if(!fieldBox) std::cout << "[DISPLAY] FIELDBOX MISSING" << std::endl;
     return true;
 }
 
@@ -96,6 +106,7 @@ void gameInstance::ResourceUnloader()
         delete objLib[i];
         objLib[i]=NULL;
     }
+    if(fieldBox) { al_destroy_bitmap(fieldBox); std::cout << "[objLIB] FIELDBOX UNLOADED" <<std::endl; }
     unitLib.clear();
     soundLib.clear();
     objLib.clear();

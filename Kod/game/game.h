@@ -88,7 +88,10 @@ class gameInstance
         int mapSize[2]; // jej rozmiar
 
         ///MAP RENDER
+        ALLEGRO_MOUSE_STATE state;
         bool RenderMap();
+        bool RenderFieldBox();
+        ALLEGRO_BITMAP* fieldBox;
 
         ///SWIAT GRY
         void CreateUnit(std::string type); //Funkcja tworzaca jednostke, typ z unitLib

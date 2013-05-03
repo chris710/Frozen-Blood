@@ -25,6 +25,7 @@ bool gameInstance::CreateDisplay(int ScreenHeight,int ScreenWidth)
     }
 
     //ALLEGRO - Uruchamianie dodatkow i potrzebnych funkcji
+    al_install_mouse();
     al_install_keyboard();
     al_install_audio();
     al_init_image_addon();
