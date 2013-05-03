@@ -30,7 +30,7 @@ int main()
 
     al_start_timer(game->gameTimerAL); //Uruchamiamy nasz timer
 
-    game->LoadMap("test");
+    game->LoadMap("test"); //Ladowanie testowej mapy, na razie brak interfejsu
 
     while(!game->exitGame) //Petla wlasciwa gry
     {

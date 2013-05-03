@@ -1,0 +1,14 @@
+TODO LIST
+Najwa¿niejsze na chwilê obecn¹.
+
+1. Obs³uga b³êdów dla wielu funkcji programu
+2. Obs³uga efektow oraz rotacji kafelków terenu
+3. Animacje dla jednostek i objektów(woda).
+4. Obs³uga plików dŸwiêkowych takich jak muzyka czy odg³osy walki/ruchu/œmierci
+5. Menu gry
+-Wybór trybu: iloœæ graczy, mapa
+-Wybór edytora
+-credits
+-wyjœcie z gry
+6. Obs³uga myszki
+
