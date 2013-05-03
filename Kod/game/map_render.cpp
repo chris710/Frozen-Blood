@@ -35,7 +35,7 @@ bool gameInstance::RenderFieldBox()
     mouseX=(int)state.x;
     mouseY=(int)state.y;
 
-    if(mouseX>=0 && mouseX<=mapSize[0]*96-1 && mouseY>=0 && mouseY<=mapSize[1]*96-1)
+    if(mouseX>=0 && mouseX<=mapSize[1]*96-1 && mouseY>=0 && mouseY<=mapSize[0]*96-1)
     {
             mouseX/=96;
             mouseY/=96;
