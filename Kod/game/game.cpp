@@ -34,10 +34,10 @@ bool gameInstance::CreateDisplay(int ScreenHeight,int ScreenWidth)
 
 void gameInstance::ReleaseMemory()
 {
-    if(mapLoaded) UnloadMap();
+    if(mapLoaded) UnloadMap(); //Jezeli jest co zwalniac, to usuwamy mape
     for(int i=0;i<unitList.size();i++) delete unitList[i]; //Czyszczenie jednostek na polu bitwy, bitmapy zwalnia Resource Loader
     ResourceUnloader(); //Usuwanie list zasobow
-    if(eventQueueAL) al_destroy_event_queue(eventQueueAL);
+    if(eventQueueAL) al_destroy_event_queue(eventQueueAL); //niszcenie timerow i list zdarzen ALLEGRO
     if(gameTimerAL) al_destroy_timer(gameTimerAL);
     if(displayAL) al_destroy_display(displayAL); //Zwalnianie ekranu
 }
@@ -58,7 +58,7 @@ int gameInstance::GetCurrentPlayer() //Zwraca numer obecnego gracza
 void gameInstance::EndTurn() //Przesuwa kolejnosc na nastepnego gracza, albo resetuje ture.
 {
     playerCurrent++;
-    if(playerCurrent>playerList.size())
+    if(playerCurrent>playerList.size()) //Jezeli przeszlismy cala liste, to ustawiamy ja na poczatek
     {
         //game->playerAddGold();
         playerCurrent=0;

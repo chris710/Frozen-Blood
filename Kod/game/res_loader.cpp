@@ -94,15 +94,15 @@ bool gameInstance::PushUnitCFG(std::string name,std::string file,int HP,int atta
 {
     unitStruct unit; //Dodajemy do listy nowy wpis o podanych parametrach
     unit.name=name;
-    unit.bitmap = al_load_bitmap(file.c_str());
-    if(!unit.bitmap) { return false; }
+    unit.bitmap = al_load_bitmap(file.c_str()); //Ladujemy bitmape z pliku, tylko RAZ w calym programie!
+    if(!unit.bitmap) { delete &unit; return false;} //Jezeli sie nie uda, to przerywamy, bo i tak nic nie bedzie widac
     unit.HP=HP;
     unit.attack=attack;
     unit.defence=defence;
-    unit.sound_movement=sound_movement;
+    unit.sound_movement=sound_movement; //Tylko nazwy dzwiekow, przy tworzeniu instancji jednostki ustawiane sa odpowiednie pointery
     unit.sound_attack=sound_attack;
     unit.sound_death=sound_death;
-    unitLib.push_back(&unit);
+    unitLib.push_back(&unit); //Dodajemy do biblioteki
     return true;
 }
 bool gameInstance::PushSoundCFG(std::string name,std::string file)
@@ -110,16 +110,16 @@ bool gameInstance::PushSoundCFG(std::string name,std::string file)
     soundStruct sound;
     sound.name=name;
     sound.file = al_load_sample(file.c_str());
-    if(!sound.file) { return false; }
+    if(!sound.file) { delete &sound; return false; }
     soundLib.push_back(&sound);
     return true;
 }
-bool gameInstance::PushObjCFG(std::string name,std::string file)
+bool gameInstance::PushObjCFG(std::string name,std::string file) //Lista elementow mapy
 {
     objStruct obj;
     obj.name=name;
     obj.bitmap = al_load_bitmap(file.c_str());
-    if(!obj.bitmap) { return false; }
+    if(!obj.bitmap) { delete &obj; return false; }
     objLib.push_back(&obj);
     return true;
 }

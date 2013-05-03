@@ -47,24 +47,24 @@ class gameInstance
             std::string name;
             ALLEGRO_BITMAP* bitmap;
         };
-        struct mapTile
+        struct mapTile //Kafelek mapy
         {
             ALLEGRO_BITMAP* tile;
             std::string effect;
             int rotation;
-            unitInstance* CurrentUnit;
+            unitInstance* CurrentUnit; //Przechowuje wskaznik na obecna na tym polu jednostke
         };
         ///KONTROLA OKNA
         bool CreateDisplay(int ScreenHeight,int ScreenWidth); //Tworzenie ekranu gry o podanej rozdzielczosci
         void ReleaseMemory(); //Zwalnianie pamieci zajetej przez Allegro, np. timer czy keystate
         void DisplayMessage(std::string title,std::string message); //Wyswietlanie wiadomosci na ekran
-        ALLEGRO_EVENT_QUEUE *eventQueueAL;
+        ALLEGRO_EVENT_QUEUE *eventQueueAL; //Zdarzenia i timery ALLEGRO
         ALLEGRO_EVENT gameEventsAL;
         ALLEGRO_TIMER *gameTimerAL;
         ALLEGRO_KEYBOARD_STATE keyStateAL;
-        int fps;
-        bool updateDisplay;
-        bool exitGame;
+        int fps; //Ilosc klatek na sekunde
+        bool updateDisplay; //Zmienna wskazujaca na to, czy trzeba przerysowywac cala mape
+        bool exitGame; //Zmienna sterujace petla gry
 
         ///RESOURCE LOADER
         bool PushUnitCFG(std::string name,std::string file,int HP,int attack, int defence,std::string sound_movement,
@@ -79,25 +79,25 @@ class gameInstance
         std::vector<objStruct*> objLib;
 
         ///MAP LOADER
-        bool LoadMap(std::string file);
-        void UnloadMap();
-        bool mapLoaded;
-        mapTile** gameMap;
-        std::string mapName;
-        int mapSize[2];
+        bool LoadMap(std::string file); //Ladowanie mapy o podanej nazwie
+        void UnloadMap(); //Usuwanie obecnie zaladowanej mapy
+        bool mapLoaded; //Zmienna stanu wczytania mapy
+        mapTile** gameMap; //Macierz mapy
+        std::string mapName; //Nazwa mapy
+        int mapSize[2]; // jej rozmiar
 
         ///SWIAT GRY
-        void CreateUnit(std::string type);
-        std::vector<unitInstance*> unitList;
+        void CreateUnit(std::string type); //Funkcja tworzaca jednostke, typ z unitLib
+        std::vector<unitInstance*> unitList; //lista jednostek na mapie
 
         ///GRACZE
-        int GetCurrentPlayer();
-        void EndTurn();
+        int GetCurrentPlayer(); //Funkcja zwraca numer obecnego gracza
+        void EndTurn(); //Funkcja ustawia nastepnego gracza na obecnego
 
     private:
         ///GRACZE
-        std::vector<std::string> playerList;
-        int playerCurrent;
+        std::vector<std::string> playerList; //Lista graczy
+        int playerCurrent; //Numer obecnego gracza
 
         ///KONTROLA OKNA
         ALLEGRO_DISPLAY* displayAL; //Uchwyt okna

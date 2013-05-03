@@ -21,34 +21,34 @@ int main()
         game->ReleaseMemory();
         return -1;
     }
-    //Wlasciwa petla gry
-    game->eventQueueAL = al_create_event_queue();
-    al_register_event_source(game->eventQueueAL,al_get_keyboard_event_source());
+    //Ustawianie zmiennych ALLEGRO i wlasciwa petla gry
+    game->eventQueueAL = al_create_event_queue(); //Tworzymy nowa kolejke zdarzen
+    al_register_event_source(game->eventQueueAL,al_get_keyboard_event_source()); // i ja rejestrujemy
 
-    game->gameTimerAL = al_create_timer(1.0/game->fps);
-    al_register_event_source(game->eventQueueAL,al_get_timer_event_source(game->gameTimerAL));
+    game->gameTimerAL = al_create_timer(1.0/game->fps); //tworzymy nowy timer
+    al_register_event_source(game->eventQueueAL,al_get_timer_event_source(game->gameTimerAL)); //i go rejestrujemy jako zrodlo zdarzen
 
+    al_start_timer(game->gameTimerAL); //Uruchamiamy nasz timer
 
-    al_start_timer(game->gameTimerAL);
-    while(!game->exitGame)
+    while(!game->exitGame) //Petla wlasciwa gry
     {
-        al_wait_for_event(game->eventQueueAL,&game->gameEventsAL);
-        if(game->gameEventsAL.type == ALLEGRO_EVENT_KEY_DOWN)
+        al_wait_for_event(game->eventQueueAL,&game->gameEventsAL); //Czekamy na zdarzenie
+        if(game->gameEventsAL.type == ALLEGRO_EVENT_KEY_DOWN) //Jezeli zdarzenie to wcisniety przycisk
         {
-            switch(game->gameEventsAL.keyboard.keycode)
+            switch(game->gameEventsAL.keyboard.keycode) //to sprawdzamy co to za przycisk
             {
-            case ALLEGRO_KEY_ESCAPE:
+            case ALLEGRO_KEY_ESCAPE: //w przypadku esc zamykamy program
                 game->exitGame = true;
                 break;
             }
         }
-        if(game->updateDisplay)
+        if(game->updateDisplay) //Jezeli nalezy uaktualnic ekran, to to robimy
         {
             al_flip_display();
             al_clear_to_color(al_map_rgb(157,67,67));
         }
     }
-    game->ReleaseMemory(); //Zwalnianie pamieci zajetej przez gre
-    delete game;
+    game->ReleaseMemory(); //Zwalnianie pamieci zajetej przez gre, zwalniami Liby
+    delete game; //Usuwamy instancje gry i konczymy
     return 0;
 }
