@@ -62,7 +62,7 @@ bool gameInstance::MapScroll()
         offset[1]-=4;
         return true;
     }
-    if(y>=0 && y<=30)
+    else if(y>=0 && y<=30)
     {
         if(offset[0] >=0) return false;
         offset[0]+=4;
