@@ -17,6 +17,7 @@ int main()
 {
 
     bool done=false;        //zmienna do pętli edytora, kiedy przyjmuje true program kończy się
+    struct tile* Tmp=(struct tile *)malloc(sizeof(struct tile));        //struktura tymczasowa wyboru kafelka
 
     ///Zeby skorzystac z res_loadera musisz przekazac do klasy edytora odniesienie do gameLIB
     resInstance* gameLIB = new resInstance;
@@ -88,9 +89,60 @@ int main()
                         nowa->createMap();      //tworzymy pustą mapę       ///nie działa
                         break;
                     }
-                    case ALLEGRO_KEY_1:
+                    case ALLEGRO_KEY_1:         //bridge
                     {
-
+                        Tmp->type="bridge";
+                        Tmp->image=gameEditor->gameLIB->objLib[0]->bitmap;
+                        Tmp->rotation=0;    //0 czyli nie obrócony
+                        Tmp->effect=5;      //most daje 5 defence'a
+                        break;
+                    }
+                    case ALLEGRO_KEY_2:         //forest1
+                    {
+                        Tmp->type="forest1";
+                        Tmp->image=gameEditor->gameLIB->objLib[1]->bitmap;
+                        Tmp->rotation=0;    //0 czyli nie obrócony
+                        Tmp->effect=10;      //las daje 10 defence'a
+                        break;
+                    }
+                    case ALLEGRO_KEY_3:         //forest2
+                    {
+                        Tmp->type="forest2";
+                        Tmp->image=gameEditor->gameLIB->objLib[2]->bitmap;
+                        Tmp->rotation=0;    //0 czyli nie obrócony
+                        Tmp->effect=10;      //forest daje 10 defence'a
+                        break;
+                    }
+                    case ALLEGRO_KEY_4:         //mountains1
+                    {
+                        Tmp->type="mountains1";
+                        Tmp->image=gameEditor->gameLIB->objLib[3]->bitmap;
+                        Tmp->rotation=0;    //0 czyli nie obrócony
+                        Tmp->effect=15;      //góry dają 15 defence'a
+                        break;
+                    }
+                    case ALLEGRO_KEY_5:         //mountains2
+                    {
+                        Tmp->type="mountains2";
+                        Tmp->image=gameEditor->gameLIB->objLib[4]->bitmap;
+                        Tmp->rotation=0;    //0 czyli nie obrócony
+                        Tmp->effect=15;      //góry dają 15 defence'a
+                        break;
+                    }
+                    case ALLEGRO_KEY_6:         //skrzyżowanie 3 dróg
+                    {
+                        Tmp->type="road_crossing3";
+                        Tmp->image=gameEditor->gameLIB->objLib[5]->bitmap;
+                        Tmp->rotation=0;    //0 czyli nie obrócony
+                        Tmp->effect=0;      //droga nie daje obrony
+                        break;
+                    }
+                    case ALLEGRO_KEY_7:         //skrzyżowanie 3 dróg
+                    {
+                        Tmp->type="road_crossing3";
+                        Tmp->image=gameEditor->gameLIB->objLib[5]->bitmap;
+                        Tmp->rotation=0;    //0 czyli nie obrócony
+                        Tmp->effect=0;      //droga nie daje obrony
                         break;
                     }
                 }

@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <CodeBlocks_layout_file>
 	<ActiveTarget name="Debug" />
-	<File name="editor.cpp" open="0" top="0" tabpos="2">
+	<File name="editor.cpp" open="1" top="0" tabpos="7">
+		<Cursor position="0" topLine="12" />
+	</File>
+	<File name="editor.h" open="1" top="1" tabpos="3">
+		<Cursor position="206" topLine="0" />
+	</File>
+	<File name="lib.h" open="1" top="0" tabpos="5">
 		<Cursor position="0" topLine="0" />
 	</File>
-	<File name="editor.h" open="1" top="0" tabpos="2">
-		<Cursor position="209" topLine="0" />
+	<File name="main.cpp" open="1" top="0" tabpos="4">
+		<Cursor position="3233" topLine="0" />
 	</File>
-	<File name="lib.h" open="1" top="0" tabpos="4">
+	<File name="res_loader\res_loader.cpp" open="1" top="0" tabpos="6">
 		<Cursor position="0" topLine="0" />
 	</File>
-	<File name="main.cpp" open="1" top="1" tabpos="3">
-		<Cursor position="817" topLine="7" />
-	</File>
-	<File name="res_loader\res_loader.cpp" open="1" top="0" tabpos="5">
-		<Cursor position="0" topLine="0" />
-	</File>
-	<File name="res_loader\res_loader.h" open="1" top="0" tabpos="1">
-		<Cursor position="559" topLine="19" />
+	<File name="res_loader\res_loader.h" open="1" top="0" tabpos="2">
+		<Cursor position="559" topLine="1" />
 	</File>
 </CodeBlocks_layout_file>
