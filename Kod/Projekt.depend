@@ -1,8 +1,9 @@
 # depslib dependency file v1.0
-1367616175 source:c:\users\wojciech\documents\github\temporary_project_name\kod\main.cpp
+1367654628 source:c:\users\wojciech\documents\github\temporary_project_name\kod\main.cpp
 	"game/game.h"
+	"game/mouse.h"
 
-1367616155 c:\users\wojciech\documents\github\temporary_project_name\kod\game\game.h
+1367654908 c:\users\wojciech\documents\github\temporary_project_name\kod\game\game.h
 	<allegro5/allegro.h>
 	<allegro5/allegro_native_dialog.h>
 	<allegro5/allegro_image.h>
@@ -14,10 +15,10 @@
 	<fstream>
 	"unit.h"
 
-1367615484 source:c:\users\wojciech\documents\github\temporary_project_name\kod\game\game.cpp
+1367651979 source:c:\users\wojciech\documents\github\temporary_project_name\kod\game\game.cpp
 	"game.h"
 
-1367615788 source:c:\users\wojciech\documents\github\temporary_project_name\kod\game\res_loader.cpp
+1367652965 source:c:\users\wojciech\documents\github\temporary_project_name\kod\game\res_loader.cpp
 	"game.h"
 
 1367583362 source:c:\users\wojciech\documents\github\temporary_project_name\kod\editor\level_editor.cpp
@@ -45,4 +46,10 @@
 
 1367602257 source:c:\users\wojciech\documents\github\temporary_project_name\kod\game\unit.cpp
 	"unit.h"
+
+1367654543 source:c:\users\wojciech\documents\github\temporary_project_name\kod\game\mouse.cpp
+	"mouse.h"
+
+1367654551 c:\users\wojciech\documents\github\temporary_project_name\kod\game\mouse.h
+	"game.h"
 

@@ -67,42 +67,45 @@ bool gameInstance::ResourceLoader()
                 std::cout << "[objLIB] \"" << name  << " " << file << "\" LOADING" <<std::endl;
                 PushObjCFG(name,file);
             }
-            if(line=="[FIELDBOX]")
-            {
-                if(fieldBox!=NULL) continue;
-                std::string file;
-                getline(resources[i],file);
-                fieldBox = al_load_bitmap(file.c_str());
-                if(!fieldBox) std::cout << "[objLib] ERROR \"" << file << "\" - FILE NOT FOUND" << std::endl;
-                else std::cout << "[objLib] FIELDBOX LOADED" << std::endl;
-            }
-            if(line=="[CURSOR]")
-            {
-                if(cursor!=NULL) continue;
-                std::string file;
-                getline(resources[i],file);
-                cursor = al_load_bitmap(file.c_str());
-                if(!cursor) std::cout << "[objLib] ERROR \"" << file << "\" - FILE NOT FOUND" << std::endl;
-                else std::cout << "[objLib] CURSOR LOADED" << std::endl;
-            }
-            if(line=="[CURSORPRESSED]")
-            {
-                if(cursorPressed!=NULL) continue;
-                std::string file;
-                getline(resources[i],file);
-                cursorPressed = al_load_bitmap(file.c_str());
-                if(!cursorPressed) std::cout << "[objLib] ERROR \"" << file << "\" - FILE NOT FOUND" << std::endl;
-                else std::cout << "[objLib] CURSORPRESSED LOADED" << std::endl;
-            }
         }
         resources[i].close(); //Zamykamy pliki cfg
     }
-    if(!fieldBox) std::cout << "[DISPLAY] FIELDBOX MISSING" << std::endl;
-    if(!cursor) std::cout << "[DISPLAY] CURSOR MISSING" << std::endl;
-    else    { mouseCursor = al_create_mouse_cursor(cursor,12,12); al_set_mouse_cursor(displayAL,mouseCursor); }
-    if(!cursorPressed) std::cout << "[DISPLAY] CURSORPRESSED MISSING" << std::endl;
-    else    mouseCursorPressed = al_create_mouse_cursor(cursorPressed,12,12);
-
+    std::cout << "[UI] FIELDBOX \"res/drawable/UI/fieldbox.png\" LOADING" <<std::endl;
+    fieldBox = al_load_bitmap("res/drawable/UI/fieldbox.png");
+    if(!fieldBox)
+    {
+        std::cout << "[UI] ERROR \"res/drawable/UI/fieldbox.png\" - FILE NOT FOUND" << std::endl;
+        DisplayMessage("Blad!","Nie mozna odnalezc pliku \"fieldbox.png\"");
+        return false;
+    }
+    else  std::cout << "[UI] FIELDBOX LOADED" <<std::endl;
+    std::cout << "[UI] CURSOR(1) \"res/drawable/UI/cursor1.png\" LOADING" <<std::endl;
+    cursor[0] = al_load_bitmap("res/drawable/UI/cursor1.png");
+    if(!cursor[0])
+    {
+        std::cout << "[UI] ERROR \"res/drawable/UI/cursor1.png\" - FILE NOT FOUND" << std::endl;
+        DisplayMessage("Blad!","Nie mozna odnalezc pliku \"cursor1.png\"");
+        return false;
+    }
+    else
+    {
+        mouseCursor[0] = al_create_mouse_cursor(cursor[0],12,12);
+        std::cout << "[UI] CURSOR(1) LOADED" <<std::endl;
+        al_set_mouse_cursor(displayAL,mouseCursor[0]);
+    }
+    std::cout << "[UI] CURSOR(2) \"res/drawable/UI/cursor2.png\" LOADING" <<std::endl;
+    cursor[1] = al_load_bitmap("res/drawable/UI/cursor2.png");
+    if(!cursor[1])
+    {
+        std::cout << "[UI] ERROR \"res/drawable/UI/cursor2.png\" - FILE NOT FOUND" << std::endl;
+        DisplayMessage("Blad!","Nie mozna odnalezc pliku \"cursor2.png\"");
+        return false;
+    }
+    else
+    {
+        mouseCursor[1] = al_create_mouse_cursor(cursor[1],12,12);
+        std::cout << "[UI] CURSOR(2) LOADED" <<std::endl;
+    }
     return true;
 }
 
@@ -129,9 +132,9 @@ void gameInstance::ResourceUnloader()
         delete objLib[i];
         objLib[i]=NULL;
     }
-    if(cursor) { al_destroy_bitmap(cursor); std::cout << "[objLIB] CURSOR UNLOADED" <<std::endl; }
-    if(cursorPressed) { al_destroy_bitmap(cursorPressed); std::cout << "[objLIB] CURSORPRESSED UNLOADED" <<std::endl; }
-    if(fieldBox) { al_destroy_bitmap(fieldBox); std::cout << "[objLIB] FIELDBOX UNLOADED" <<std::endl; }
+    if(cursor[0]) { al_destroy_bitmap(cursor[0]); std::cout << "[UI] CURSOR(1) UNLOADED" <<std::endl; }
+    if(cursor[1]) { al_destroy_bitmap(cursor[1]); std::cout << "[UI] CURSOR(2) UNLOADED" <<std::endl; }
+    if(fieldBox) { al_destroy_bitmap(fieldBox); std::cout << "[UI] FIELDBOX UNLOADED" <<std::endl; }
     unitLib.clear();
     soundLib.clear();
     objLib.clear();

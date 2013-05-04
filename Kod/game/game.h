@@ -55,19 +55,24 @@ class gameInstance
             unitInstance* CurrentUnit; //Przechowuje wskaznik na obecna na tym polu jednostke
         };
         ///KONTROLA OKNA
-        ALLEGRO_MOUSE_CURSOR* mouseCursor,* mouseCursorPressed;
-        bool cursorActive;
-        ALLEGRO_DISPLAY* GetDisplay() { return displayAL; };
-        bool CreateDisplay(int ScreenHeight,int ScreenWidth); //Tworzenie ekranu gry o podanej rozdzielczosci
-        void ReleaseMemory(); //Zwalnianie pamieci zajetej przez Allegro, np. timer czy keystate
-        void DisplayMessage(std::string title,std::string message); //Wyswietlanie wiadomosci na ekran
+        ALLEGRO_MOUSE_STATE mouseState;
+        ALLEGRO_MOUSE_CURSOR* mouseCursor[2];
         ALLEGRO_EVENT_QUEUE *eventQueueAL; //Zdarzenia i timery ALLEGRO
         ALLEGRO_EVENT gameEventsAL;
         ALLEGRO_TIMER *gameTimerAL;
         ALLEGRO_KEYBOARD_STATE keyStateAL;
+        bool CreateDisplay(int ScreenHeight,int ScreenWidth); //Tworzenie ekranu gry o podanej rozdzielczosci
+        void ReleaseMemory(); //Zwalnianie pamieci zajetej przez Allegro, np. timer czy keystate
+        void DisplayMessage(std::string title,std::string message); //Wyswietlanie wiadomosci na ekran
+        ALLEGRO_DISPLAY* GetDisplay() { return displayAL; };
         int fps; //Ilosc klatek na sekunde
+        bool cursorActive;
         bool updateDisplay; //Zmienna wskazujaca na to, czy trzeba przerysowywac cala mape
         bool exitGame; //Zmienna sterujace petla gry
+
+        ///UI
+        ALLEGRO_BITMAP* fieldBox;
+        ALLEGRO_BITMAP* cursor[2];
 
         ///RESOURCE LOADER
         bool PushUnitCFG(std::string name,std::string file,int HP,int attack, int defence,std::string sound_movement,
@@ -85,17 +90,14 @@ class gameInstance
         bool LoadMap(std::string file); //Ladowanie mapy o podanej nazwie
         void UnloadMap(); //Usuwanie obecnie zaladowanej mapy
         bool mapLoaded; //Zmienna stanu wczytania mapy
+        int mapSize[2]; // jej rozmiar
         std::vector<mapTile*> gameMap; //Macierz mapy
         std::string mapName; //Nazwa mapy
-        int mapSize[2]; // jej rozmiar
+
 
         ///MAP RENDER
-        ALLEGRO_MOUSE_STATE mouseState;
         bool RenderMap();
         bool RenderFieldBox();
-        ALLEGRO_BITMAP* fieldBox;
-        ALLEGRO_BITMAP* cursor;
-        ALLEGRO_BITMAP* cursorPressed;
 
         ///SWIAT GRY
         void CreateUnit(std::string type); //Funkcja tworzaca jednostke, typ z unitLib
@@ -108,8 +110,8 @@ class gameInstance
 
     private:
         ///GRACZE
-        std::vector<std::string> playerList; //Lista graczy
         int playerCurrent; //Numer obecnego gracza
+        std::vector<std::string> playerList; //Lista graczy
 
         ///KONTROLA OKNA
         ALLEGRO_DISPLAY* displayAL; //Uchwyt okna
