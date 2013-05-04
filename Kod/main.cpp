@@ -8,7 +8,7 @@
 
 ///DEFINICJE PROGRAMU
 #define ScreenHeight 672
-#define ScreenWidth 800
+#define ScreenWidth 960
 
 int main()
 {

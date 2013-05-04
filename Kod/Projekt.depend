@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1367668386 source:c:\users\wojciech\documents\github\temporary_project_name\kod\main.cpp
+1367686538 source:c:\users\wojciech\documents\github\temporary_project_name\kod\main.cpp
 	"game/game.h"
 
 1367668413 c:\users\wojciech\documents\github\temporary_project_name\kod\game\game.h
@@ -36,7 +36,7 @@
 1367664930 source:c:\users\wojciech\documents\github\temporary_project_name\kod\game\map_loader.cpp
 	"game.h"
 
-1367675702 source:c:\users\wojciech\documents\github\temporary_project_name\kod\game\map_render.cpp
+1367686501 source:c:\users\wojciech\documents\github\temporary_project_name\kod\game\map_render.cpp
 	"game.h"
 
 1367602239 c:\users\wojciech\documents\github\temporary_project_name\kod\game\unit.h
