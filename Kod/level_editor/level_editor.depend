@@ -1,0 +1,16 @@
+# depslib dependency file v1.0
+1367617433 source:c:\users\administrator\documents\github\temporary_project_name\leveleditor\level_editor\editor.cpp
+	"editor.h"
+
+1367657501 c:\users\administrator\documents\github\temporary_project_name\leveleditor\level_editor\editor.h
+	<iostream>
+	<vector>
+	<fstream>
+	<conio.h>
+	<allegro5/allegro.h>
+	<allegro5/allegro_native_dialog.h>
+	<allegro5/allegro_image.h>
+
+1367657352 source:c:\users\administrator\documents\github\temporary_project_name\leveleditor\level_editor\main.cpp
+	"editor.h"
+
