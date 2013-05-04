@@ -60,17 +60,6 @@ void editor::releaseMemory()
 
 
 
-/////////////////////////////////////////////////////
-//
-//      PUSH - ŁADUJE OBRAZY
-//
-/////////////////////////////////////////////////////
-bool editor::push(string name, string file)
-{
-
-}
-
-
 
 //////////////////////////////////////////////////////
 //
@@ -83,9 +72,8 @@ void map::createMap()
     {
         for(int j=0; j<Xsize; j++)
         {
-            struct tile* Tile=(struct tile*)malloc(sizeof(struct tile));
 
-            mapa[i][j]=Tile;            ///NIE DZIAŁA
+            mapa[i][j].image;         ///TO juz jest tile
         }
 
     }

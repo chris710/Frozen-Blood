@@ -14,3 +14,72 @@
 1367657352 source:c:\users\administrator\documents\github\temporary_project_name\leveleditor\level_editor\main.cpp
 	"editor.h"
 
+1367661183 source:c:\users\wojciech\documents\github\temporary_project_name\kod\level_editor\editor.cpp
+	"editor.h"
+
+1367661788 c:\users\wojciech\documents\github\temporary_project_name\kod\level_editor\editor.h
+	"lib.h"
+	"res_loader/res_loader.h"
+
+1367654908 c:\users\wojciech\documents\github\temporary_project_name\kod\game\game.h
+	<allegro5/allegro.h>
+	<allegro5/allegro_native_dialog.h>
+	<allegro5/allegro_image.h>
+	<allegro5/allegro_audio.h>
+	<allegro5/allegro_acodec.h>
+	<iostream>
+	<vector>
+	<string>
+	<fstream>
+	"unit.h"
+
+1367602239 c:\users\wojciech\documents\github\temporary_project_name\kod\game\unit.h
+	"game.h"
+	<time.h>
+
+1367661718 source:c:\users\wojciech\documents\github\temporary_project_name\kod\level_editor\main.cpp
+	"editor.h"
+
+1367652965 source:c:\users\wojciech\documents\github\temporary_project_name\kod\game\res_loader.cpp
+	"game.h"
+
+1367651979 source:c:\users\wojciech\documents\github\temporary_project_name\kod\game\game.cpp
+	"game.h"
+
+1367661391 c:\users\wojciech\documents\github\temporary_project_name\kod\level_editor\editorgame\game.h
+	<allegro5/allegro.h>
+	<allegro5/allegro_native_dialog.h>
+	<allegro5/allegro_image.h>
+	<allegro5/allegro_audio.h>
+	<allegro5/allegro_acodec.h>
+	<iostream>
+	<vector>
+	<string>
+	<fstream>
+
+1367660833 source:c:\users\wojciech\documents\github\temporary_project_name\kod\level_editor\editorgame\game.cpp
+	"game.h"
+
+1367661215 source:c:\users\wojciech\documents\github\temporary_project_name\kod\level_editor\editorgame\res_loader.cpp
+	"game.h"
+
+1367660510 source:c:\users\wojciech\documents\github\temporary_project_name\kod\level_editor\editorgame\map_loader.cpp
+	"game.h"
+
+1367616155 source:c:\users\wojciech\documents\github\temporary_project_name\kod\level_editor\editorgame\map_render.cpp
+	"game.h"
+
+1367661788 c:\users\wojciech\documents\github\temporary_project_name\kod\level_editor\res_loader\res_loader.h
+	"../lib.h"
+
+1367661788 c:\users\wojciech\documents\github\temporary_project_name\kod\level_editor\lib.h
+	<allegro5/allegro.h>
+	<allegro5/allegro_native_dialog.h>
+	<allegro5/allegro_image.h>
+	<allegro5/allegro_audio.h>
+	<allegro5/allegro_acodec.h>
+	<iostream>
+	<vector>
+	<string>
+	<fstream>
+

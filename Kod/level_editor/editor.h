@@ -16,21 +16,9 @@
 //-bajery z ekranem (przewijanie, wyświetlanie, podgląd na żywo)
 
 
-
-
-
-
-///BIBLIOTEKI
-#include<iostream>
-#include<vector>
-#include<fstream>
-#include<conio.h>
-#include<allegro5/allegro.h>
-#include<allegro5/allegro_native_dialog.h>
-#include<allegro5/allegro_image.h>
-
+#include "lib.h"
 ///POTRZEBNE PLIKI
-#include"../game/game.h"
+#include "res_loader/res_loader.h"
 
 using namespace std;
 
@@ -40,10 +28,9 @@ struct tile
 {
     string type;        //id kafelka
     ALLEGRO_BITMAP *image;         //bitmapa kafelka
-    int Xpos;       //pozycja pozioma
-    int Ypos;       //pozycja pionowa
+    //POZYCJA NIE POTRZEBNA BO I TAK TO W MACIERZY JEST
     int rotation;       //orientacja kafelka
-    int effect;     //efekt kafelka (wtf?)
+    int effect;     //efekt kafelka (wtf?) - CHODZI O WPLYW KAFELKA NA JEDNOSTKI NA NIM
 };
 
 
@@ -52,12 +39,16 @@ struct tile
 class editor
 {
     public:
-        bool createDisplay(int ScreenHeight,int ScreenWidth);   //Tworzenie ekranu gry o podanej rozdzielczosci
+        editor(resInstance* gameLIBSource,int ScreenHeight,int ScreenWidth) { gameLIB=gameLIBSource; createDisplay(ScreenHeight,ScreenWidth); }
+        //Uruchamianie poprzez podanie liba i wys i szer ekranu
+        //Tworzenie ekranu gry o podanej rozdzielczosci
         void releaseMemory(); //Zwalnianie pamieci zajetej przez Allegro, np. timer czy keystate
 
         //ŁADOWANIE ZASOBÓW
-        vector<tile*> lista;
-        bool push(string name, string file);
+        resInstance* gameLIB;
+
+    private:
+        bool createDisplay(int ScreenHeight,int ScreenWidth); //URUCHAMIANE przez konstruktor - raz!
 };
 
 
