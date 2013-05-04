@@ -27,7 +27,6 @@ bool editor::createDisplay(int ScreenHeight,int ScreenWidth)
         al_show_native_message_box(NULL,NULL,NULL,"Nie udalo sie zainicjalizowac Allegro 5.",NULL,NULL);
         return false;
     }
-    ALLEGRO_DISPLAY *display;
     display = al_create_display(ScreenWidth,ScreenHeight); //Tworzenie ekranu gry korzystajac z uchwytu okna
     if(!display) //Jezeli sie udalo sie stworzyc okna, zamykamy program
     {
@@ -49,14 +48,11 @@ bool editor::createDisplay(int ScreenHeight,int ScreenWidth)
 //      RELEASE MEMORY - ZWALNIA PAMIĘĆ PO ALLEGRO
 //
 /////////////////////////////////////////////////////////////
+*/
 void editor::releaseMemory()
 {
-    if(eventQueueAL) al_destroy_event_queue(eventQueueAL); //niszcenie timerow i list zdarzen ALLEGRO
-    if(gameTimerAL) al_destroy_timer(gameTimerAL);
-    if(mouseCursor) al_destroy_mouse_cursor(mouseCursor);
-    if(mouseCursorPressed) al_destroy_mouse_cursor(mouseCursorPressed);
-    if(displayAL) al_destroy_display(displayAL); //Zwalnianie ekranu
-}*/
+    if(display) al_destroy_display(display); //Zwalnianie ekranu
+}
 
 
 
@@ -86,7 +82,7 @@ void map::createMap()
 //      FILL WATER - WYPEŁNIA MAPĘ WODĄ
 //
 /////////////////////////////////////////////////////
-void map::fillWater(string name)
+void map::fillWater(std::string name)
 {
 
 }

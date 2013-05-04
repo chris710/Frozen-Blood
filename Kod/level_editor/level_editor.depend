@@ -14,10 +14,10 @@
 1367657352 source:c:\users\administrator\documents\github\temporary_project_name\leveleditor\level_editor\main.cpp
 	"editor.h"
 
-1367661183 source:c:\users\wojciech\documents\github\temporary_project_name\kod\level_editor\editor.cpp
+1367666800 source:c:\users\wojciech\documents\github\temporary_project_name\kod\level_editor\editor.cpp
 	"editor.h"
 
-1367661788 c:\users\wojciech\documents\github\temporary_project_name\kod\level_editor\editor.h
+1367666795 c:\users\wojciech\documents\github\temporary_project_name\kod\level_editor\editor.h
 	"lib.h"
 	"res_loader/res_loader.h"
 
@@ -37,7 +37,8 @@
 	"game.h"
 	<time.h>
 
-1367661718 source:c:\users\wojciech\documents\github\temporary_project_name\kod\level_editor\main.cpp
+1367666779 source:c:\users\wojciech\documents\github\temporary_project_name\kod\level_editor\main.cpp
+	<conio.h>
 	"editor.h"
 
 1367652965 source:c:\users\wojciech\documents\github\temporary_project_name\kod\game\res_loader.cpp
@@ -69,10 +70,10 @@
 1367616155 source:c:\users\wojciech\documents\github\temporary_project_name\kod\level_editor\editorgame\map_render.cpp
 	"game.h"
 
-1367661788 c:\users\wojciech\documents\github\temporary_project_name\kod\level_editor\res_loader\res_loader.h
+1367666779 c:\users\wojciech\documents\github\temporary_project_name\kod\level_editor\res_loader\res_loader.h
 	"../lib.h"
 
-1367661788 c:\users\wojciech\documents\github\temporary_project_name\kod\level_editor\lib.h
+1367661838 c:\users\wojciech\documents\github\temporary_project_name\kod\level_editor\lib.h
 	<allegro5/allegro.h>
 	<allegro5/allegro_native_dialog.h>
 	<allegro5/allegro_image.h>
@@ -109,4 +110,7 @@
 
 1367664655 source:c:\users\administrator\documents\github\temporary_project_name\kod\level_editor\main.cpp
 	"editor.h"
+
+1367667136 source:c:\users\wojciech\documents\github\temporary_project_name\kod\level_editor\res_loader\res_loader.cpp
+	"res_loader.h"
 

@@ -20,13 +20,12 @@
 ///POTRZEBNE PLIKI
 #include "res_loader/res_loader.h"
 
-using namespace std;
 
 
 ///STRUKTURA KAFELKA
 struct tile
 {
-    string type;        //id kafelka
+    std::string type;        //id kafelka
     ALLEGRO_BITMAP *image;         //bitmapa kafelka
     //POZYCJA NIE POTRZEBNA BO I TAK TO W MACIERZY JEST
     int rotation;       //orientacja kafelka
@@ -46,7 +45,7 @@ class editor
 
         //ŁADOWANIE ZASOBÓW
         resInstance* gameLIB;
-
+        ALLEGRO_DISPLAY *display;
     private:
         bool createDisplay(int ScreenHeight,int ScreenWidth); //URUCHAMIANE przez konstruktor - raz!
 };
@@ -56,13 +55,13 @@ class editor
 class map
 {
     public:
-        string name;        //nazwa mapy
+        std::string name;        //nazwa mapy
         int Xsize;      //szerokość mapy
         int Ysize;      //wysokość mapy
 
         tile** mapa;        //macierz
 
-        map(int X, int Y, string n)          //konstruktor
+        map(int X, int Y, std::string n)          //konstruktor
         {
             tile** mapa=new tile*[Y];
             name=n;
@@ -77,8 +76,8 @@ class map
         }
 
         void createMap();        //tworzy pustą mapę
-        void fillWater(string name);        //wypełnia wodą
-        void addTile(string type,int rotation, int Xpos, int Ypos);       //tworzy kafelek danego typu w danym miejscu
+        void fillWater(std::string name);        //wypełnia wodą
+        void addTile(std::string type,int rotation, int Xpos, int Ypos);       //tworzy kafelek danego typu w danym miejscu
         void releaseMemory();       //zwalnia pamięć po macierzy
 };
 
