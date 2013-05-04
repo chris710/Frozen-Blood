@@ -74,5 +74,18 @@ bool gameInstance::MapScroll()
         offset[0]-=4;
         return true;
     }
-    return false;
+    else
+    {
+        if(offset[0]%96!=0)
+        {
+            if(offset[0]>=-48) offset[0]++; else offset[0]--;
+            return true;
+        }
+        if(offset[1]%96!=0)
+        {
+            if(offset[1]>=-48) offset[1]++; else offset[1]--;
+            return true;
+        }
+        if(offset[0]%96==0 && offset[1]%96==0) return false;
+    }
 }
