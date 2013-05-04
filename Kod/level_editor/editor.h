@@ -10,7 +10,8 @@
 
 
 //      TO-DO LIST:
-//-sprzężyć z res_loaderem
+//-sprzężyć z res_loaderem [DONE]
+//-oznakować obrazki
 //-dodać zapis do pliku
 //-i odczyt
 //-bajery z ekranem (przewijanie, wyświetlanie, podgląd na żywo)

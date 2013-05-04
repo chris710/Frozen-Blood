@@ -7,8 +7,8 @@
 		<Option compiler="gcc" />
 		<Build>
 			<Target title="Debug">
-				<Option output="bin/Debug/level_editor" prefix_auto="1" extension_auto="1" />
-				<Option object_output="obj/Debug/" />
+				<Option output="bin\Debug\level_editor" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj\Debug\" />
 				<Option type="1" />
 				<Option compiler="gcc" />
 				<Compiler>
@@ -19,8 +19,8 @@
 				</Linker>
 			</Target>
 			<Target title="Release">
-				<Option output="bin/Release/level_editor" prefix_auto="1" extension_auto="1" />
-				<Option object_output="obj/Release/" />
+				<Option output="bin\Release\level_editor" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj\Release\" />
 				<Option type="1" />
 				<Option compiler="gcc" />
 				<Compiler>
@@ -34,12 +34,15 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
+		<Linker>
+			<Add library="..\..\..\..\..\..\..\Program Files (x86)\CodeBlocks\MinGW\lib\liballegro-5.0.8-monolith-mt.a" />
+		</Linker>
 		<Unit filename="editor.cpp" />
 		<Unit filename="editor.h" />
 		<Unit filename="lib.h" />
 		<Unit filename="main.cpp" />
-		<Unit filename="res_loader/res_loader.cpp" />
-		<Unit filename="res_loader/res_loader.h" />
+		<Unit filename="res_loader\res_loader.cpp" />
+		<Unit filename="res_loader\res_loader.h" />
 		<Extensions>
 			<code_completion />
 			<debugger />

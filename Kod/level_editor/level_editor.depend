@@ -84,13 +84,13 @@
 	<string>
 	<fstream>
 
-1367661988 source:c:\users\administrator\documents\github\temporary_project_name\kod\level_editor\res_loader\res_loader.cpp
+1367668307 source:c:\users\administrator\documents\github\temporary_project_name\kod\level_editor\res_loader\res_loader.cpp
 	"res_loader.h"
 
-1367661988 c:\users\administrator\documents\github\temporary_project_name\kod\level_editor\res_loader\res_loader.h
+1367668307 c:\users\administrator\documents\github\temporary_project_name\kod\level_editor\res_loader\res_loader.h
 	"../lib.h"
 
-1367661988 c:\users\administrator\documents\github\temporary_project_name\kod\level_editor\lib.h
+1367668307 c:\users\administrator\documents\github\temporary_project_name\kod\level_editor\lib.h
 	<allegro5/allegro.h>
 	<allegro5/allegro_native_dialog.h>
 	<allegro5/allegro_image.h>
@@ -101,14 +101,15 @@
 	<string>
 	<fstream>
 
-1367661987 source:c:\users\administrator\documents\github\temporary_project_name\kod\level_editor\editor.cpp
+1367668306 source:c:\users\administrator\documents\github\temporary_project_name\kod\level_editor\editor.cpp
 	"editor.h"
 
-1367661988 c:\users\administrator\documents\github\temporary_project_name\kod\level_editor\editor.h
+1367668696 c:\users\administrator\documents\github\temporary_project_name\kod\level_editor\editor.h
 	"lib.h"
 	"res_loader/res_loader.h"
 
-1367664655 source:c:\users\administrator\documents\github\temporary_project_name\kod\level_editor\main.cpp
+1367668828 source:c:\users\administrator\documents\github\temporary_project_name\kod\level_editor\main.cpp
+	<conio.h>
 	"editor.h"
 
 1367667136 source:c:\users\wojciech\documents\github\temporary_project_name\kod\level_editor\res_loader\res_loader.cpp
