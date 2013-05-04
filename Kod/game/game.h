@@ -28,7 +28,7 @@ class unitInstance;
 class gameInstance
 {
     public:
-        gameInstance() { mapLoaded = false; exitGame = false; updateDisplay = true; displayAL = NULL; gameTimerAL = NULL; eventQueueAL = NULL; cursorActive = false; fps = 20;} //Konstruktor, wywoluje wczytywanie danych
+        gameInstance() { mapLoaded = false; exitGame = false; updateDisplay = true; displayAL = NULL; gameTimerAL = NULL; eventQueueAL = NULL; fps = 60; offset[0]=0; offset[1]=0;} //Konstruktor, wywoluje wczytywanie danych
         ~gameInstance() { }; //Destruktor, wywoluje czyszczenie pamieci
         struct unitStruct //Struktura jednostki na liscie
         {
@@ -55,6 +55,7 @@ class gameInstance
             unitInstance* CurrentUnit; //Przechowuje wskaznik na obecna na tym polu jednostke
         };
         ///KONTROLA OKNA
+        ALLEGRO_DISPLAY* displayAL; //Uchwyt okna
         ALLEGRO_MOUSE_STATE mouseState;
         ALLEGRO_MOUSE_CURSOR* mouseCursor[2];
         ALLEGRO_EVENT_QUEUE *eventQueueAL; //Zdarzenia i timery ALLEGRO
@@ -62,11 +63,10 @@ class gameInstance
         ALLEGRO_TIMER *gameTimerAL;
         ALLEGRO_KEYBOARD_STATE keyStateAL;
         bool CreateDisplay(int ScreenHeight,int ScreenWidth); //Tworzenie ekranu gry o podanej rozdzielczosci
+        int height,width;
         void ReleaseMemory(); //Zwalnianie pamieci zajetej przez Allegro, np. timer czy keystate
         void DisplayMessage(std::string title,std::string message); //Wyswietlanie wiadomosci na ekran
-        ALLEGRO_DISPLAY* GetDisplay() { return displayAL; };
         int fps; //Ilosc klatek na sekunde
-        bool cursorActive;
         bool updateDisplay; //Zmienna wskazujaca na to, czy trzeba przerysowywac cala mape
         bool exitGame; //Zmienna sterujace petla gry
 
@@ -96,8 +96,11 @@ class gameInstance
 
 
         ///MAP RENDER
+        bool MapScroll();
         bool RenderMap();
         bool RenderFieldBox();
+        int offset[2];
+        bool mapScroll;
 
         ///SWIAT GRY
         void CreateUnit(std::string type); //Funkcja tworzaca jednostke, typ z unitLib
@@ -106,16 +109,8 @@ class gameInstance
         ///GRACZE
         int GetCurrentPlayer(); //Funkcja zwraca numer obecnego gracza
         void EndTurn(); //Funkcja ustawia nastepnego gracza na obecnego
-
-
-    private:
-        ///GRACZE
         int playerCurrent; //Numer obecnego gracza
         std::vector<std::string> playerList; //Lista graczy
-
-        ///KONTROLA OKNA
-        ALLEGRO_DISPLAY* displayAL; //Uchwyt okna
-
 };
 
 #endif

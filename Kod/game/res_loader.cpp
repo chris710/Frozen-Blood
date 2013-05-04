@@ -147,7 +147,7 @@ bool gameInstance::PushUnitCFG(std::string name,std::string file,int HP,int atta
     unit->name=name;
     unit->bitmap=NULL;
     unit->bitmap = al_load_bitmap(file.c_str()); //Ladujemy bitmape z pliku, tylko RAZ w calym programie!
-    if(!unit->bitmap) { delete &unit;  std::cout << "[unitLIB] ERROR \"" << file << "\" - FILE NOT FOUND | SKIPPING" << std::endl; return false;} //Jezeli sie nie uda, to przerywamy, bo i tak nic nie bedzie widac
+    if(!unit->bitmap) { delete unit;  std::cout << "[unitLIB] ERROR \"" << file << "\" - FILE NOT FOUND | SKIPPING" << std::endl; return false;} //Jezeli sie nie uda, to przerywamy, bo i tak nic nie bedzie widac
     unit->HP=HP;
     unit->attack=attack;
     unit->defence=defence;

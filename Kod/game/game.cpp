@@ -30,6 +30,8 @@ bool gameInstance::CreateDisplay(int ScreenHeight,int ScreenWidth)
     al_install_audio();
     al_init_image_addon();
     al_init_acodec_addon();
+    height=ScreenHeight;
+    width=ScreenWidth;
     return true;
 }
 

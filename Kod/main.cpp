@@ -26,7 +26,7 @@ int main()
     game->gameTimerAL = al_create_timer(1.0/game->fps); //tworzymy nowy timer
     al_register_event_source(game->eventQueueAL,al_get_timer_event_source(game->gameTimerAL)); //i go rejestrujemy jako zrodlo zdarzen
     //Rejestracja okna jako zrodlo zdarzen
-    al_register_event_source(game->eventQueueAL,al_get_display_event_source(game->GetDisplay()));
+    al_register_event_source(game->eventQueueAL,al_get_display_event_source(game->displayAL));
     al_start_timer(game->gameTimerAL); //Uruchamiamy nasz timer
 
     game->LoadMap("test"); //Ladowanie testowej mapy, na razie brak interfejsu
@@ -44,14 +44,14 @@ int main()
         case ALLEGRO_EVENT_MOUSE_BUTTON_DOWN: //Jezeli wcisnieto przycisk myszy(dowolny!)
             if(game->cursor[0]!=NULL)          //Jezeli mamy wlasny kursor
             {
-                if(game->mouseState.buttons & 1) al_set_mouse_cursor(game->GetDisplay(),game->mouseCursor[1]); //Ustawiamy go, jezeli wcisnieto lewy przycisk
+                if(game->mouseState.buttons & 1) al_set_mouse_cursor(game->displayAL,game->mouseCursor[1]); //Ustawiamy go, jezeli wcisnieto lewy przycisk
                 game->updateDisplay=true; //i updatujemy ekran
             }
             break;
         case ALLEGRO_EVENT_MOUSE_BUTTON_UP: //Puszczono przycisk myszy
             if(game->cursor[1]!=NULL)
             {
-                if(!game->mouseState.buttons & 1) al_set_mouse_cursor(game->GetDisplay(),game->mouseCursor[0]); //Jezeli to lewy podniesiono, to zamieniamy kursor
+                if(!game->mouseState.buttons & 1) al_set_mouse_cursor(game->displayAL,game->mouseCursor[0]); //Jezeli to lewy podniesiono, to zamieniamy kursor
                 game->updateDisplay=true;
             }
             break;
@@ -63,13 +63,17 @@ int main()
                 break;
             }
             break;
-        case ALLEGRO_EVENT_MOUSE_AXES: //Jezeli przesunieto mysz to updatujemy ekran(bo mamy fieldboxa do zaaktualizowania)
+        case ALLEGRO_EVENT_MOUSE_AXES:
+            {
+                game->mapScroll=game->MapScroll();
+            } //Jezeli przesunieto mysz to updatujemy ekran(bo mamy fieldboxa do zaaktualizowania)
             game->updateDisplay=true;
             break;
         }
-        if(game->updateDisplay) //Jezeli nalezy uaktualnic ekran, to to robimy
+        if(game->updateDisplay || game->mapScroll) //Jezeli nalezy uaktualnic ekran, to to robimy
         {
             al_clear_to_color(al_map_rgb(157,67,67)); //czyscimi
+            game->MapScroll();
             game->RenderMap(); //renderujemy mape
             game->RenderFieldBox(); //renderujemy fieldboxa
             al_flip_display(); //wyswietlamy
