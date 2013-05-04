@@ -1,3 +1,9 @@
+//////////////////////////////////////////////
+///         MAIN.CPP
+///     Główny plik edytora poziomów
+//////////////////////////////////////////////
+
+
 
 ///POTRZEBNE PLIKI
 #include "editor.h"
@@ -14,7 +20,13 @@ int main()
             //error
             return -1;
     }
-    //editor* gameEditor = new editor(gameLIB,wysokosc,szerokosc);
+    editor* gameEditor = new editor(gameLIB,800,600);        //tworzy instancję klasy edytora
+
+    for(int i=0;i<gameEditor->gameLIB->objLib.size();i++)         //wypisuje wszystkie obrazki
+    {
+        cout<<i+1<<" - "<<gameEditor->gameLIB->objLib[i]->name<<endl;
+    }
+
 
     //Po takim zabiegu w gameEditor->gameLib->objLib[iterator] masz po kolei kafelki z objs.cfg
     //w gameEditor->gameLib->soundLib[iterator] dzwieki
