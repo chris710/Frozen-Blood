@@ -52,25 +52,25 @@ bool gameInstance::MapScroll()
 
     if(x>=0 && x<=30) //W LEWO
     {
-        if(offset[1]>=0) return false;
+        if(offset[1]>=0) { offset[1]=0; return false; }
       offset[1]+=4;
       return true; //DZIALA
    }
     else if(x<=width && x>=width-30) // W PRAWO
     {
-        if(abs(offset[1])+width>=mapSize[1]*96) return false;
+        if(abs(offset[1])+width>=mapSize[1]*96) { offset[1]=-1*abs(mapSize[1]*96-width); return false; }
         offset[1]-=4;
         return true;
     }
     else if(y>=0 && y<=30)
     {
-        if(offset[0] >=0) return false;
+        if(offset[0]>=0) { offset[0]=0; return false; }
         offset[0]+=4;
         return true;
     }// DO GORY
     else if(y<=height && y>=height-30) //DO DOLU
     {
-        if(mapSize[0]*96+offset[0]<=height) return false;
+        if(mapSize[0]*96+offset[0]<=height) { offset[0] = height-mapSize[0]*96; return false; }
         offset[0]-=4;
         return true;
     }

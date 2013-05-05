@@ -64,16 +64,14 @@ int main()
             }
             break;
         case ALLEGRO_EVENT_MOUSE_AXES:
-            {
-                game->mapScroll=game->MapScroll();
-            } //Jezeli przesunieto mysz to updatujemy ekran(bo mamy fieldboxa do zaaktualizowania)
+             //Jezeli przesunieto mysz to updatujemy ekran(bo mamy fieldboxa do zaaktualizowania)
             game->updateDisplay=true;
             break;
         }
         if(game->updateDisplay || game->mapScroll) //Jezeli nalezy uaktualnic ekran, to to robimy
         {
             al_clear_to_color(al_map_rgb(157,67,67)); //czyscimi
-            game->MapScroll();
+            game->mapScroll=game->MapScroll();
             game->RenderMap(); //renderujemy mape
             game->RenderFieldBox(); //renderujemy fieldboxa
             al_flip_display(); //wyswietlamy
