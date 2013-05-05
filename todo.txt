@@ -14,5 +14,3 @@ Najważniejsze na chwilę obecną.
 -Wybór edytora
 -credits
 -wyjście z gry
-6. Obsługa myszki
-7. Scrollowanie ekranu mapy

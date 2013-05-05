@@ -1,0 +1,31 @@
+# depslib dependency file v1.0
+1367763487 source:c:\users\wojciech\documents\github\the-frozen-blood\level_editor\editor\editor.cpp
+	"editor.h"
+
+1367763667 c:\users\wojciech\documents\github\the-frozen-blood\level_editor\editor\editor.h
+	<allegro5/allegro.h>
+	<allegro5/allegro_native_dialog.h>
+	<allegro5/allegro_image.h>
+	<allegro5/allegro_audio.h>
+	<allegro5/allegro_acodec.h>
+	<iostream>
+	<vector>
+	<string>
+	<fstream>
+	"../res_loader/res_loader.h"
+
+1367763055 c:\users\wojciech\documents\github\the-frozen-blood\level_editor\res_loader\res_loader.h
+	"../editor/editor.h"
+
+1367765427 source:c:\users\wojciech\documents\github\the-frozen-blood\level_editor\editor\map_loader.cpp
+	"editor.h"
+
+1367765387 source:c:\users\wojciech\documents\github\the-frozen-blood\level_editor\editor\map_render.cpp
+	"editor.h"
+
+1367764028 source:c:\users\wojciech\documents\github\the-frozen-blood\level_editor\main.cpp
+	"editor/editor.h"
+
+1367763345 source:c:\users\wojciech\documents\github\the-frozen-blood\level_editor\res_loader\res_loader.cpp
+	"res_loader.h"
+
