@@ -50,19 +50,19 @@ bool gameInstance::MapScroll()
     int x = mouseState.x;
     int y = mouseState.y;
 
-    if(x>=0 && x<=30) //W LEWO
+    if(x>=0 && x<=50) //W LEWO
     {
       offset[1]+=4;
     }
-    else if(x<=width && x>=width-30) // W PRAWO
+    else if(x<=width && x>=width-50) // W PRAWO
     {
         offset[1]-=4;
     }
-    else if(y>=0 && y<=30)
+    else if(y>=0 && y<=50)
     {
         offset[0]+=4;
     }// DO GORY
-    else if(y<=height && y>=height-30) //DO DOLU
+    else if(y<=height && y>=height-50) //DO DOLU
     {
         offset[0]-=4;
     }
