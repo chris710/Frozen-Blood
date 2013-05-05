@@ -82,7 +82,15 @@ void map::createMap()
 //      FILL WATER - WYPEŁNIA MAPĘ WODĄ
 //
 /////////////////////////////////////////////////////
-void map::fillWater(std::string name)
+void map::fillWater()
 {
+    for(int i=0;i<Ysize;i++)
+    {
+        for(int j=0;j<Xsize;j++)
+        {
+            mapa[i][j].type="water_open";
+            //mapa[i][j].image=         ///trololo problem, nie mam obrazków tutaj
+        }
 
+    }
 }

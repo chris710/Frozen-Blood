@@ -77,7 +77,7 @@ class map
         }
 
         void createMap();        //tworzy pustą mapę
-        void fillWater(std::string name);        //wypełnia wodą
+        void fillWater();        //wypełnia wodą
         void addTile(std::string type,int rotation, int Xpos, int Ypos);       //tworzy kafelek danego typu w danym miejscu
         void releaseMemory();       //zwalnia pamięć po macierzy
 };
