@@ -19,6 +19,7 @@
 #include <vector>
 #include <string>
 #include <fstream>
+#include <conio.h>
 
 class resInstance;
 
@@ -52,6 +53,7 @@ public:
     //RENDEROWANIE MAPY W OKNIE PODGLADU
     bool RenderMap();
     bool mapLoaded;
+    void AddTile(resInstance* resLib);
     void fillWater(resInstance* resLib);
 
     ///EDYTOR OPCJE

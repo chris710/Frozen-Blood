@@ -32,7 +32,7 @@
 1367829190 source:c:\users\administrator\documents\github\the-frozen-blood\kod edytor\editor\map_loader.cpp
 	"editor.h"
 
-1367827341 c:\users\administrator\documents\github\the-frozen-blood\kod edytor\editor\editor.h
+1367843840 c:\users\administrator\documents\github\the-frozen-blood\kod edytor\editor\editor.h
 	<allegro5/allegro.h>
 	<allegro5/allegro_native_dialog.h>
 	<allegro5/allegro_image.h>
@@ -42,6 +42,7 @@
 	<vector>
 	<string>
 	<fstream>
+	<conio.h>
 	"../res_loader/res_loader.h"
 
 1367765867 c:\users\administrator\documents\github\the-frozen-blood\kod edytor\res_loader\res_loader.h
@@ -50,12 +51,12 @@
 1367765866 source:c:\users\administrator\documents\github\the-frozen-blood\kod edytor\editor\map_render.cpp
 	"editor.h"
 
-1367827861 source:c:\users\administrator\documents\github\the-frozen-blood\kod edytor\main.cpp
+1367843847 source:c:\users\administrator\documents\github\the-frozen-blood\kod edytor\main.cpp
 	"editor/editor.h"
 
 1367765866 source:c:\users\administrator\documents\github\the-frozen-blood\kod edytor\res_loader\res_loader.cpp
 	"res_loader.h"
 
-1367828956 source:c:\users\administrator\documents\github\the-frozen-blood\kod edytor\editor\editor.cpp
+1367847300 source:c:\users\administrator\documents\github\the-frozen-blood\kod edytor\editor\editor.cpp
 	"editor.h"
 

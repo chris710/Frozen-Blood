@@ -82,17 +82,19 @@ int main()
                         mapatmp.open(file.c_str());
                         if( mapatmp.good() )  //nadpisanie mapy
                         {
-                            std::cout<<"Czy chcesz nadpisac mape? (Y/N)";
-                            /*switch (editor->editorEventsAL.keyboard.keycode)          ///nadpisanie
+                            std::cout<<"Czy chcesz nadpisac mape? (Y/N)"<<std::endl;
+
+                            char over=getch();      //zmienna do nadpisania
+                            switch (over)                                       ///nadpisanie
                             {
-                                case ALLEGRO_KEY_Y: //nadpisz
+                                case 'y': //nadpisz
                                 {
                                     editor->exitEditor = true;
                                     editor->SaveMap(editor->mapName);
                                     break;
                                 }
-                                case ALLEGRO_KEY_N:     break;  //nie nadpisuj
-                            }*/
+                                case 'n':     break;  //nie nadpisuj
+                            }
                         }
                         else     editor->SaveMap(editor->mapName);
                         break;

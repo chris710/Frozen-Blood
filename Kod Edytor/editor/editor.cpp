@@ -80,3 +80,25 @@ void editorInstance::CreateMap(resInstance* resLib)
 
     fillWater(resLib);      //wypełnia mapę wodą
 }
+
+
+///////////////////////////////////////////////
+//      DODAJE KAFELEK NA MIEJSCE
+///////////////////////////////////////////////
+void editorInstance::AddTile(resInstance* resLib)
+{
+    int tile;       //rodzaj kafelka
+
+    if(!mapLoaded)  return;
+
+    std::cout<<"Podaj wspolrzedne kafelka: "<<std::endl;
+    //std::cin>>
+    ///TUTAJ UMIEŚCIĆ ODWOŁANIE DO KONKRETNEGO KAFELKA
+
+    std::cout<<"Podaj rodzaj kafelka: "<<std::endl;
+    std::cin>>tile;
+    ///TUTAJ ZROBIĆ WCZYTYWANIE Z BIBLIOTEKI KAFELKÓW/ ZROBIĆ BIBLIOTEKĘ KAFELKÓW
+    resLib->objLib[tile]->bitmap;
+
+
+}
