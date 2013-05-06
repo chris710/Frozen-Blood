@@ -46,12 +46,13 @@ public:
 
     ///MAPA
     bool LoadMap(std::string file, resInstance* resLib);
+    bool SaveMap(std::string file);
     void UnloadMap();
+    void CreateMap(resInstance* resLib);
     //RENDEROWANIE MAPY W OKNIE PODGLADU
     bool RenderMap();
     bool mapLoaded;
-    void fillWater(resInstance* resLib)
-    ;
+    void fillWater(resInstance* resLib);
 
     ///EDYTOR OPCJE
     bool displayWindow;
@@ -61,6 +62,7 @@ public:
     ///STRUKTURA KAFELKA
     struct mapTile //Kafelek mapy
     {
+        std::string name;
         ALLEGRO_BITMAP* tile;
         std::string effect;
         int rotation;
@@ -68,7 +70,7 @@ public:
     ///MAPA
     std::vector<mapTile*> gameMap;
     int mapSize[2];
-    int mapScale;//Zalezna od rozmiaru mapy
+    int mapScale;//Zalezna od rozmiaru mapy; skala
     std::string mapName; //Nazwa mapy
 };
 

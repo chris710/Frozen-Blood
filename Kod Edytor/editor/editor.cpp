@@ -46,6 +46,10 @@ void editorInstance::ReleaseMemory()
     if(editorTimerAL) al_destroy_timer(editorTimerAL);
     if(displayAL) al_destroy_display(displayAL); //Zwalnianie ekranu
 }
+
+/////////////////////////////////
+//      WYPEŁNIA MAPĘ WODĄ
+/////////////////////////////////
 void editorInstance::fillWater(resInstance* resLib)
 {
     if(!mapLoaded || resLib->defaultTile==NULL) return;
@@ -53,9 +57,26 @@ void editorInstance::fillWater(resInstance* resLib)
         for(int j=0;j<mapSize[1];j++)
         {
             mapTile* tile = new mapTile;
+            tile->name="snow1";
             tile->tile=resLib->defaultTile;
             tile->effect="unwalkable";
             tile->rotation=0;
             gameMap.push_back(tile);
         }
+}
+
+
+//////////////////////////////
+//      TWORZY NOWĄ MAPĘ
+//////////////////////////////
+void editorInstance::CreateMap(resInstance* resLib)
+{
+    if(mapLoaded) UnloadMap();
+    std::cout<<"Podaj wys. i szer. mapy: "<<std::endl;
+    std::cin>>mapSize[0]>>mapSize[1];
+    while(mapSize[0]*mapScale>displayH || mapSize[1]*mapScale>displayW) mapScale-=4;
+
+    mapLoaded=true;
+
+    fillWater(resLib);      //wypełnia mapę wodą
 }

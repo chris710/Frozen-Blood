@@ -6,6 +6,10 @@
 ///POTRZEBNE PLIKI
 #include "editor.h"
 
+
+//////////////////////////////////
+///       LADOWANIE MAPY
+//////////////////////////////////
 bool editorInstance::LoadMap(std::string file, resInstance* resLib)
 {
     if(mapLoaded) return false; //Jezeli istnieje zaladowana mapa to konczymy
@@ -44,6 +48,7 @@ bool editorInstance::LoadMap(std::string file, resInstance* resLib)
             tile->effect=line;
             mapa >> x;
             tile->rotation=x;
+            tile->name=resLib->objLib[k]->name;
             gameMap.push_back(tile); //Dodajemy kafelek do obecnej mapy
         }
     }
@@ -51,6 +56,38 @@ bool editorInstance::LoadMap(std::string file, resInstance* resLib)
     std::cout << "[MAP] \"" << file << "\" LOADED" << std::endl;
     return true;
 }
+
+///////////////////////////////////////////
+///      ZAPISANIE MAPY DO PLIKU
+///////////////////////////////////////////
+bool editorInstance::SaveMap(std::string file)
+{
+    int height = 0,width = 0;       //zmienne pomocnicze
+
+    file="res/maps/"+file+".cfg";
+    std::ofstream mapa;
+    mapa.open(file.c_str());
+
+    mapa<<"[NAME]"<<std::endl<<mapName<<std::endl;         //nagłówek mapy
+    mapa<<"[SIZE]"<<std::endl<<mapSize[0]<<" "<<mapSize[1]<<std::endl;
+
+    for(int i=0;i<gameMap.size();i++)       //przejeżdżamy każdą kolumnę wektora tablic
+    {
+            mapa<<"[TILE]"<<std::endl;      //nagłówek kafelka
+            mapa<<gameMap[i]->name<<std::endl;      //nazwa kafelka
+            mapa<<gameMap[i]->effect<<std::endl;        //efekt kafelka
+            mapa<<gameMap[i]->rotation<<std::endl;      //rotacja kafelka
+            height++; //zmiana tablicy na wektorze
+            if(height==mapSize[1]) { width++; height=0; }   //jeżeli dojechaliśmy do końca wektora to zmieniamy kolumnę i jedziemy od początku
+            //mapa<<std::endl;
+    }
+    std::cout<<"[MAP] \""<<file<<"\" SAVED"<<std::endl;     //komunikat
+    mapa.close();
+}
+
+//////////////////////////////////
+///       USUWANIE MAPY
+//////////////////////////////////
 void editorInstance::UnloadMap() //Usuwanie mapy z pamieci
 {
     if(!mapLoaded) return;
