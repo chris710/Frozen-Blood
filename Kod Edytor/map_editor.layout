@@ -2,22 +2,22 @@
 <CodeBlocks_layout_file>
 	<ActiveTarget name="Debug" />
 	<File name="editor\editor.cpp" open="1" top="0" tabpos="6">
-		<Cursor position="2408" topLine="47" />
+		<Cursor position="2976" topLine="69" />
 	</File>
-	<File name="editor\editor.h" open="1" top="0" tabpos="2">
-		<Cursor position="1717" topLine="36" />
+	<File name="editor\editor.h" open="1" top="0" tabpos="5">
+		<Cursor position="585" topLine="0" />
 	</File>
-	<File name="editor\map_loader.cpp" open="1" top="1" tabpos="4">
-		<Cursor position="2883" topLine="52" />
+	<File name="editor\map_loader.cpp" open="1" top="0" tabpos="3">
+		<Cursor position="2369" topLine="27" />
 	</File>
-	<File name="editor\map_render.cpp" open="1" top="0" tabpos="5">
+	<File name="editor\map_render.cpp" open="1" top="0" tabpos="4">
 		<Cursor position="1245" topLine="0" />
 	</File>
-	<File name="main.cpp" open="1" top="0" tabpos="1">
-		<Cursor position="4548" topLine="0" />
+	<File name="main.cpp" open="1" top="1" tabpos="1">
+		<Cursor position="3776" topLine="71" />
 	</File>
-	<File name="res_loader\res_loader.cpp" open="1" top="0" tabpos="3">
-		<Cursor position="4950" topLine="110" />
+	<File name="res_loader\res_loader.cpp" open="1" top="0" tabpos="2">
+		<Cursor position="4455" topLine="110" />
 	</File>
 	<File name="res_loader\res_loader.h" open="0" top="0" tabpos="0">
 		<Cursor position="309" topLine="1" />

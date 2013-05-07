@@ -99,6 +99,17 @@ int main()
                         else     editor->SaveMap(editor->mapName);
                         break;
                     }
+                    case ALLEGRO_KEY_E:
+                    {
+                        if(!editor->mapLoaded)  break;
+                        for(int i=0;i<resLib->objLib.size();i++)
+                        {
+                            std::cout<<i+1<<":"<<resLib->objLib[i]->name<<" ";
+                        }
+                        editor->AddTile(resLib);
+                        editor->updateDisplay=true;
+                        break;
+                    }
                 }
                 break;
             }

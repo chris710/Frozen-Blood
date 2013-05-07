@@ -88,17 +88,18 @@ void editorInstance::CreateMap(resInstance* resLib)
 void editorInstance::AddTile(resInstance* resLib)
 {
     int tile;       //rodzaj kafelka
+    int x,y; //współrzędne wybieranego kafelka
 
     if(!mapLoaded)  return;
 
     std::cout<<"Podaj wspolrzedne kafelka: "<<std::endl;
-    //std::cin>>
-    ///TUTAJ UMIEŚCIĆ ODWOŁANIE DO KONKRETNEGO KAFELKA
+    std::cin>>y>>x;
 
     std::cout<<"Podaj rodzaj kafelka: "<<std::endl;
     std::cin>>tile;
     ///TUTAJ ZROBIĆ WCZYTYWANIE Z BIBLIOTEKI KAFELKÓW/ ZROBIĆ BIBLIOTEKĘ KAFELKÓW
-    resLib->objLib[tile]->bitmap;
+    gameMap[x+y*mapSize[0]]->tile=resLib->objLib[tile-1]->bitmap;     //ustawiamy grafikę
+    gameMap[x+y*mapSize[0]]->name=resLib->objLib[tile-1]->name;       //ustawiamy id kafelka
 
 
 }
