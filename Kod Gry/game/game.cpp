@@ -35,6 +35,21 @@ bool gameInstance::CreateDisplay(int ScreenHeight,int ScreenWidth)
     return true;
 }
 
+gameInstance::gameInstance()
+{
+    mapLoaded = false;
+    mapScroll = true;
+    mapDrawUnitRange = false;
+    exitGame = false;
+    updateDisplay = true;
+    displayAL = NULL;
+    gameTimerAL = NULL;
+    eventQueueAL = NULL;
+    fps = 60;
+    mapOffset[0]=0;
+    mapOffset[1]=0; //Konstruktor, wywoluje wczytywanie danych
+}
+
 void gameInstance::ReleaseMemory()
 {
     UnloadMap(); //Jezeli jest co zwalniac, to usuwamy mape
@@ -53,8 +68,9 @@ void gameInstance::DisplayMessage(std::string title,std::string message)
 }
 void gameInstance::CreateUnit(std::string type) //Tworzymy jednostke o podanym typie, typ wziety z unitLib
 {
-    unitInstance unit(type,this);
-    this->unitList.push_back(&unit); //jednostka trafia na liste jednostek na mapie, trafia do obecnego gracza
+    unitInstance* unit = new unitInstance(type,this,0,0);
+    gameMap[0]->currentUnit=unit;
+    this->unitList.push_back(unit); //jednostka trafia na liste jednostek na mapie, trafia do obecnego gracza
 }
 int gameInstance::GetCurrentPlayer() //Zwraca numer obecnego gracza
 {

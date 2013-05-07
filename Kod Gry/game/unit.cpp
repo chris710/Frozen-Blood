@@ -6,19 +6,28 @@
 ///POTRZEBNE PLIKI
 #include "unit.h"
 
-unitInstance::unitInstance(std::string type,gameInstance* game) //Ladowanie danych o jednostce z listy
+unitInstance::unitInstance(std::string type,gameInstance* game, int x, int y) //Ladowanie danych o jednostce z listy
 {
     owner = game->GetCurrentPlayer();
+    xPos = x;
+    yPos = y;
     for(int i=0;i<game->unitLib.size();i++)
     {
         if(game->unitLib[i]->name==type)
         {
+            name = type;
             HP = game->unitLib[i]->HP;
             attack = game->unitLib[i]->attack;
             defence = game->unitLib[i]->defence;
             bitmap = game->unitLib[i]->bitmap;
             ful = i; //Fast unit list access
             ID = time(NULL); //Niepowtarzalny ID jednostki
+            attackRange = 5;
+            movementRange = 5;
+            tired = false;
+            movement = false;
+            moveTo[0] = 0;
+            moveTo[1] = 0;
             break;
         }
     }

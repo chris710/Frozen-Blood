@@ -36,13 +36,14 @@ bool gameInstance::LoadMap(std::string file)
             for(k=0;k<objLib.size();k++)
                 if(objLib[k]->name==line) { tile->tile=objLib[k]->bitmap; break; }
                 else tile->tile=NULL;
+            //sprawdzamy czy sie udalo znalezc kafelek, jezeli nie to blad
             if(tile->tile==NULL) { std::cout << "[objLIB] ERROR - \"" << line << "\" - FILE NOT FOUND" << std::endl; UnloadMap(); return false; }
             if(k>=objLib.size()) { std::cout << "[objLIB] ERROR - \"" << line << "\" - FILE NOT FOUND" << std::endl; UnloadMap(); return false; }
             mapa >> line;
-            tile->effect=line;
+            tile->effect=line; //pobieramy dane kafelka
             mapa >> x;
             tile->rotation=x;
-            tile->CurrentUnit=NULL;
+            tile->currentUnit=NULL;
             gameMap.push_back(tile); //Dodajemy kafelek do obecnej mapy
         }
     }

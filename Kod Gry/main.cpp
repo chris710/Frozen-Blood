@@ -30,7 +30,7 @@ int main()
     al_start_timer(game->gameTimerAL); //Uruchamiamy nasz timer
 
     game->LoadMap("test"); //Ladowanie testowej mapy, na razie brak interfejsu
-
+    game->CreateUnit("test");
     while(!game->exitGame) //Petla wlasciwa gry
     {
         al_wait_for_event(game->eventQueueAL,&game->gameEventsAL); //Czekamy na zdarzenie
@@ -44,7 +44,11 @@ int main()
         case ALLEGRO_EVENT_MOUSE_BUTTON_DOWN: //Jezeli wcisnieto przycisk myszy(dowolny!)
             if(game->cursor[0]!=NULL)          //Jezeli mamy wlasny kursor
             {
-                if(game->mouseState.buttons & 1) al_set_mouse_cursor(game->displayAL,game->mouseCursor[1]); //Ustawiamy go, jezeli wcisnieto lewy przycisk
+                if(game->mouseState.buttons & 1)
+                {
+                    al_set_mouse_cursor(game->displayAL,game->mouseCursor[1]); //Ustawiamy go, jezeli wcisnieto lewy przycisk
+                    game->MapClick();
+                }
                 game->updateDisplay=true; //i updatujemy ekran
             }
             break;
@@ -59,7 +63,14 @@ int main()
             switch(game->gameEventsAL.keyboard.keycode) //to sprawdzamy co to za przycisk
             {
             case ALLEGRO_KEY_ESCAPE: //w przypadku esc zamykamy program
-                game->exitGame = true;
+                if(game->mapDrawUnitRange && game->selectedUnit!=NULL)
+                {
+                game->selectedUnit = NULL;
+                game->mapDrawUnitRange = false;
+                std::cout << "[MAP] CS" << std::endl;
+                game->updateDisplay=true;
+                }
+                else game->exitGame=true;
                 break;
             }
             break;
@@ -74,6 +85,7 @@ int main()
             game->mapScroll=game->MapScroll();
             game->RenderMap(); //renderujemy mape
             game->RenderFieldBox(); //renderujemy fieldboxa
+            if(game->selectedUnit!=NULL) game->RenderUnitRange();
             al_flip_display(); //wyswietlamy
             game->updateDisplay = false;
         }

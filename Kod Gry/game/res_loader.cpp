@@ -9,12 +9,12 @@
 bool gameInstance::ResourceLoader()
 {
     std::ifstream resources[3]; //Otwieramy wszystkie pliki cfg zawierajace dane o obiektach gry
-    resources[0].open("game/units.cfg");
-    resources[1].open("game/sounds.cfg");
+    resources[0].open("game/sounds.cfg");
+    resources[1].open("game/units.cfg");
     resources[2].open("game/objs.cfg");
 
-    if(!resources[0].good()) { DisplayMessage("Blad!","Nie mozna otworzyc pliku units.cfg!"); return false; } //Sprawdzamy czy
-    if(!resources[1].good()) { DisplayMessage("Blad!","Nie mozna otworzyc pliku sounds.cfg!"); return false; } //listy sa dostepne
+    if(!resources[0].good()) { DisplayMessage("Blad!","Nie mozna otworzyc pliku sounds.cfg!"); return false; } //Sprawdzamy czy
+    if(!resources[1].good()) { DisplayMessage("Blad!","Nie mozna otworzyc pliku units.cfg!"); return false; } //listy sa dostepne
     if(!resources[2].good()) { DisplayMessage("Blad!","Nie mozna otworzyc pliku objs.cfg!"); return false; } // do wczytania
 
     std::string line;
@@ -28,22 +28,22 @@ bool gameInstance::ResourceLoader()
             {
                 std::string name,file,sound_movement,sound_attack,sound_death;
                 int HP,attack,defence;
-                getline(resources[i],line); //Sprawdzamy czy dany wpis w pliku cfg istnieje i czy jest na odpowiedniej pozycji
-                if(line=="[NAME]") getline(resources[i],name); else continue; //wczytujemy dane, albo przerywamy je¿eli s¹ niepoprawne
-                getline(resources[i],line);
-                if(line=="[BITMAP]") getline(resources[i],file); else continue;
-                getline(resources[i],line);
-                if(line=="[HP]") resources[i]>>HP; else continue;
-                getline(resources[i],line);
-                if(line=="[ATTACK]") resources[i]>>attack; else continue;
-                getline(resources[i],line);
+                resources[i]>>line; //Sprawdzamy czy dany wpis w pliku cfg istnieje i czy jest na odpowiedniej pozycji
+                if(line=="[NAME]") resources[i] >> name; else  continue;  //wczytujemy dane, albo przerywamy je¿eli s¹ niepoprawne
+                resources[i] >> line;
+                if(line=="[BITMAP]") resources[i] >> file; else continue;
+                resources[i] >> line;
+                if(line=="[HP]") resources[i] >> HP;  else continue;
+                resources[i] >> line;
+                if(line=="[ATTACK]") resources[i] >> attack; else continue;
+                resources[i] >> line;
                 if(line=="[DEFENCE]") resources[i]>>defence; else continue;
-                getline(resources[i],line);
-                if(line=="[SOUND_MOVEMENT]") getline(resources[i],sound_movement); else continue;
-                getline(resources[i],line);
-                if(line=="[SOUND_ATTACK]") getline(resources[i],sound_attack); else continue;
-                getline(resources[i],line);
-                if(line=="[SOUND_DEATH]") getline(resources[i],sound_death); else continue;
+                resources[i] >> line;
+                if(line=="[SOUND_MOVEMENT]") resources[i] >> sound_movement; else continue;
+                resources[i] >> line;
+                if(line=="[SOUND_ATTACK]") resources[i] >> sound_attack; else continue;
+                resources[i] >> line;
+                if(line=="[SOUND_DEATH]") resources[i] >> sound_death; else continue;
                 std::cout << "[unitLIB] \"" << name << " " << file << "\" LOADING" <<std::endl;
                 PushUnitCFG(name,file,HP,attack,defence,sound_movement,sound_attack,sound_death); //Dodajemy poprawne dane do listy
             }
@@ -147,13 +147,13 @@ bool gameInstance::PushUnitCFG(std::string name,std::string file,int HP,int atta
     unit->name=name;
     unit->bitmap=NULL;
     unit->bitmap = al_load_bitmap(file.c_str()); //Ladujemy bitmape z pliku, tylko RAZ w calym programie!
-    if(!unit->bitmap) { delete unit;  std::cout << "[unitLIB] ERROR \"" << file << "\" - FILE NOT FOUND | SKIPPING" << std::endl; return false;} //Jezeli sie nie uda, to przerywamy, bo i tak nic nie bedzie widac
+    if(!unit->bitmap) { delete unit;   std::cout << "[unitLIB] ERROR \"" << file << "\" - FILE NOT FOUND | SKIPPING" << std::endl; return false;} //Jezeli sie nie uda, to przerywamy, bo i tak nic nie bedzie widac
     unit->HP=HP;
     unit->attack=attack;
     unit->defence=defence;
-    unit->sound_movement=sound_movement; //Tylko nazwy dzwiekow, przy tworzeniu instancji jednostki ustawiane sa odpowiednie pointery
-    unit->sound_attack=sound_attack;
-    unit->sound_death=sound_death;
+    //unit->sound_movement=sound_movement; //Tylko nazwy dzwiekow, przy tworzeniu instancji jednostki ustawiane sa odpowiednie pointery
+    //unit->sound_attack=sound_attack;
+    //unit->sound_death=sound_death;
     unitLib.push_back(unit); //Dodajemy do biblioteki
     std::cout << "[unitLIB] \"" << unit->name << "\" LOADED" <<std::endl;
     return true;

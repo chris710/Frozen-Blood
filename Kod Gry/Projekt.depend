@@ -52,10 +52,10 @@
 1367654551 c:\users\wojciech\documents\github\temporary_project_name\kod\game\mouse.h
 	"game.h"
 
-1367852311 source:c:\users\wojciech\documents\github\the-frozen-blood\kod gry\game\game.cpp
+1367918485 source:c:\users\wojciech\documents\github\the-frozen-blood\kod gry\game\game.cpp
 	"game.h"
 
-1367852311 c:\users\wojciech\documents\github\the-frozen-blood\kod gry\game\game.h
+1367919224 c:\users\wojciech\documents\github\the-frozen-blood\kod gry\game\game.h
 	<allegro5/allegro.h>
 	<allegro5/allegro_native_dialog.h>
 	<allegro5/allegro_image.h>
@@ -67,22 +67,25 @@
 	<fstream>
 	"unit.h"
 
-1367775884 c:\users\wojciech\documents\github\the-frozen-blood\kod gry\game\unit.h
+1367919225 c:\users\wojciech\documents\github\the-frozen-blood\kod gry\game\unit.h
 	"game.h"
 	<time.h>
 
-1367775884 source:c:\users\wojciech\documents\github\the-frozen-blood\kod gry\game\map_loader.cpp
+1367914223 source:c:\users\wojciech\documents\github\the-frozen-blood\kod gry\game\map_loader.cpp
 	"game.h"
 
-1367852929 source:c:\users\wojciech\documents\github\the-frozen-blood\kod gry\game\map_render.cpp
+1367918092 source:c:\users\wojciech\documents\github\the-frozen-blood\kod gry\game\map_render.cpp
 	"game.h"
 
-1367775884 source:c:\users\wojciech\documents\github\the-frozen-blood\kod gry\game\res_loader.cpp
+1367918231 source:c:\users\wojciech\documents\github\the-frozen-blood\kod gry\game\res_loader.cpp
 	"game.h"
 
-1367775884 source:c:\users\wojciech\documents\github\the-frozen-blood\kod gry\game\unit.cpp
+1367918645 source:c:\users\wojciech\documents\github\the-frozen-blood\kod gry\game\unit.cpp
 	"unit.h"
 
-1367852335 source:c:\users\wojciech\documents\github\the-frozen-blood\kod gry\main.cpp
+1367918347 source:c:\users\wojciech\documents\github\the-frozen-blood\kod gry\main.cpp
 	"game/game.h"
+
+1367918192 source:c:\users\wojciech\documents\github\the-frozen-blood\kod gry\game\mouse.cpp
+	"game.h"
 

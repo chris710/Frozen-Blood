@@ -38,6 +38,7 @@
 		<Unit filename="game/game.h" />
 		<Unit filename="game/map_loader.cpp" />
 		<Unit filename="game/map_render.cpp" />
+		<Unit filename="game/mouse.cpp" />
 		<Unit filename="game/res_loader.cpp" />
 		<Unit filename="game/unit.cpp" />
 		<Unit filename="game/unit.h" />

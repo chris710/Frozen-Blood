@@ -28,7 +28,7 @@ class unitInstance;
 class gameInstance
 {
     public:
-        gameInstance() { mapLoaded = false; mapScroll = true; exitGame = false; updateDisplay = true; displayAL = NULL; gameTimerAL = NULL; eventQueueAL = NULL; fps = 60; offset[0]=0; offset[1]=0;} //Konstruktor, wywoluje wczytywanie danych
+        gameInstance();
         ~gameInstance() { }; //Destruktor, wywoluje czyszczenie pamieci
         struct unitStruct //Struktura jednostki na liscie
         {
@@ -52,27 +52,28 @@ class gameInstance
             ALLEGRO_BITMAP* tile;
             std::string effect;
             int rotation;
-            unitInstance* CurrentUnit; //Przechowuje wskaznik na obecna na tym polu jednostke
+            unitInstance* currentUnit; //Przechowuje wskaznik na obecna na tym polu jednostke
         };
         ///KONTROLA OKNA
         ALLEGRO_DISPLAY* displayAL; //Uchwyt okna
         ALLEGRO_MOUSE_STATE mouseState;
-        ALLEGRO_MOUSE_CURSOR* mouseCursor[2];
+        ALLEGRO_MOUSE_CURSOR* mouseCursor[2]; //normalny, klikniete
         ALLEGRO_EVENT_QUEUE *eventQueueAL; //Zdarzenia i timery ALLEGRO
         ALLEGRO_EVENT gameEventsAL;
         ALLEGRO_TIMER *gameTimerAL;
         ALLEGRO_KEYBOARD_STATE keyStateAL;
         bool CreateDisplay(int ScreenHeight,int ScreenWidth); //Tworzenie ekranu gry o podanej rozdzielczosci
-        int height,width;
+
         void ReleaseMemory(); //Zwalnianie pamieci zajetej przez Allegro, np. timer czy keystate
         void DisplayMessage(std::string title,std::string message); //Wyswietlanie wiadomosci na ekran
         int fps; //Ilosc klatek na sekunde
+        int height,width; //wysokosc okna i jego szerokosc
         bool updateDisplay; //Zmienna wskazujaca na to, czy trzeba przerysowywac cala mape
         bool exitGame; //Zmienna sterujace petla gry
 
         ///UI
-        ALLEGRO_BITMAP* fieldBox;
-        ALLEGRO_BITMAP* cursor[2];
+        ALLEGRO_BITMAP* fieldBox; //zaznaczanie pol mapy
+        ALLEGRO_BITMAP* cursor[2]; //kursory
 
         ///RESOURCE LOADER
         bool PushUnitCFG(std::string name,std::string file,int HP,int attack, int defence,std::string sound_movement,
@@ -99,12 +100,19 @@ class gameInstance
         bool MapScroll();
         bool RenderMap();
         bool RenderFieldBox();
-        int offset[2];
+        bool RenderUnitRange();
+        int mapOffset[2]; //offset mapy, 0 -> szer, 1 -> wys
         bool mapScroll;
+        bool mapDrawUnitRange;
+
+
+        ///MOUSE
+        void MapClick();
 
         ///SWIAT GRY
         void CreateUnit(std::string type); //Funkcja tworzaca jednostke, typ z unitLib
         std::vector<unitInstance*> unitList; //lista jednostek na mapie
+        unitInstance* selectedUnit;
 
         ///GRACZE
         int GetCurrentPlayer(); //Funkcja zwraca numer obecnego gracza
