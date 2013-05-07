@@ -68,8 +68,8 @@ void gameInstance::DisplayMessage(std::string title,std::string message)
 }
 void gameInstance::CreateUnit(std::string type) //Tworzymy jednostke o podanym typie, typ wziety z unitLib
 {
-    unitInstance* unit = new unitInstance(type,this,0,0);
-    gameMap[0]->currentUnit=unit;
+    unitInstance* unit = new unitInstance(type,this,2,3);
+    gameMap[unit->xPos+unit->yPos*mapSize[1]]->currentUnit=unit;
     this->unitList.push_back(unit); //jednostka trafia na liste jednostek na mapie, trafia do obecnego gracza
 }
 int gameInstance::GetCurrentPlayer() //Zwraca numer obecnego gracza

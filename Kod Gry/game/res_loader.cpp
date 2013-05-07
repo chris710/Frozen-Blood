@@ -79,6 +79,15 @@ bool gameInstance::ResourceLoader()
         return false;
     }
     else  std::cout << "[UI] FIELDBOX LOADED" <<std::endl;
+    std::cout << "[UI] HIGHLIGHT \"res/drawable/UI/highlight.png\" LOADING" <<std::endl;
+    highlight = al_load_bitmap("res/drawable/UI/highlight.png");
+    if(!highlight)
+    {
+        std::cout << "[UI] ERROR \"res/drawable/UI/highlight.png\" - FILE NOT FOUND" << std::endl;
+        DisplayMessage("Blad!","Nie mozna odnalezc pliku \"highlight.png\"");
+        return false;
+    }
+    else  std::cout << "[UI] HIGHLIGHT LOADED" <<std::endl;
     std::cout << "[UI] CURSOR(1) \"res/drawable/UI/cursor1.png\" LOADING" <<std::endl;
     cursor[0] = al_load_bitmap("res/drawable/UI/cursor1.png");
     if(!cursor[0])

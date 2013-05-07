@@ -17,14 +17,16 @@ bool gameInstance::RenderMap()
         {
             default:
             case 0: al_draw_bitmap(gameMap[i]->tile,h*96+mapOffset[1],w*96+mapOffset[0],NULL); break;
-            case 1: al_draw_bitmap(gameMap[i]->tile,h*96+mapOffset[1],w*96+mapOffset[0],ALLEGRO_FLIP_HORIZONTAL); break;
-            case 2: al_draw_bitmap(gameMap[i]->tile,h*96+mapOffset[1],w*96+mapOffset[0],ALLEGRO_FLIP_VERTICAL); break;
-            case 3: al_draw_bitmap(gameMap[i]->tile,h*96+mapOffset[1],w*96+mapOffset[0],ALLEGRO_FLIP_VERTICAL|ALLEGRO_FLIP_HORIZONTAL); break;
+           // case 1: al_draw_bitmap(gameMap[i]->tile,h*96+mapOffset[1],w*96+mapOffset[0],ALLEGRO_FLIP_HORIZONTAL); break;
+           // case 2: al_draw_bitmap(gameMap[i]->tile,h*96+mapOffset[1],w*96+mapOffset[0],ALLEGRO_FLIP_VERTICAL); break;
+            //case 3: al_draw_bitmap(gameMap[i]->tile,h*96+mapOffset[1],w*96+mapOffset[0],ALLEGRO_FLIP_VERTICAL|ALLEGRO_FLIP_HORIZONTAL); break;
         }
-        if(gameMap[i]->currentUnit!=NULL) al_draw_bitmap(gameMap[i]->currentUnit->bitmap,10+mapOffset[1],10+mapOffset[0],NULL);
         w++; //Zwiekszamy w
         if(w==mapSize[0]) { h++; w=0; }
     }
+     for(int i=0;i<gameMap.size();i++)
+       if(gameMap[i]->currentUnit!=NULL) al_draw_bitmap(gameMap[i]->currentUnit->bitmap,gameMap[i]->currentUnit->xPos*96+mapOffset[1],gameMap[i]->currentUnit->yPos*96+mapOffset[0],NULL);
+
     return true;
 }
 
@@ -89,5 +91,37 @@ bool gameInstance::MapScroll()
 }
 bool gameInstance::RenderUnitRange() //rysowanie zasiegu jednostek
 {
-
+    if(!mapDrawUnitRange || selectedUnit==NULL) return false;
+    if(selectedUnit->xPos-1>=0) //lewy
+    {
+        al_draw_bitmap(highlight,(selectedUnit->xPos-1)*96+mapOffset[1],selectedUnit->yPos*96+mapOffset[0],NULL);
+    }
+    if(selectedUnit->xPos+1<=mapSize[0]) //prawy
+    {
+        al_draw_bitmap(highlight,(selectedUnit->xPos+1)*96+mapOffset[1],selectedUnit->yPos*96+mapOffset[0],NULL);
+    }
+    if(selectedUnit->yPos-1>=0) //gorny
+    {
+        al_draw_bitmap(highlight,selectedUnit->xPos*96+mapOffset[1],(selectedUnit->yPos-1)*96+mapOffset[0],NULL);
+    }
+    if(selectedUnit->yPos+1<=mapSize[1]) //dolny
+    {
+        al_draw_bitmap(highlight,selectedUnit->xPos*96+mapOffset[1],(selectedUnit->yPos+1)*96+mapOffset[0],NULL);
+    }
+    if(selectedUnit->xPos-1>=0 && selectedUnit->yPos-1>=0) //gorny lewy
+    {
+        al_draw_bitmap(highlight,(selectedUnit->xPos-1)*96+mapOffset[1],(selectedUnit->yPos-1)*96+mapOffset[0],NULL);
+    }
+    if(selectedUnit->xPos+1<=mapSize[0] && selectedUnit->yPos-1>=0) //dolny prawy
+    {
+        al_draw_bitmap(highlight,(selectedUnit->xPos+1)*96+mapOffset[1],(selectedUnit->yPos-1)*96+mapOffset[0],NULL);
+    }
+    if(selectedUnit->xPos+1<=mapSize[0] && selectedUnit->yPos+1>=0) //prawy dolny
+    {
+        al_draw_bitmap(highlight,(selectedUnit->xPos+1)*96+mapOffset[1],(selectedUnit->yPos+1)*96+mapOffset[0],NULL);
+    }
+    if(selectedUnit->xPos-1>=0 && selectedUnit->yPos+1<=mapSize[1]) //dolny lewy
+    {
+        al_draw_bitmap(highlight,(selectedUnit->xPos-1)*96+mapOffset[1],(selectedUnit->yPos+1)*96+mapOffset[0],NULL);
+    }
 }

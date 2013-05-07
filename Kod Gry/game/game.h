@@ -74,6 +74,7 @@ class gameInstance
         ///UI
         ALLEGRO_BITMAP* fieldBox; //zaznaczanie pol mapy
         ALLEGRO_BITMAP* cursor[2]; //kursory
+        ALLEGRO_BITMAP* highlight; //zaznaczanie pol mapy
 
         ///RESOURCE LOADER
         bool PushUnitCFG(std::string name,std::string file,int HP,int attack, int defence,std::string sound_movement,
