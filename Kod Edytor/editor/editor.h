@@ -31,13 +31,14 @@ class editorInstance
 public:
     editorInstance() { mapLoaded = false; exitEditor = false; int fps = 60; mapScale=96; updateDisplay=true; }
     ///KONTROLA OKNA
-    ALLEGRO_DISPLAY* displayAL; //Uchwyt okna
+    ALLEGRO_DISPLAY* displayAL; //Uchwyt okna głównego
+    ALLEGRO_DISPLAY* displayUI; //uchwyt okna z interfejsem
     ALLEGRO_EVENT_QUEUE *eventQueueAL; //Zdarzenia i timery ALLEGRO
     ALLEGRO_EVENT editorEventsAL;
     ALLEGRO_TIMER *editorTimerAL;
     ALLEGRO_KEYBOARD_STATE keyStateAL;
     bool Init();
-    bool CreateDisplay(int ScreenHeight,int ScreenWidth); //Tworzenie ekranu gry o podanej rozdzielczosci
+    bool CreateDisplay(ALLEGRO_DISPLAY* display, int ScreenHeight,int ScreenWidth); //Tworzenie ekranu gry o podanej rozdzielczosci
     void ReleaseMemory(); //Zwalnianie pamieci zajetej przez Allegro, np. timer czy keystate
     void DisplayMessage(std::string title,std::string message); //Wyswietlanie wiadomosci na ekran
     int fps; //Ilosc klatek na sekunde
@@ -52,6 +53,7 @@ public:
     void CreateMap(resInstance* resLib);
     //RENDEROWANIE MAPY W OKNIE PODGLADU
     bool RenderMap();
+    bool RenderUI(resInstance* resLib);
     bool mapLoaded;
     void AddTile(resInstance* resLib);
     void fillWater(resInstance* resLib);

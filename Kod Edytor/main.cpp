@@ -12,7 +12,8 @@ int main()
     if(!editor->Init()) return -1;
     resInstance* resLib = new resInstance;
     if(!resLib->ResourceLoader()) { resLib->ResourceUnloader(); return -2; }
-    editor->CreateDisplay(480,576);
+    editor->CreateDisplay(editor->displayAL,480,576);
+    editor->CreateDisplay(editor->displayUI,480,96);
 
     ////////////////////////////////////
     //      INICJALIZACJA ALLEGRO

@@ -25,10 +25,10 @@ bool editorInstance::Init()
     return true;
 }
 
-bool editorInstance::CreateDisplay(int ScreenHeight,int ScreenWidth)
+bool editorInstance::CreateDisplay(ALLEGRO_DISPLAY* display, int ScreenHeight,int ScreenWidth)
 {
-    displayAL = al_create_display(ScreenWidth,ScreenHeight); //Tworzenie ekranu gry korzystajac z uchwytu okna
-    if(!displayAL) //Jezeli sie udalo sie stworzyc okna, zamykamy program
+    display = al_create_display(ScreenWidth,ScreenHeight); //Tworzenie ekranu gry korzystajac z uchwytu okna
+    if(!display) //Jezeli sie udalo sie stworzyc okna, zamykamy program
     {
         al_show_native_message_box(NULL,NULL,NULL,"Nie udalo sie utworzyc obrazu.",NULL,NULL);
         return false;
@@ -45,6 +45,7 @@ void editorInstance::ReleaseMemory()
     if(eventQueueAL) al_destroy_event_queue(eventQueueAL); //niszcenie timerow i list zdarzen ALLEGRO
     if(editorTimerAL) al_destroy_timer(editorTimerAL);
     if(displayAL) al_destroy_display(displayAL); //Zwalnianie ekranu
+    if(displayUI) al_destroy_display(displayUI);
 }
 
 /////////////////////////////////
