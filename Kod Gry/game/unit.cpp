@@ -21,8 +21,9 @@ unitInstance::unitInstance(std::string type,gameInstance* game, int x, int y) //
             defence = game->unitLib[i]->defence;
             bitmap = game->unitLib[i]->bitmap;
             ful = i; //Fast unit list access
-            ID = time(NULL); //Niepowtarzalny ID jednostki
+            ID = game->unitLib.size(); //Niepowtarzalny ID jednostki
             attackRange = 1;
+            movementRange = 2;
             tired = false;
             movement = false;
             moveTo[0] = 0;

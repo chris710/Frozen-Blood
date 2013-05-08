@@ -22,11 +22,18 @@ void gameInstance::MapClick()
 
     //std::cout << x+y*mapSize[1] << std:: endl;
     //Klikniecie na kafelek
-    if(gameMap[x+y*mapSize[1]]->currentUnit==NULL) return;
-    if(selectedUnit!=gameMap[x+y*mapSize[1]]->currentUnit) selectedUnit = gameMap[x+y*mapSize[1]]->currentUnit; // jezeli obecnie zaznaczona jednostka to ta na ktora kliknieto
-    else { selectedUnit = NULL; mapDrawUnitRange=false; std::cout << "[MAP] CS" << std::endl;} // to odznacz
-    if(!mapDrawUnitRange && selectedUnit!=NULL)  { std::cout << "[MAP] UNIT " << selectedUnit->name << " (ID: " << selectedUnit->ID << ") SELECTED" << std::endl; mapDrawUnitRange=true; } //albo rysuj jej zasieg
-    //else sprawdz co jest na klknietym polu(ruch czy atak)
+    if(selectedUnit==NULL && gameMap[x+y*mapSize[1]]->currentUnit==NULL) return;
+    else if(selectedUnit!=NULL && gameMap[x+y*mapSize[1]]->currentUnit==NULL)
+    {
+        //Move
+    }
+    else
+    {
+        if(selectedUnit!=gameMap[x+y*mapSize[1]]->currentUnit) selectedUnit = gameMap[x+y*mapSize[1]]->currentUnit; // jezeli obecnie zaznaczona jednostka to ta na ktora kliknieto
+        else { selectedUnit = NULL; mapDrawUnitRange=false; std::cout << "[MAP] CS" << std::endl;} // to odznacz
+        if(!mapDrawUnitRange && selectedUnit!=NULL)  { std::cout << "[MAP] UNIT " << selectedUnit->name << " (ID: " << selectedUnit->ID << ") SELECTED" << std::endl; mapDrawUnitRange=true; } //albo rysuj jej zasieg
+        //else sprawdz co jest na klknietym polu(ruch czy atak)
+    }
 }
 
 

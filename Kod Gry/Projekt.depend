@@ -52,10 +52,10 @@
 1367654551 c:\users\wojciech\documents\github\temporary_project_name\kod\game\mouse.h
 	"game.h"
 
-1367947215 source:c:\users\wojciech\documents\github\the-frozen-blood\kod gry\game\game.cpp
+1368020047 source:c:\users\wojciech\documents\github\the-frozen-blood\kod gry\game\game.cpp
 	"game.h"
 
-1367944924 c:\users\wojciech\documents\github\the-frozen-blood\kod gry\game\game.h
+1368020047 c:\users\wojciech\documents\github\the-frozen-blood\kod gry\game\game.h
 	<allegro5/allegro.h>
 	<allegro5/allegro_native_dialog.h>
 	<allegro5/allegro_image.h>
@@ -67,25 +67,24 @@
 	<fstream>
 	"unit.h"
 
-1367941583 c:\users\wojciech\documents\github\the-frozen-blood\kod gry\game\unit.h
-	"game.h"
-	<time.h>
-
-1367941583 source:c:\users\wojciech\documents\github\the-frozen-blood\kod gry\game\map_loader.cpp
+1368029609 c:\users\wojciech\documents\github\the-frozen-blood\kod gry\game\unit.h
 	"game.h"
 
-1367947478 source:c:\users\wojciech\documents\github\the-frozen-blood\kod gry\game\map_render.cpp
+1368020047 source:c:\users\wojciech\documents\github\the-frozen-blood\kod gry\game\map_loader.cpp
 	"game.h"
 
-1367945691 source:c:\users\wojciech\documents\github\the-frozen-blood\kod gry\game\res_loader.cpp
+1368030032 source:c:\users\wojciech\documents\github\the-frozen-blood\kod gry\game\map_render.cpp
 	"game.h"
 
-1367943275 source:c:\users\wojciech\documents\github\the-frozen-blood\kod gry\game\unit.cpp
+1368020047 source:c:\users\wojciech\documents\github\the-frozen-blood\kod gry\game\res_loader.cpp
+	"game.h"
+
+1368029609 source:c:\users\wojciech\documents\github\the-frozen-blood\kod gry\game\unit.cpp
 	"unit.h"
 
-1367942305 source:c:\users\wojciech\documents\github\the-frozen-blood\kod gry\main.cpp
+1368029911 source:c:\users\wojciech\documents\github\the-frozen-blood\kod gry\main.cpp
 	"game/game.h"
 
-1367947057 source:c:\users\wojciech\documents\github\the-frozen-blood\kod gry\game\mouse.cpp
+1368028937 source:c:\users\wojciech\documents\github\the-frozen-blood\kod gry\game\mouse.cpp
 	"game.h"
 

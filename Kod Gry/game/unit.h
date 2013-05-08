@@ -8,7 +8,6 @@
 
 ///POTRZEBNE PLIKI
 #include "game.h"
-#include <time.h>
 
 ///WYSUNIETE DEKLARACJE
 class gameInstance;
@@ -27,7 +26,7 @@ class unitInstance
         int owner;
         int exp;    //ilość zdobytego doświadczenia
         int level;    //poziom doświadczenia
-        time_t ID;
+        int ID;
         int attackRange;
         int movementRange;
         bool tired; //czy juz uzyta

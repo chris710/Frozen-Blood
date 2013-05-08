@@ -28,8 +28,10 @@ int main()
     //Rejestracja okna jako zrodlo zdarzen
     al_register_event_source(game->eventQueueAL,al_get_display_event_source(game->displayAL));
     al_start_timer(game->gameTimerAL); //Uruchamiamy nasz timer
-
-    game->LoadMap("test"); //Ladowanie testowej mapy, na razie brak interfejsu
+    std::cout << "Podaj nazwe mapy: ";
+    std::string map;
+    std::cin >> map;
+    if(!game->LoadMap(map.c_str())) {game->ReleaseMemory(); return -1; } //Ladowanie testowej mapy, na razie brak interfejsu
     game->CreateUnit("test");
     while(!game->exitGame) //Petla wlasciwa gry
     {

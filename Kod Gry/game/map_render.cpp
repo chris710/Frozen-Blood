@@ -89,39 +89,15 @@ bool gameInstance::MapScroll()
     if(mapSize[0]*96+mapOffset[0]<height && mapSize[0]*96>height) { mapOffset[0] = height-mapSize[0]*96; return false; }
     return true;
 }
-bool gameInstance::RenderUnitRange() //rysowanie zasiegu jednostek
+bool gameInstance::RenderUnitRange() //rysowanie zasiegu jednostek,do przerobienia
 {
     if(!mapDrawUnitRange || selectedUnit==NULL) return false;
-    if(selectedUnit->xPos-1>=0) //lewy
+    for(int i=-1*selectedUnit->movementRange;i<=selectedUnit->movementRange;i++)
     {
-        al_draw_bitmap(highlight,(selectedUnit->xPos-1)*96+mapOffset[1],selectedUnit->yPos*96+mapOffset[0],NULL);
-    }
-    if(selectedUnit->xPos+1<=mapSize[0]) //prawy
-    {
-        al_draw_bitmap(highlight,(selectedUnit->xPos+1)*96+mapOffset[1],selectedUnit->yPos*96+mapOffset[0],NULL);
-    }
-    if(selectedUnit->yPos-1>=0) //gorny
-    {
-        al_draw_bitmap(highlight,selectedUnit->xPos*96+mapOffset[1],(selectedUnit->yPos-1)*96+mapOffset[0],NULL);
-    }
-    if(selectedUnit->yPos+1<=mapSize[1]) //dolny
-    {
-        al_draw_bitmap(highlight,selectedUnit->xPos*96+mapOffset[1],(selectedUnit->yPos+1)*96+mapOffset[0],NULL);
-    }
-    if(selectedUnit->xPos-1>=0 && selectedUnit->yPos-1>=0) //gorny lewy
-    {
-        al_draw_bitmap(highlight,(selectedUnit->xPos-1)*96+mapOffset[1],(selectedUnit->yPos-1)*96+mapOffset[0],NULL);
-    }
-    if(selectedUnit->xPos+1<=mapSize[0] && selectedUnit->yPos-1>=0) //dolny prawy
-    {
-        al_draw_bitmap(highlight,(selectedUnit->xPos+1)*96+mapOffset[1],(selectedUnit->yPos-1)*96+mapOffset[0],NULL);
-    }
-    if(selectedUnit->xPos+1<=mapSize[0] && selectedUnit->yPos+1>=0) //prawy dolny
-    {
-        al_draw_bitmap(highlight,(selectedUnit->xPos+1)*96+mapOffset[1],(selectedUnit->yPos+1)*96+mapOffset[0],NULL);
-    }
-    if(selectedUnit->xPos-1>=0 && selectedUnit->yPos+1<=mapSize[1]) //dolny lewy
-    {
-        al_draw_bitmap(highlight,(selectedUnit->xPos-1)*96+mapOffset[1],(selectedUnit->yPos+1)*96+mapOffset[0],NULL);
+        for(int j=-1*selectedUnit->movementRange;j<=selectedUnit->movementRange;j++)
+        {
+            if(selectedUnit->xPos+i>=0 && selectedUnit->yPos+j>=0 && selectedUnit->xPos+i<mapSize[0] && selectedUnit->yPos+j<mapSize[1])
+            al_draw_bitmap(highlight,(selectedUnit->xPos+i)*96+mapOffset[1],(selectedUnit->yPos+j)*96+mapOffset[0],NULL);
+        }
     }
 }
