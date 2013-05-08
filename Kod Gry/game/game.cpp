@@ -3,8 +3,6 @@
 ///                 game.cpp                   ///
 //////////////////////////////////////////////////
 
-///POTRZEBNE BIBLIOTEKI
-
 ///POTRZEBNE PLIKI
 #include "game.h"
 

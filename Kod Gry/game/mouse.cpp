@@ -3,9 +3,6 @@
 ///                mouse.cpp                   ///
 //////////////////////////////////////////////////
 
-#ifndef MOUSE_H
-#define MOUSE_H
-
 ///POTRZEBNE PLIKI
 #include "game.h"
 
@@ -36,5 +33,3 @@ void gameInstance::MapClick()
     }
 }
 
-
-#endif
