@@ -2,19 +2,19 @@
 <CodeBlocks_layout_file>
 	<ActiveTarget name="Debug" />
 	<File name="editor\editor.cpp" open="1" top="0" tabpos="6">
-		<Cursor position="867" topLine="16" />
+		<Cursor position="3112" topLine="71" />
 	</File>
 	<File name="editor\editor.h" open="1" top="0" tabpos="5">
-		<Cursor position="1205" topLine="20" />
+		<Cursor position="1942" topLine="46" />
 	</File>
 	<File name="editor\map_loader.cpp" open="1" top="0" tabpos="3">
-		<Cursor position="2369" topLine="27" />
+		<Cursor position="2369" topLine="9" />
 	</File>
-	<File name="editor\map_render.cpp" open="1" top="0" tabpos="4">
-		<Cursor position="1245" topLine="0" />
+	<File name="editor\map_render.cpp" open="1" top="1" tabpos="4">
+		<Cursor position="1998" topLine="19" />
 	</File>
-	<File name="main.cpp" open="1" top="1" tabpos="1">
-		<Cursor position="571" topLine="0" />
+	<File name="main.cpp" open="1" top="0" tabpos="1">
+		<Cursor position="570" topLine="0" />
 	</File>
 	<File name="res_loader\res_loader.cpp" open="1" top="0" tabpos="2">
 		<Cursor position="4455" topLine="110" />
