@@ -1,38 +1,8 @@
 # depslib dependency file v1.0
-1367763487 source:c:\users\wojciech\documents\github\the-frozen-blood\level_editor\editor\editor.cpp
+1368087328 source:c:\users\administrator\documents\github\the-frozen-blood\kod edytor\editor\editor.cpp
 	"editor.h"
 
-1367763667 c:\users\wojciech\documents\github\the-frozen-blood\level_editor\editor\editor.h
-	<allegro5/allegro.h>
-	<allegro5/allegro_native_dialog.h>
-	<allegro5/allegro_image.h>
-	<allegro5/allegro_audio.h>
-	<allegro5/allegro_acodec.h>
-	<iostream>
-	<vector>
-	<string>
-	<fstream>
-	"../res_loader/res_loader.h"
-
-1367763055 c:\users\wojciech\documents\github\the-frozen-blood\level_editor\res_loader\res_loader.h
-	"../editor/editor.h"
-
-1367765427 source:c:\users\wojciech\documents\github\the-frozen-blood\level_editor\editor\map_loader.cpp
-	"editor.h"
-
-1367765387 source:c:\users\wojciech\documents\github\the-frozen-blood\level_editor\editor\map_render.cpp
-	"editor.h"
-
-1367764028 source:c:\users\wojciech\documents\github\the-frozen-blood\level_editor\main.cpp
-	"editor/editor.h"
-
-1367763345 source:c:\users\wojciech\documents\github\the-frozen-blood\level_editor\res_loader\res_loader.cpp
-	"res_loader.h"
-
-1367829190 source:c:\users\administrator\documents\github\the-frozen-blood\kod edytor\editor\map_loader.cpp
-	"editor.h"
-
-1367843840 c:\users\administrator\documents\github\the-frozen-blood\kod edytor\editor\editor.h
+1368087328 c:\users\administrator\documents\github\the-frozen-blood\kod edytor\editor\editor.h
 	<allegro5/allegro.h>
 	<allegro5/allegro_native_dialog.h>
 	<allegro5/allegro_image.h>
@@ -45,18 +15,18 @@
 	<conio.h>
 	"../res_loader/res_loader.h"
 
-1367765867 c:\users\administrator\documents\github\the-frozen-blood\kod edytor\res_loader\res_loader.h
+1368087181 c:\users\administrator\documents\github\the-frozen-blood\kod edytor\res_loader\res_loader.h
 	"../editor/editor.h"
 
-1367765866 source:c:\users\administrator\documents\github\the-frozen-blood\kod edytor\editor\map_render.cpp
+1368087181 source:c:\users\administrator\documents\github\the-frozen-blood\kod edytor\editor\map_loader.cpp
 	"editor.h"
 
-1367920959 source:c:\users\administrator\documents\github\the-frozen-blood\kod edytor\main.cpp
+1368087181 source:c:\users\administrator\documents\github\the-frozen-blood\kod edytor\editor\map_render.cpp
+	"editor.h"
+
+1368089137 source:c:\users\administrator\documents\github\the-frozen-blood\kod edytor\main.cpp
 	"editor/editor.h"
 
-1367765866 source:c:\users\administrator\documents\github\the-frozen-blood\kod edytor\res_loader\res_loader.cpp
+1368087181 source:c:\users\administrator\documents\github\the-frozen-blood\kod edytor\res_loader\res_loader.cpp
 	"res_loader.h"
-
-1367920849 source:c:\users\administrator\documents\github\the-frozen-blood\kod edytor\editor\editor.cpp
-	"editor.h"
 

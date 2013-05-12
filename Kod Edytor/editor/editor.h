@@ -32,7 +32,7 @@ public:
     editorInstance() { mapLoaded = false; exitEditor = false; int fps = 60; mapScale=96; updateDisplay=true; }
     ///KONTROLA OKNA
     ALLEGRO_DISPLAY* displayAL; //Uchwyt okna głównego
-    ALLEGRO_DISPLAY* displayUI; //uchwyt okna z interfejsem
+    //ALLEGRO_DISPLAY* displayUI; //uchwyt okna z interfejsem
     ALLEGRO_EVENT_QUEUE *eventQueueAL; //Zdarzenia i timery ALLEGRO
     ALLEGRO_EVENT editorEventsAL;
     ALLEGRO_TIMER *editorTimerAL;

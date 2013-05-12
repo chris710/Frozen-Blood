@@ -33,10 +33,22 @@ mist->mistral->phantom->wraith;
 defender->protector->guardian->titan; 
 trebuchet->siege trebuchet->heavy trebuchet->bombarder;
 dragon->blood dragon->elder dragon->legendary dragon).
+-Każda jednostka charakteryzuje się przypisaną mobilością (w punktach). Poruszanie dodatkowo jest warunkowane terenem. Wejście na odpowiednie pole oznacza odjęcie określonej ilości
+punktów ruchu jednostki w danej turze. Jeżeli liczba punktów mobilności jednostki w danej 
+turze jest mniejsza niż "trudność" terenu na następnym polu to jednostka  nie może się na nie
+przenieść. Właściwości poszczególnych kafelków:
+droga - 1
+most - 1
+zabudowania - 1
+otwarty teren (śnieg) - 1,5
+las - 2
+góry - 3
+woda - nie da się przejść
+ 
 
 Tryby:
 Skirmish dla 2,3 i 4 graczy.
-Story mode: -? może w przyszłości
+Story mode: - zagraj w stworzone kampanie
 
 
 5) Interakcja między graczem a grą 
@@ -51,8 +63,7 @@ Main menu.
 
 6) Opis interfejsu (grafiki, muzyki, poziomów)
 Grafikę trzeba zrobić od nowa.
-Do tego należy uzgodnić co się animuje a co nie. Muzyka pomocy :( 
-Ogarniam powoli Cubase, więc za parę miesięcy może coś wykombinuję.
+Do tego należy uzgodnić co się animuje a co nie. Muzyka (ror)
 
 
 7) Przebieg (trudne) opisać co będzie się działo w grze od momentu, kiedy użytkownik rozpoczyna grę, poprzez główne zdarzenia w grze, aż do momentu jej zakończenia, wygląda to tak jakbyś opisywał grę w którą sam grałeś

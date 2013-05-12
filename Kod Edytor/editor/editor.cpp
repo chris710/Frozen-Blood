@@ -45,7 +45,7 @@ void editorInstance::ReleaseMemory()
     if(eventQueueAL) al_destroy_event_queue(eventQueueAL); //niszcenie timerow i list zdarzen ALLEGRO
     if(editorTimerAL) al_destroy_timer(editorTimerAL);
     if(displayAL) al_destroy_display(displayAL); //Zwalnianie ekranu
-    if(displayUI) al_destroy_display(displayUI);
+    //if(displayUI) al_destroy_display(displayUI);
 }
 
 /////////////////////////////////
