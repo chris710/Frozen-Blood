@@ -13,27 +13,27 @@
  
  
  --           REQUIRE
- require global
+require("global")
  
  
  
  
  --           ŁADOWANIE
- function love.load
+ function love.load()
    
  end
  
  
  
  --           MECHANIKA
- function love.update
+ function love.update(dt)
    
  end
  
  
  
  --           RYSOWANIE
- function love.draw
+ function love.draw()
    
  end
  
