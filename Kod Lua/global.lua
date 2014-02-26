@@ -1,0 +1,7 @@
+
+--*** GLOBAL ***--
+
+--[[  WSKAZÓWKI
+* tylko stałe
+]]--
+
